@@ -111,7 +111,18 @@
     const worksHead = document.querySelector('.works__head');
     const workCards = document.querySelectorAll('.section--works .work');
 
-    const FADE_RANGE = 240; // px over which each card fades out behind the title
+    /* Fade tuning — designed so cards are fully transparent BEFORE
+       they reach the sticky title (keeping it legible at all times):
+
+         FADE_END_OFFSET  cardBottom this far below titleBottom = opacity 0
+         FADE_RANGE       scroll distance over which the fade happens
+
+       With offset 220 + range 460, a 7/5 card (~580 tall) begins
+       fading after ~70px of scroll and is fully transparent while
+       still ~220px of body is below the title — so the title text
+       never sits on a dark/coloured card. */
+    const FADE_END_OFFSET = 220;
+    const FADE_RANGE      = 460;
 
     let ticking = false;
     const onScrollFade = () => {
@@ -126,17 +137,19 @@
         if (heroTitle) heroTitle.style.opacity = heroOpacity;
         if (clientsEl) clientsEl.style.opacity = heroOpacity;
 
-        // Works cards: fade out as they pass behind the sticky title
+        // Works cards: fade out well before they touch the sticky title
         if (worksHead && workCards.length) {
           const titleBottom = worksHead.getBoundingClientRect().bottom;
           workCards.forEach((card) => {
             const cardBottom = card.getBoundingClientRect().bottom;
-            const distance = cardBottom - titleBottom;
+            const distance = cardBottom - titleBottom - FADE_END_OFFSET;
             let op;
             if (distance >= FADE_RANGE) op = 1;
             else if (distance <= 0) op = 0;
             else op = distance / FADE_RANGE;
             card.style.opacity = op;
+            // Block hover on cards that have effectively disappeared
+            card.style.pointerEvents = op < 0.08 ? 'none' : '';
           });
         }
 
