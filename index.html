@@ -48,7 +48,7 @@
 
   <main id="top">
 
-    <!-- ========== HERO (titolo + clients visibili insieme) ========== -->
+    <!-- ========== HERO (titolo + clients + scroll indicator) ========== -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__top">
         <h1 class="hero__title" id="hero-title" data-reveal>
@@ -58,50 +58,27 @@
         </h1>
       </div>
 
-      <!-- Clients marquee — sostituire i <span> testuali con <img src="assets/img/clients/<brand>.svg" alt="..."> quando arrivano gli SVG -->
-      <div class="clients" aria-label="Clienti">
-        <p class="clients__label">Selected clients</p>
-        <div class="clients__track">
-          <ul class="clients__list" aria-hidden="false">
-            <li><span>Vodafone</span></li>
-            <li><span>SIAE</span></li>
-            <li><span>Bocconi</span></li>
-            <li><span>2i Rete Gas</span></li>
-            <li><span>Intercos</span></li>
-            <li><span>Flex</span></li>
-            <li><span>IVECO</span></li>
-            <li><span>Ferrovie</span></li>
-            <li><span>Pirelli</span></li>
-            <li><span>Eni</span></li>
-            <li><span>Generali</span></li>
-          </ul>
-          <ul class="clients__list" aria-hidden="true">
-            <li><span>Vodafone</span></li>
-            <li><span>SIAE</span></li>
-            <li><span>Bocconi</span></li>
-            <li><span>2i Rete Gas</span></li>
-            <li><span>Intercos</span></li>
-            <li><span>Flex</span></li>
-            <li><span>IVECO</span></li>
-            <li><span>Ferrovie</span></li>
-            <li><span>Pirelli</span></li>
-            <li><span>Eni</span></li>
-            <li><span>Generali</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      <!-- Clients row — sostituire i <span> testuali con <img src="assets/img/clients/<brand>.svg" alt="..."> quando arrivano gli SVG -->
+      <ul class="clients" aria-label="Selected clients">
+        <li><span>SIAE</span></li>
+        <li><span>2i Rete Gas</span></li>
+        <li><span>Vodafone</span></li>
+        <li><span>Flex</span></li>
+        <li><span>Bocconi</span></li>
+        <li><span>IVECO</span></li>
+        <li><span>Intercos</span></li>
+        <li><span>Piaggio</span></li>
+        <li><span>Ferrari</span></li>
+      </ul>
 
-    <!-- ========== TRANSITION — Selected works intro + arrow ========== -->
-    <section class="works-intro" aria-hidden="true">
-      <h2 class="works-intro__title">Selected works</h2>
-      <span class="works-intro__arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 48" fill="none" focusable="false">
-          <path d="M12 2 L12 42 M4 34 L12 42 L20 34"
-                stroke="currentColor" stroke-width="2"
+      <a class="hero__scroll" href="#work" data-cursor="hover" aria-label="Vai ai progetti">
+        <span class="hero__scroll-label">Scroll</span>
+        <svg class="hero__scroll-icon" viewBox="0 0 16 24" aria-hidden="true" focusable="false">
+          <path d="M8 3 L8 17 M3 13 L8 18 L13 13"
+                fill="none" stroke="currentColor" stroke-width="1.5"
                 stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-      </span>
+      </a>
     </section>
 
     <!-- ========== SELECTED WORKS — Apple-style 2-col grid ========== -->
