@@ -51,10 +51,6 @@
     <!-- ========== HERO (titolo + clients visibili insieme) ========== -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__top">
-        <p class="hero__eyebrow" data-reveal>
-          <span class="dot" aria-hidden="true"></span>
-          Disponibile per nuovi progetti — Q3 2026
-        </p>
         <h1 class="hero__title" id="hero-title" data-reveal>
           Designing digital products where
           <em>clarity</em>, systems thinking
@@ -96,12 +92,20 @@
       </div>
     </section>
 
-    <!-- ========== SELECTED WORKS — Apple-style 2-col grid ========== -->
-    <section class="section section--works" id="work" aria-labelledby="work-title">
-      <header class="works__head">
-        <p class="works__kicker" data-reveal>Selected works</p>
-      </header>
+    <!-- ========== TRANSITION — Selected works intro + arrow ========== -->
+    <section class="works-intro" aria-hidden="true">
+      <h2 class="works-intro__title">Selected works</h2>
+      <span class="works-intro__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 48" fill="none" focusable="false">
+          <path d="M12 2 L12 42 M4 34 L12 42 L20 34"
+                stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </section>
 
+    <!-- ========== SELECTED WORKS — Apple-style 2-col grid ========== -->
+    <section class="section section--works" id="work">
       <ul class="works" role="list">
         <li class="work work--dark" data-reveal>
           <a class="work__link" href="projects/viola.html" data-cursor="hover">
@@ -157,20 +161,29 @@
       </ul>
     </section>
 
-    <!-- ========== PROCESS (dark band) ========== -->
-    <section class="section section--dark" id="process" aria-labelledby="process-title">
-      <header class="section__head">
-        <p class="section__index">02 — How I Work</p>
-        <h2 class="section__title" id="process-title" data-reveal>
-          Un processo che riduce il rumore.
+    <!-- ========== ABOUT + PROCESS — sezione fusa, dark band ========== -->
+    <section class="section section--studio" id="about" aria-labelledby="studio-title">
+      <header class="studio__head">
+        <h2 class="studio__title" id="studio-title" data-reveal>
+          Designer di prodotto con un'attenzione
+          <em>ostinata</em> al dettaglio.
         </h2>
-        <p class="section__lede" data-reveal>
-          Quattro fasi, pensate per allineare team, decisioni e deliverable.
-          Niente teatro, solo le cose che spostano l'ago.
-        </p>
+        <div class="studio__lede" data-reveal>
+          <p>
+            Lavoro da oltre dieci anni come Product Designer, con un focus
+            su prodotti enterprise complessi, sistemi safety-critical e
+            interfacce dove la chiarezza non è un'opzione.
+          </p>
+          <p>
+            Collaboro con team di prodotto, ricerca e ingegneria per
+            costruire interfacce che reggono nel tempo: design system
+            scalabili, gerarchie informative leggibili, micro-interazioni
+            che servono il contenuto.
+          </p>
+        </div>
       </header>
 
-      <ol class="process" role="list">
+      <ol class="process" role="list" id="process">
         <li class="process__step" data-reveal>
           <span class="process__num">01</span>
           <h3>Discover</h3>
@@ -196,45 +209,18 @@
             La consegna è l'inizio, non la fine.</p>
         </li>
       </ol>
-    </section>
 
-    <!-- ========== ABOUT ========== -->
-    <section class="section" id="about" aria-labelledby="about-title">
-      <header class="section__head">
-        <p class="section__index">03 — About</p>
-        <h2 class="section__title" id="about-title" data-reveal>
-          Designer di prodotto con un'attenzione ostinata al dettaglio.
-        </h2>
-      </header>
-      <div class="about">
-        <div class="about__col" data-reveal>
-          <p>
-            Lavoro da oltre dieci anni come Product Designer, con un focus
-            su prodotti enterprise complessi, sistemi safety-critical e
-            interfacce dove la chiarezza non è un'opzione.
-          </p>
-          <p>
-            Collaboro con team di prodotto, ricerca e ingegneria per
-            costruire interfacce che reggono nel tempo: design system
-            scalabili, gerarchie informative leggibili, micro-interazioni
-            che servono il contenuto.
-          </p>
-        </div>
-        <div class="about__col" data-reveal>
-          <dl class="about__list">
-            <div><dt>Esperienza</dt><dd>10+ anni</dd></div>
-            <div><dt>Progetti consegnati</dt><dd>40+</dd></div>
-            <div><dt>Settori</dt><dd>Enterprise, Safety, Mobility, Healthcare, AI</dd></div>
-            <div><dt>Tools</dt><dd>Figma, Framer, Origami, Principle</dd></div>
-            <div><dt>Lingue</dt><dd>Italiano, English</dd></div>
-          </dl>
-        </div>
-      </div>
+      <dl class="studio__stats" data-reveal>
+        <div><dt>Esperienza</dt><dd>10+ anni</dd></div>
+        <div><dt>Progetti consegnati</dt><dd>40+</dd></div>
+        <div><dt>Settori</dt><dd>Enterprise · Safety · Mobility · AI</dd></div>
+        <div><dt>Tools</dt><dd>Figma · Framer · Origami</dd></div>
+        <div><dt>Lingue</dt><dd>Italiano · English</dd></div>
+      </dl>
     </section>
 
     <!-- ========== STAY IN TOUCH ========== -->
     <section class="stay" id="contact" aria-labelledby="stay-title">
-      <p class="stay__kicker">04 — Stay in touch</p>
       <h2 class="stay__title" id="stay-title" data-reveal>
         Let's stay in touch.
       </h2>
