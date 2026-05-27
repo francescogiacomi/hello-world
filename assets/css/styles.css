@@ -86,13 +86,10 @@ html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
   background: var(--canvas-light);
-
-  /* Section-by-section snap — proximity keeps tall content reachable */
-  scroll-snap-type: y proximity;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-snap-type: none; scroll-behavior: auto; }
+  html { scroll-behavior: auto; }
 }
 
 body {
@@ -283,8 +280,6 @@ a {
   row-gap: clamp(32px, 5vh, 64px);
   max-width: var(--maxw);
   margin: 0 auto;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .hero__top {
@@ -471,19 +466,12 @@ a {
   .clients__list { flex-wrap: wrap; justify-content: center; }
 }
 
-/* ============================================================
-   Snap targets — major sections align to top, header-offset.
-   .works-page is handled in its own block above (each row of cards
-   is its own 100svh snap target with snap-stop: always).
-   ============================================================ */
+/* Header-offset for smooth anchor navigation (About/Contact links) */
 .hero,
+.section--works,
 .section--studio,
 .stay {
   scroll-margin-top: 72px;
-}
-.section--studio,
-.stay {
-  scroll-snap-align: start;
 }
 
 /* ============================================================
@@ -939,44 +927,30 @@ a {
   margin: 0;
   color: var(--ink);
 }
-/* Contact links — stacked, big editorial type, hairline dividers */
+/* Contact links — inline row, small sans, hairline-underline on hover */
 .stay__links {
   list-style: none;
   padding: 0;
-  margin: clamp(40px, 7vh, 80px) 0 0;
+  margin: clamp(32px, 5vh, 56px) 0 0;
   display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--hairline-light);
-  max-width: 720px;
-}
-.stay__links li {
-  border-bottom: 1px solid var(--hairline-light);
+  flex-wrap: wrap;
+  gap: clamp(16px, 2vw, 32px);
+  font-family: var(--f-sans);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.16px;
+  color: var(--charcoal);
 }
 .stay__links a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: clamp(18px, 2.6vh, 28px) 0;
-  font-family: var(--f-display);
-  font-weight: 500;
-  font-size: clamp(28px, 3.2vw, 48px);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  transition: padding .35s var(--ease-out), color .25s var(--ease-out);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color .3s var(--ease-out), color .3s var(--ease-out);
 }
-.stay__links a > span {
-  font-family: var(--f-sans);
-  font-weight: 500;
-  font-size: 0.6em;
-  color: var(--mute);
-  transition: transform .35s var(--ease-out), color .25s var(--ease-out);
-}
-.stay__links a:hover { padding-left: 12px; color: var(--primary); }
-.stay__links a:hover > span {
-  transform: translate(6px, -6px);
-  color: var(--primary);
-}
+.stay__links a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.stay__links a > span { font-size: 0.9em; }
 
 /* ============================================================
    Footer
