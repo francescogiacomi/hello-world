@@ -19,156 +19,145 @@
 
   <a class="skip-link" href="#work">Salta al contenuto</a>
 
-  <header class="site-header" data-reveal>
-    <a class="brand" href="#top" data-cursor="hover">
-      <span class="brand__mark" aria-hidden="true">FG</span>
+  <header class="site-header">
+    <a class="brand" href="#top" data-cursor="hover" aria-label="Francesco Giacomi — Home">
+      <svg class="brand__logo" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <!-- FG monogram: shared vertical spine, F arms top-left, G curve right -->
+        <path
+          d="M8 6 L8 34 M8 6 L22 6 M8 18 L18 18
+             M32 14 C32 8.5 27.5 6 22 6
+             C16.5 6 12 10.5 12 16
+             C12 21.5 16.5 26 22 26
+             C27.5 26 32 23 32 18
+             L26 18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+        />
+      </svg>
       <span class="brand__name">Francesco Giacomi</span>
     </a>
+
     <nav class="nav" aria-label="Primary">
-      <a href="#work" data-cursor="hover">Work</a>
       <a href="#about" data-cursor="hover">About</a>
       <a href="#process" data-cursor="hover">Process</a>
-      <a href="#contact" data-cursor="hover" class="nav__cta">Contact</a>
     </nav>
   </header>
 
   <main id="top">
+
+    <!-- ========== HERO (titolo + clients visibili insieme) ========== -->
     <section class="hero" aria-labelledby="hero-title">
-      <p class="hero__eyebrow" data-reveal>
-        <span class="dot" aria-hidden="true"></span>
-        Disponibile per nuovi progetti — Q3 2026
-      </p>
-      <h1 class="hero__title" id="hero-title" data-reveal>
-        <span class="line">Designing digital products</span>
-        <span class="line">where <em>clarity</em>, systems thinking</span>
-        <span class="line">and visual rigor work together.</span>
-      </h1>
-      <div class="hero__meta" data-reveal>
-        <div class="hero__col">
-          <span class="label">Role</span>
-          <span>Senior Product · UX/UI Designer</span>
-        </div>
-        <div class="hero__col">
-          <span class="label">Based in</span>
-          <span>Milano — Working worldwide</span>
-        </div>
-        <div class="hero__col">
-          <span class="label">Focus</span>
-          <span>Enterprise · Safety · Mobility · AI</span>
-        </div>
-      </div>
-
-      <div class="hero__scroll" aria-hidden="true">
-        <span>Scroll</span>
-        <span class="hero__scroll-line"></span>
-      </div>
-    </section>
-
-    <section class="marquee" aria-label="Clienti">
-      <div class="marquee__track">
-        <ul class="marquee__list" aria-hidden="false">
-          <li>Vodafone</li><li>SIAE</li><li>Bocconi</li><li>2i Rete Gas</li>
-          <li>Intercos</li><li>Flex</li><li>IVECO</li><li>Ferrovie</li>
-          <li>Pirelli</li><li>Eni</li><li>Generali</li>
-        </ul>
-        <ul class="marquee__list" aria-hidden="true">
-          <li>Vodafone</li><li>SIAE</li><li>Bocconi</li><li>2i Rete Gas</li>
-          <li>Intercos</li><li>Flex</li><li>IVECO</li><li>Ferrovie</li>
-          <li>Pirelli</li><li>Eni</li><li>Generali</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="work" aria-labelledby="work-title">
-      <header class="section__head">
-        <p class="section__index">01 — Selected Work</p>
-        <h2 class="section__title" id="work-title" data-reveal>
-          Progetti recenti, progettati per durare.
-        </h2>
-        <p class="section__lede" data-reveal>
-          Una selezione di casi su prodotti enterprise, sistemi safety-critical e
-          interfacce mobile. Ogni progetto è raccontato con il contesto, le decisioni
-          e l'impatto misurabile.
+      <div class="hero__top">
+        <p class="hero__eyebrow" data-reveal>
+          <span class="dot" aria-hidden="true"></span>
+          Disponibile per nuovi progetti — Q3 2026
         </p>
+        <h1 class="hero__title" id="hero-title" data-reveal>
+          Designing digital products where
+          <em>clarity</em>, systems thinking
+          and visual rigor work together.
+        </h1>
+      </div>
+
+      <!-- Clients marquee — sostituire i <span> testuali con <img src="assets/img/clients/<brand>.svg" alt="..."> quando arrivano gli SVG -->
+      <div class="clients" aria-label="Clienti">
+        <p class="clients__label">Selected clients</p>
+        <div class="clients__track">
+          <ul class="clients__list" aria-hidden="false">
+            <li><span>Vodafone</span></li>
+            <li><span>SIAE</span></li>
+            <li><span>Bocconi</span></li>
+            <li><span>2i Rete Gas</span></li>
+            <li><span>Intercos</span></li>
+            <li><span>Flex</span></li>
+            <li><span>IVECO</span></li>
+            <li><span>Ferrovie</span></li>
+            <li><span>Pirelli</span></li>
+            <li><span>Eni</span></li>
+            <li><span>Generali</span></li>
+          </ul>
+          <ul class="clients__list" aria-hidden="true">
+            <li><span>Vodafone</span></li>
+            <li><span>SIAE</span></li>
+            <li><span>Bocconi</span></li>
+            <li><span>2i Rete Gas</span></li>
+            <li><span>Intercos</span></li>
+            <li><span>Flex</span></li>
+            <li><span>IVECO</span></li>
+            <li><span>Ferrovie</span></li>
+            <li><span>Pirelli</span></li>
+            <li><span>Eni</span></li>
+            <li><span>Generali</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SELECTED WORKS — Apple-style 2-col grid ========== -->
+    <section class="section section--works" id="work" aria-labelledby="work-title">
+      <header class="works__head">
+        <p class="works__kicker" data-reveal>Selected works</p>
       </header>
 
-      <ul class="projects" role="list">
-        <li class="project" data-reveal>
-          <a class="project__link" href="projects/viola.html" data-cursor="hover">
-            <div class="project__media project__media--viola" aria-hidden="true">
-              <div class="project__shape"></div>
+      <ul class="works" role="list">
+        <li class="work work--dark" data-reveal>
+          <a class="work__link" href="projects/viola.html" data-cursor="hover">
+            <div class="work__copy">
+              <h3 class="work__title">VIOLA</h3>
+              <p class="work__sub">Safety app. Rapid help in three taps.</p>
+              <span class="work__cta">Scopri di più</span>
             </div>
-            <div class="project__body">
-              <div class="project__tags">
-                <span>Product Design</span><span>Safety</span><span>Mobile</span>
-              </div>
-              <h3 class="project__title">VIOLA</h3>
-              <p class="project__excerpt">
-                Una safety app dal flow UX iniziale all'interfaccia mobile ad alta
-                fedeltà: un servizio sensibile reso chiaro, rapido e rassicurante.
-              </p>
-              <dl class="project__meta">
-                <div><dt>Platform</dt><dd>Mobile App</dd></div>
-                <div><dt>Duration</dt><dd>3 years</dd></div>
-                <div><dt>Year</dt><dd>2023</dd></div>
-              </dl>
-              <span class="project__cta">Leggi il case study →</span>
+            <div class="work__media work__media--viola" aria-hidden="true">
+              <div class="work__shape"></div>
             </div>
           </a>
         </li>
 
-        <li class="project project--reverse" data-reveal>
-          <a class="project__link" href="#" data-cursor="hover">
-            <div class="project__media project__media--orbit" aria-hidden="true">
-              <div class="project__shape project__shape--ring"></div>
+        <li class="work work--light" data-reveal>
+          <a class="work__link" href="#" data-cursor="hover">
+            <div class="work__copy">
+              <h3 class="work__title">ORBIT</h3>
+              <p class="work__sub">Monitoring per asset industriali distribuiti.</p>
+              <span class="work__cta">Scopri di più</span>
             </div>
-            <div class="project__body">
-              <div class="project__tags">
-                <span>AI & Enterprise</span><span>Dashboard</span>
-              </div>
-              <h3 class="project__title">ORBIT</h3>
-              <p class="project__excerpt">
-                Piattaforma di monitoring per asset industriali distribuiti.
-                Design system, data visualization e gerarchia informativa per
-                operatori in turno H24.
-              </p>
-              <dl class="project__meta">
-                <div><dt>Platform</dt><dd>Web App</dd></div>
-                <div><dt>Duration</dt><dd>18 mesi</dd></div>
-                <div><dt>Year</dt><dd>2024</dd></div>
-              </dl>
-              <span class="project__cta">In arrivo →</span>
+            <div class="work__media work__media--orbit" aria-hidden="true">
+              <div class="work__shape work__shape--ring"></div>
             </div>
           </a>
         </li>
 
-        <li class="project" data-reveal>
-          <a class="project__link" href="#" data-cursor="hover">
-            <div class="project__media project__media--hmi" aria-hidden="true">
-              <div class="project__shape project__shape--grid"></div>
+        <li class="work work--light" data-reveal>
+          <a class="work__link" href="#" data-cursor="hover">
+            <div class="work__copy">
+              <h3 class="work__title">DRIVE OS</h3>
+              <p class="work__sub">In-vehicle HMI per veicoli commerciali.</p>
+              <span class="work__cta">Scopri di più</span>
             </div>
-            <div class="project__body">
-              <div class="project__tags">
-                <span>Mobility & HMI</span><span>In-Vehicle</span>
-              </div>
-              <h3 class="project__title">DRIVE OS</h3>
-              <p class="project__excerpt">
-                Sistema di interfaccia in-vehicle per veicoli commerciali.
-                Linguaggio visivo nuovo, mappatura dei task e safety guidelines
-                per ridurre il distracted driving.
-              </p>
-              <dl class="project__meta">
-                <div><dt>Platform</dt><dd>HMI</dd></div>
-                <div><dt>Duration</dt><dd>2 anni</dd></div>
-                <div><dt>Year</dt><dd>2025</dd></div>
-              </dl>
-              <span class="project__cta">In arrivo →</span>
+            <div class="work__media work__media--hmi" aria-hidden="true">
+              <div class="work__shape work__shape--grid"></div>
+            </div>
+          </a>
+        </li>
+
+        <li class="work work--dark" data-reveal>
+          <a class="work__link" href="#" data-cursor="hover">
+            <div class="work__copy">
+              <h3 class="work__title">NORTH</h3>
+              <p class="work__sub">Enterprise dashboard, design system & analytics.</p>
+              <span class="work__cta">In arrivo</span>
+            </div>
+            <div class="work__media work__media--north" aria-hidden="true">
+              <div class="work__shape"></div>
             </div>
           </a>
         </li>
       </ul>
     </section>
 
+    <!-- ========== PROCESS (dark band) ========== -->
     <section class="section section--dark" id="process" aria-labelledby="process-title">
       <header class="section__head">
         <p class="section__index">02 — How I Work</p>
@@ -177,7 +166,7 @@
         </h2>
         <p class="section__lede" data-reveal>
           Quattro fasi, pensate per allineare team, decisioni e deliverable.
-          Niente teatro, solo le cose che spostano l'ago della bilancia.
+          Niente teatro, solo le cose che spostano l'ago.
         </p>
       </header>
 
@@ -185,20 +174,20 @@
         <li class="process__step" data-reveal>
           <span class="process__num">01</span>
           <h3>Discover</h3>
-          <p>Interviste, audit, mappatura degli stakeholder. Si definisce
-            il problema reale, non quello dichiarato.</p>
+          <p>Interviste, audit, mappatura degli stakeholder.
+            Si definisce il problema reale, non quello dichiarato.</p>
         </li>
         <li class="process__step" data-reveal>
           <span class="process__num">02</span>
           <h3>Frame</h3>
           <p>Information architecture, user flow, principi di design.
-            Si stabilisce la spina dorsale prima di disegnare schermate.</p>
+            La spina dorsale, prima di disegnare schermate.</p>
         </li>
         <li class="process__step" data-reveal>
           <span class="process__num">03</span>
           <h3>Craft</h3>
           <p>UI ad alta fedeltà, design system, prototipi navigabili.
-            Tipografia, spaziatura e microinterazioni curate al pixel.</p>
+            Tipografia, spaziatura, microinterazioni al pixel.</p>
         </li>
         <li class="process__step" data-reveal>
           <span class="process__num">04</span>
@@ -209,6 +198,7 @@
       </ol>
     </section>
 
+    <!-- ========== ABOUT ========== -->
     <section class="section" id="about" aria-labelledby="about-title">
       <header class="section__head">
         <p class="section__index">03 — About</p>
@@ -242,16 +232,16 @@
       </div>
     </section>
 
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <p class="section__index">04 — Get in touch</p>
-      <h2 class="contact__title" id="contact-title" data-reveal>
-        <span>Hai un progetto</span>
-        <span>che merita <em>rigore</em>?</span>
+    <!-- ========== STAY IN TOUCH ========== -->
+    <section class="stay" id="contact" aria-labelledby="stay-title">
+      <p class="stay__kicker">04 — Stay in touch</p>
+      <h2 class="stay__title" id="stay-title" data-reveal>
+        Let's stay in touch.
       </h2>
-      <a class="contact__email" href="mailto:francescogiacomi1@gmail.com" data-cursor="hover">
+      <a class="stay__email" href="mailto:francescogiacomi1@gmail.com" data-cursor="hover">
         francescogiacomi1@gmail.com
       </a>
-      <ul class="contact__links" role="list">
+      <ul class="stay__links" role="list">
         <li><a href="#" data-cursor="hover">LinkedIn ↗</a></li>
         <li><a href="#" data-cursor="hover">Read.cv ↗</a></li>
         <li><a href="#" data-cursor="hover">Dribbble ↗</a></li>

@@ -103,35 +103,24 @@
   }
 
   /* ---------------------------------------------------------
-     Subtle parallax on project shapes + hero title
+     Subtle parallax on work card shapes
      --------------------------------------------------------- */
   if (!prefersReduced) {
-    const shapes = document.querySelectorAll('.project__shape');
-    const heroTitle = document.querySelector('.hero__title');
+    const shapes = document.querySelectorAll('.work__shape');
 
     let ticking = false;
     const onScrollParallax = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const sy = window.scrollY;
-
-        if (heroTitle) {
-          const t = Math.min(sy * 0.08, 80);
-          heroTitle.style.transform = `translate3d(0, ${t}px, 0)`;
-          heroTitle.style.opacity = String(Math.max(1 - sy / 700, 0.15));
-        }
-
         shapes.forEach((shape) => {
           const rect = shape.getBoundingClientRect();
           const vh = window.innerHeight;
           const center = rect.top + rect.height / 2;
           const offset = (center - vh / 2) / vh;
-          const tx = offset * -14;
-          const ty = offset * -28;
-          shape.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+          const ty = offset * -18;
+          shape.style.transform = `translate3d(0, ${ty}px, 0)`;
         });
-
         ticking = false;
       });
     };
