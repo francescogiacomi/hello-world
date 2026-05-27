@@ -355,38 +355,24 @@ a {
   transform: translateY(0);
 }
 
-/* "work together" climax: enters word-by-word in ink, then the whole
-   em phrase lights up to primary with a tiny scale after both
-   constituent words have landed. */
+/* "work together" already enters in primary blue + italic serif;
+   it rises word-by-word like the rest, just visually emphasized. */
 .hero__title em {
-  display: inline-block;
-  color: var(--ink);
   font-style: italic;
   font-family: var(--f-serif);
-  transform: scale(0.97);
-  transform-origin: left center;
-  transition:
-    color 0.75s var(--ease-out),
-    transform 0.75s var(--ease-out);
-  transition-delay: 1.55s;
-}
-.hero__title.is-in em {
   color: var(--primary);
-  transform: scale(1);
 }
-/* The em wraps .word spans; descend the italic + serif into them */
 .hero__title em .word__inner {
   font-style: italic;
   font-family: var(--f-serif);
+  color: var(--primary);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__title .word__inner,
-  .hero__title em {
+  .hero__title .word__inner {
     transform: none;
     transition: none;
   }
-  .hero__title em { color: var(--primary); }
 }
 
 /* ----------- Clients ticker: infinite, slow, edge-faded ----------- */
