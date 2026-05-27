@@ -103,15 +103,14 @@
   }
 
   /* ---------------------------------------------------------
-     Scroll-linked: hero fade-out + subtle parallax on work shapes
+     Scroll-linked hero fade-out
      --------------------------------------------------------- */
   if (!prefersReduced) {
-    const shapes = document.querySelectorAll('.work__shape');
     const heroTitle = document.querySelector('.hero__title');
     const clientsEl = document.querySelector('.clients');
 
     let ticking = false;
-    const onScrollParallax = () => {
+    const onScrollFade = () => {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
@@ -119,27 +118,17 @@
         const vh = window.innerHeight;
 
         // Hero fade: 1 at top, 0 by the time we've scrolled ~85% of a viewport.
-        // Mapping is linear and clamped — feels calm and predictable.
         const fadeDistance = vh * 0.85;
         const heroOpacity = Math.max(0, Math.min(1, 1 - sy / fadeDistance));
         if (heroTitle) heroTitle.style.opacity = heroOpacity;
         if (clientsEl) clientsEl.style.opacity = heroOpacity;
 
-        // Parallax on work card shapes
-        shapes.forEach((shape) => {
-          const rect = shape.getBoundingClientRect();
-          const center = rect.top + rect.height / 2;
-          const offset = (center - vh / 2) / vh;
-          const ty = offset * -18;
-          shape.style.transform = `translate3d(0, ${ty}px, 0)`;
-        });
-
         ticking = false;
       });
     };
 
-    window.addEventListener('scroll', onScrollParallax, { passive: true });
-    onScrollParallax();
+    window.addEventListener('scroll', onScrollFade, { passive: true });
+    onScrollFade();
   }
 
   /* ---------------------------------------------------------
