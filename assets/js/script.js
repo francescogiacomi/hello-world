@@ -130,6 +130,22 @@
   }
 
   /* ---------------------------------------------------------
+     Clients: lazy-swap text → SVG if file exists
+     Folder convention: assets/img/clients/<slug>.svg
+     --------------------------------------------------------- */
+  document.querySelectorAll('.clients li[data-client]').forEach((li) => {
+    const slug = li.dataset.client;
+    if (!slug) return;
+    const src = `assets/img/clients/${slug}.svg`;
+    const probe = new Image();
+    probe.onload = () => {
+      const alt = li.textContent.trim();
+      li.innerHTML = `<img src="${src}" alt="${alt}" loading="lazy" decoding="async">`;
+    };
+    probe.src = src;
+  });
+
+  /* ---------------------------------------------------------
      Footer: local time chip
      --------------------------------------------------------- */
   const timeEl = document.getElementById('footerTime');
