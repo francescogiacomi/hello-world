@@ -26,20 +26,21 @@
 
 .case__title {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(64px, 14vw, 220px);
-  line-height: .92;
+  line-height: 1.0;
   letter-spacing: -0.04em;
   margin: 0;
+  color: var(--ink);
 }
 
 .case__subtitle {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(20px, 2.4vw, 36px);
-  line-height: 1.3;
+  line-height: 1.21;
   letter-spacing: -0.01em;
-  color: var(--ink-soft);
+  color: var(--charcoal);
   max-width: 36ch;
   margin: 0;
 }
@@ -70,19 +71,19 @@
 
 .case__cover {
   aspect-ratio: 16 / 9;
-  border-radius: var(--radius);
+  border-radius: var(--r-lg);
   overflow: hidden;
   position: relative;
-  background: linear-gradient(140deg, #FFE2D0 0%, #FF8A4D 100%);
-  border: 1px solid var(--line-soft);
+  background: linear-gradient(140deg, #4F55F1 0%, #494FDF 60%, #3A40C4 100%);
+  border: 1px solid var(--hairline-light);
   margin-top: clamp(40px, 6vh, 80px);
 }
 .case__cover-shape {
   position: absolute;
-  inset: 8% 8% 8% 8%;
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.4);
-  border-radius: 24px;
+  inset: 8%;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: var(--r-lg);
 }
 
 /* Sections */
@@ -116,11 +117,12 @@
 
 .case__body h2 {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(28px, 3.2vw, 48px);
-  line-height: 1.06;
+  line-height: 1.21;
   letter-spacing: -0.02em;
   margin: 0 0 24px;
+  color: var(--ink);
 }
 .case__body p {
   font-size: clamp(16px, 1.3vw, 19px);
@@ -162,7 +164,7 @@
   overflow: hidden;
   margin-bottom: 12px;
 }
-.case__visual--viola { background: linear-gradient(140deg, #FFE2D0 0%, #FF8A4D 100%); }
+.case__visual--viola { background: linear-gradient(140deg, #4F55F1 0%, #494FDF 60%, #3A40C4 100%); }
 
 .case__phone {
   width: clamp(180px, 22vw, 280px);
@@ -177,8 +179,8 @@
 }
 .case__phone-screen {
   height: 100%;
-  background: #FF5C1A;
-  border-radius: 24px;
+  background: #494FDF;
+  border-radius: var(--r-lg);
   padding: 24px 20px;
   display: flex; flex-direction: column; gap: 8px;
   color: #fff;
@@ -192,21 +194,23 @@
 }
 .case__phone-screen h3 {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 32px;
-  line-height: 1;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 .case__phone-cta {
   margin-top: auto;
   align-self: flex-start;
   background: #fff;
-  color: #FF5C1A;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-family: var(--f-mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
+  color: #494FDF;
+  padding: 10px 16px;
+  border-radius: var(--r-full);
+  font-family: var(--f-sans);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.16px;
 }
 
 .case__figure figcaption {
@@ -233,11 +237,11 @@
 }
 .case__metric-num {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(48px, 6vw, 96px);
-  line-height: 1;
+  line-height: 1.0;
   letter-spacing: -0.03em;
-  color: var(--accent);
+  color: var(--primary);
 }
 .case__metric-label {
   font-size: 14px;
@@ -255,22 +259,22 @@
   margin-top: clamp(40px, 6vh, 80px);
 }
 .case__tile {
-  border-radius: var(--radius);
-  border: 1px solid var(--line-soft);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--hairline-light);
   min-height: 200px;
 }
 .case__tile--a {
   grid-row: span 2;
-  background: linear-gradient(140deg, #FFE2D0 0%, #FF8A4D 100%);
+  background: linear-gradient(140deg, #4F55F1 0%, #494FDF 60%, #3A40C4 100%);
   min-height: 480px;
 }
-.case__tile--b { background: linear-gradient(140deg, #F0EAE0 0%, #C9BFAB 100%); }
-.case__tile--c { background: linear-gradient(140deg, #1B1B1B 0%, #3B3B3B 100%); }
+.case__tile--b { background: var(--surface-soft); }
+.case__tile--c { background: linear-gradient(140deg, #0A0A0A 0%, #16181A 100%); }
 .case__tile--d {
   background:
-    repeating-linear-gradient(0deg, rgba(0,0,0,.06) 0 1px, transparent 1px 16px),
-    repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 16px),
-    #F2EEE6;
+    repeating-linear-gradient(0deg, rgba(0,0,0,.04) 0 1px, transparent 1px 16px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,.04) 0 1px, transparent 1px 16px),
+    var(--surface-soft);
   grid-column: span 2;
 }
 @media (max-width: 760px) {
@@ -299,8 +303,9 @@
 }
 .case__next strong {
   font-family: var(--f-display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: clamp(40px, 6vw, 80px);
-  line-height: 1;
+  line-height: 1.0;
   letter-spacing: -0.02em;
+  color: var(--ink);
 }
