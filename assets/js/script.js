@@ -132,18 +132,27 @@
   /* ---------------------------------------------------------
      Clients: lazy-swap text → SVG if file exists
      Folder convention: assets/img/clients/<slug>.svg
+     Probes once per unique slug, applies to all matching <li>
+     (ticker duplicates the list for the seamless loop).
      --------------------------------------------------------- */
-  document.querySelectorAll('.clients li[data-client]').forEach((li) => {
-    const slug = li.dataset.client;
-    if (!slug) return;
-    const src = `assets/img/clients/${slug}.svg`;
-    const probe = new Image();
-    probe.onload = () => {
-      const alt = li.textContent.trim();
-      li.innerHTML = `<img src="${src}" alt="${alt}" loading="lazy" decoding="async">`;
-    };
-    probe.src = src;
-  });
+  {
+    const probed = new Set();
+    document.querySelectorAll('.clients li[data-client]').forEach((li) => {
+      const slug = li.dataset.client;
+      if (!slug || probed.has(slug)) return;
+      probed.add(slug);
+
+      const src = `assets/img/clients/${slug}.svg`;
+      const probe = new Image();
+      probe.onload = () => {
+        document.querySelectorAll(`.clients li[data-client="${slug}"]`).forEach((target) => {
+          const alt = target.textContent.trim();
+          target.innerHTML = `<img src="${src}" alt="${alt}" loading="lazy" decoding="async">`;
+        });
+      };
+      probe.src = src;
+    });
+  }
 
   /* ---------------------------------------------------------
      Footer: local time chip

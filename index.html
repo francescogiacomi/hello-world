@@ -58,18 +58,34 @@
         </h1>
       </div>
 
-      <!-- Clients row — drop SVGs in assets/img/clients/<slug>.svg, JS swaps automatically -->
-      <ul class="clients" aria-label="Selected clients">
-        <li data-client="siae"><span>SIAE</span></li>
-        <li data-client="2i-rete-gas"><span>2i Rete Gas</span></li>
-        <li data-client="vodafone"><span>Vodafone</span></li>
-        <li data-client="flex"><span>Flex</span></li>
-        <li data-client="bocconi"><span>Bocconi</span></li>
-        <li data-client="iveco"><span>IVECO</span></li>
-        <li data-client="intercos"><span>Intercos</span></li>
-        <li data-client="piaggio"><span>Piaggio</span></li>
-        <li data-client="ferrari"><span>Ferrari</span></li>
-      </ul>
+      <!-- Clients ticker — first list is the canonical one (a11y),
+           the second is aria-hidden duplicate that powers the seamless loop. -->
+      <div class="clients" aria-label="Selected clients">
+        <div class="clients__track">
+          <ul class="clients__list">
+            <li data-client="siae"><span>SIAE</span></li>
+            <li data-client="2i-rete-gas"><span>2i Rete Gas</span></li>
+            <li data-client="vodafone"><span>Vodafone</span></li>
+            <li data-client="flex"><span>Flex</span></li>
+            <li data-client="bocconi"><span>Bocconi</span></li>
+            <li data-client="iveco"><span>IVECO</span></li>
+            <li data-client="intercos"><span>Intercos</span></li>
+            <li data-client="piaggio"><span>Piaggio</span></li>
+            <li data-client="ferrari"><span>Ferrari</span></li>
+          </ul>
+          <ul class="clients__list" aria-hidden="true">
+            <li data-client="siae"><span>SIAE</span></li>
+            <li data-client="2i-rete-gas"><span>2i Rete Gas</span></li>
+            <li data-client="vodafone"><span>Vodafone</span></li>
+            <li data-client="flex"><span>Flex</span></li>
+            <li data-client="bocconi"><span>Bocconi</span></li>
+            <li data-client="iveco"><span>IVECO</span></li>
+            <li data-client="intercos"><span>Intercos</span></li>
+            <li data-client="piaggio"><span>Piaggio</span></li>
+            <li data-client="ferrari"><span>Ferrari</span></li>
+          </ul>
+        </div>
+      </div>
 
       <a class="hero__scroll" href="#work" data-cursor="hover" aria-label="Vai ai progetti">
         <span class="hero__scroll-label">Scroll</span>

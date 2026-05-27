@@ -319,47 +319,86 @@ a {
   letter-spacing: -0.015em;
 }
 
-/* ----------- Clients: static row, evenly distributed ----------- */
+/* ----------- Clients ticker: infinite, slow, edge-faded ----------- */
 .clients {
+  /* Lift the whole row 24px closer to the title */
+  margin-top: -24px;
+  overflow: hidden;
+  /* Editorial edge fade — logos appear/disappear smoothly */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+
+.clients__track {
+  display: flex;
+  width: max-content;
+  animation: clientsTicker 50s linear infinite;
+  will-change: transform;
+}
+.clients:hover .clients__track,
+.clients:focus-within .clients__track {
+  animation-play-state: paused;
+}
+
+.clients__list {
+  display: flex;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(20px, 3vw, 40px) clamp(20px, 4vw, 56px);
+  flex-shrink: 0;
+  gap: clamp(40px, 5.5vw, 80px);
+  padding-right: clamp(40px, 5.5vw, 80px); /* maintain rhythm across the seam */
 }
-.clients li {
-  flex: 0 1 auto;
+
+.clients__list li {
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
-  height: clamp(28px, 3.5vh, 40px);
+  justify-content: center;
+  height: clamp(40px, 5vh, 56px);
 }
-.clients li span {
+
+.clients__list li span {
   font-family: var(--f-display);
   font-weight: 500;
-  font-size: clamp(15px, 1.4vw, 19px);
-  letter-spacing: -0.005em;
+  font-size: clamp(18px, 1.8vw, 24px);
+  letter-spacing: -0.01em;
   color: var(--charcoal);
   white-space: nowrap;
-  transition: color .3s var(--ease-out);
+  opacity: .88;
+  transition: color .3s var(--ease-out), opacity .3s var(--ease-out);
 }
-.clients li:hover span { color: var(--ink); }
+.clients__list li:hover span { color: var(--ink); opacity: 1; }
 
-/* SVG/logo support — swap <span> with <img src="…svg"> when assets arrive */
-.clients li img {
-  max-height: 100%;
+.clients__list li img {
+  height: auto;
   width: auto;
+  max-height: clamp(28px, 3.6vh, 44px);
+  max-width: clamp(120px, 12vw, 160px);
   object-fit: contain;
   filter: grayscale(1);
-  opacity: .8;
-  transition: opacity .3s var(--ease-out), filter .3s var(--ease-out);
+  opacity: .85;
+  transition: filter .3s var(--ease-out), opacity .3s var(--ease-out);
 }
-.clients li:hover img { filter: grayscale(0); opacity: 1; }
+.clients__list li:hover img { filter: grayscale(0); opacity: 1; }
+
+@keyframes clientsTicker {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
 
 @media (max-width: 760px) {
-  .clients { justify-content: center; gap: 14px 24px; }
+  .clients__list { gap: 36px; padding-right: 36px; }
+  .clients__list li { height: clamp(36px, 4.5vh, 48px); }
+  .clients__list li img { max-height: clamp(24px, 3vh, 36px); max-width: 110px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients__track { animation: none; }
+  .clients { overflow: visible; -webkit-mask-image: none; mask-image: none; }
+  .clients__list[aria-hidden="true"] { display: none; }
+  .clients__list { flex-wrap: wrap; justify-content: center; }
 }
 
 /* ----------- Scroll indicator ----------- */
