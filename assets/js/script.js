@@ -103,11 +103,15 @@
   }
 
   /* ---------------------------------------------------------
-     Scroll-linked hero fade-out
+     Scroll-linked fades: hero exit + works cards behind sticky title
      --------------------------------------------------------- */
   if (!prefersReduced) {
     const heroTitle = document.querySelector('.hero__title');
     const clientsEl = document.querySelector('.clients');
+    const worksHead = document.querySelector('.works__head');
+    const workCards = document.querySelectorAll('.section--works .work');
+
+    const FADE_RANGE = 240; // px over which each card fades out behind the title
 
     let ticking = false;
     const onScrollFade = () => {
@@ -117,17 +121,31 @@
         const sy = window.scrollY;
         const vh = window.innerHeight;
 
-        // Hero fade: 1 at top, 0 by the time we've scrolled ~85% of a viewport.
-        const fadeDistance = vh * 0.85;
-        const heroOpacity = Math.max(0, Math.min(1, 1 - sy / fadeDistance));
+        // Hero: 1 at top, 0 by ~85% of a viewport scrolled
+        const heroOpacity = Math.max(0, Math.min(1, 1 - sy / (vh * 0.85)));
         if (heroTitle) heroTitle.style.opacity = heroOpacity;
         if (clientsEl) clientsEl.style.opacity = heroOpacity;
+
+        // Works cards: fade out as they pass behind the sticky title
+        if (worksHead && workCards.length) {
+          const titleBottom = worksHead.getBoundingClientRect().bottom;
+          workCards.forEach((card) => {
+            const cardBottom = card.getBoundingClientRect().bottom;
+            const distance = cardBottom - titleBottom;
+            let op;
+            if (distance >= FADE_RANGE) op = 1;
+            else if (distance <= 0) op = 0;
+            else op = distance / FADE_RANGE;
+            card.style.opacity = op;
+          });
+        }
 
         ticking = false;
       });
     };
 
     window.addEventListener('scroll', onScrollFade, { passive: true });
+    window.addEventListener('resize', onScrollFade, { passive: true });
     onScrollFade();
   }
 
