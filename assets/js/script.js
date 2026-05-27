@@ -137,7 +137,8 @@
             const cardHeight = rect.height;
             if (!cardHeight) return;
 
-            const cut = titleBottom - rect.top; // px from card top to title bottom
+            // Round to whole pixels — avoids sub-pixel jitter at the cut edge
+            const cut = Math.round(titleBottom - rect.top);
 
             if (cut <= 0) {
               // Title is above card top → no mask

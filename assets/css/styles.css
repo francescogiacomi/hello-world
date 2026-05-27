@@ -568,16 +568,17 @@ a {
      unsticks once the section ends. */
 }
 
-/* Sticky title — pinned at top, no background.
-   Readability is achieved by fading the cards as they pass behind it (JS). */
+/* Sticky title — pinned at top with a solid page-coloured background.
+   Visually identical to "no bg" since the page is also canvas-light,
+   but it gives the title a stable opaque box that fully hides any
+   pixel that scrolls beneath it (no flicker / no perceived "step"). */
 .works__head {
   position: sticky;
   top: clamp(56px, 8vh, 80px);
   z-index: 5;
   padding: clamp(28px, 5vh, 56px) 0 clamp(20px, 3vh, 32px);
-  pointer-events: none;
+  background: var(--canvas-light);
 }
-.works__head > * { pointer-events: auto; }
 .works__title {
   font-family: var(--f-display);
   font-weight: 500;
