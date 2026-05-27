@@ -560,37 +560,34 @@ a {
    Selected Works — Apple-style 2-col grid
    ============================================================ */
 .section--works {
-  /* Transparent wrapper — sizing happens on each .works-page */
-  max-width: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Each "page" is a 100svh snap target with two cards inside.
-   scroll-snap-stop: always forces the browser to land here on
-   every trackpad swipe — no skipping past. */
-.works-page {
-  min-height: 100svh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  scroll-margin-top: 0;
-
+  position: relative;
   max-width: min(1720px, calc(100% - 40px));
   margin: 0 auto;
-  padding: clamp(88px, 12vh, 132px) clamp(20px, 2.5vw, 40px);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(28px, 4vh, 56px);
+  padding: 0 clamp(20px, 2.5vw, 40px);
+  /* This is the sticky context — title sticks inside this section,
+     unsticks once the section ends. */
 }
 
-/* Section header — Revolut-style display title */
-.works__head { padding: 0; }
+/* Sticky title — pinned at top while cards scroll past beneath */
+.works__head {
+  position: sticky;
+  top: clamp(56px, 8vh, 80px);
+  z-index: 5;
+  padding: clamp(28px, 5vh, 56px) 0 clamp(20px, 3vh, 32px);
+  background: linear-gradient(
+    to bottom,
+    var(--canvas-light) 0%,
+    var(--canvas-light) 75%,
+    color-mix(in srgb, var(--canvas-light) 85%, transparent) 100%
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
 .works__title {
   font-family: var(--f-display);
   font-weight: 500;
-  font-size: clamp(48px, 7.2vw, 120px);
+  /* Slightly smaller than before so it doesn't dominate while sticky */
+  font-size: clamp(40px, 5.8vw, 96px);
   line-height: 0.98;
   letter-spacing: -0.035em;
   margin: 0;
@@ -604,25 +601,31 @@ a {
   letter-spacing: -0.02em;
 }
 
+/* Cards stack vertically — each one a cinematic landscape "scene" */
 .works {
   list-style: none;
-  padding: 0; margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(8px, 1vw, 16px);
-}
-@media (max-width: 760px) {
-  .works { grid-template-columns: 1fr; }
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.4vh, 32px);
+  padding-bottom: clamp(60px, 10vh, 120px);
 }
 
 .work {
   position: relative;
   overflow: hidden;
   border-radius: var(--r-lg);
-  /* Wider than tall: editorial landscape card */
-  aspect-ratio: 7 / 5;
+  /* Cinematic landscape — each card is its own scene */
+  aspect-ratio: 16 / 9;
+  /* Don't grow taller than what's visible below the sticky title */
+  max-height: 78svh;
   background: var(--surface-soft);
   transition: transform .5s var(--ease-out);
+  /* Each card snaps to the top, offset for the sticky title */
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  scroll-margin-top: clamp(140px, 18vh, 200px);
 }
 .work--dark  { background: var(--canvas-dark);  color: var(--on-dark); }
 .work--light { background: var(--surface-soft); color: var(--ink); }

@@ -89,15 +89,15 @@
       </div>
     </section>
 
-    <!-- ========== SELECTED WORKS — paginated, 2 cards per viewport ========== -->
+    <!-- ========== SELECTED WORKS — sticky title, cards scroll past ========== -->
     <section class="section section--works" id="work" aria-labelledby="works-title">
-      <div class="works-page works-page--first">
-        <header class="works__head">
-          <h2 class="works__title" id="works-title" data-reveal>
-            Selected <em>work</em>.
-          </h2>
-        </header>
-        <ul class="works works--a" role="list">
+      <header class="works__head">
+        <h2 class="works__title" id="works-title" data-reveal>
+          Selected <em>work</em>.
+        </h2>
+      </header>
+
+      <ul class="works" role="list">
         <li class="work work--dark work--viola" data-reveal>
           <a class="work__link" href="projects/viola.html" data-cursor="hover">
             <div class="work__content">
@@ -167,11 +167,7 @@
             </div>
           </a>
         </li>
-        </ul>
-      </div>
 
-      <div class="works-page works-page--second">
-        <ul class="works works--b" role="list">
         <li class="work work--light work--hmi" data-reveal>
           <a class="work__link" href="#" data-cursor="hover">
             <div class="work__content">
@@ -239,8 +235,7 @@
             </div>
           </a>
         </li>
-        </ul>
-      </div>
+      </ul>
     </section>
 
     <!-- ========== ABOUT + PROCESS — sezione fusa, dark band ========== -->
