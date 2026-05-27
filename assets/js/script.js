@@ -206,9 +206,9 @@
           hour: '2-digit', minute: '2-digit',
           timeZone: 'Europe/Rome'
         });
-        timeEl.textContent = `Milano · ${fmt.format(new Date())} CET`;
+        timeEl.textContent = `Italia · ${fmt.format(new Date())}`;
       } catch {
-        timeEl.textContent = 'Milano';
+        timeEl.textContent = 'Italia';
       }
     };
     tick();
