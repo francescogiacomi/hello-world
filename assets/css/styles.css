@@ -322,6 +322,67 @@ a {
   letter-spacing: -0.015em;
 }
 
+/* ----------- Hero title: line-by-line "text rise" reveal ----------- */
+/* Override the generic [data-reveal] — title uses its own per-line animation */
+.hero__title[data-reveal] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.hero__title .line {
+  display: block;
+  overflow: hidden;
+  /* Breathing room so italic descenders ("y" in "rigor") aren't clipped */
+  padding: 0.06em 0;
+  margin: -0.06em 0;
+}
+
+.hero__title .line__inner {
+  display: block;
+  transform: translateY(115%);
+  transition: transform 1s var(--ease-out);
+  will-change: transform;
+}
+.hero__title.is-in .line__inner {
+  transform: translateY(0);
+}
+
+/* Stagger — eye walks down the lines */
+.hero__title .line:nth-child(1) .line__inner { transition-delay: 0.10s; }
+.hero__title .line:nth-child(2) .line__inner { transition-delay: 0.25s; }
+.hero__title .line:nth-child(3) .line__inner { transition-delay: 0.40s; }
+.hero__title .line:nth-child(4) .line__inner {
+  transition-delay: 0.60s;
+  transition-duration: 1.3s; /* climactic — slightly slower than the rest */
+}
+
+/* "work together" climax: rises with the line in ink, then lights up
+   to primary with a small scale once the line has finished revealing. */
+.hero__title .line em {
+  display: inline-block;
+  color: var(--ink);
+  transform: scale(0.97);
+  transform-origin: left center;
+  transition:
+    color 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+  transition-delay: 1.55s;
+}
+.hero__title.is-in .line em {
+  color: var(--primary);
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__title .line__inner,
+  .hero__title .line em {
+    transform: none;
+    transition: none;
+  }
+  .hero__title .line em { color: var(--primary); }
+}
+
 /* ----------- Clients ticker: infinite, slow, edge-faded ----------- */
 .clients {
   /* Lift the whole row 24px closer to the title */
