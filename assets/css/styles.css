@@ -615,9 +615,8 @@ a {
   border-radius: var(--r-lg);
   aspect-ratio: 7 / 5;
   background: var(--surface-soft);
-  /* Smooth fade applied by JS as the card passes behind the sticky title */
-  transition: opacity .25s linear, transform .5s var(--ease-out);
-  will-change: opacity;
+  transition: transform .5s var(--ease-out);
+  will-change: mask-image, -webkit-mask-image;
 }
 .work--dark  { background: var(--canvas-dark);  color: var(--on-dark); }
 .work--light { background: var(--surface-soft); color: var(--ink); }

@@ -111,18 +111,11 @@
     const worksHead = document.querySelector('.works__head');
     const workCards = document.querySelectorAll('.section--works .work');
 
-    /* Fade tuning — designed so cards are fully transparent BEFORE
-       they reach the sticky title (keeping it legible at all times):
-
-         FADE_END_OFFSET  cardBottom this far below titleBottom = opacity 0
-         FADE_RANGE       scroll distance over which the fade happens
-
-       With offset 220 + range 460, a 7/5 card (~580 tall) begins
-       fading after ~70px of scroll and is fully transparent while
-       still ~220px of body is below the title — so the title text
-       never sits on a dark/coloured card. */
-    const FADE_END_OFFSET = 220;
-    const FADE_RANGE      = 460;
+    /* Progressive mask: the portion of each card that has passed
+       under the sticky title becomes transparent (top-down "wipe"),
+       while the part still below the title stays fully visible.
+       Achieved with a vertical mask-image gradient updated per frame. */
+    const FADE_BAND = 32; // px of soft transition between visible and masked
 
     let ticking = false;
     const onScrollFade = () => {
@@ -137,19 +130,35 @@
         if (heroTitle) heroTitle.style.opacity = heroOpacity;
         if (clientsEl) clientsEl.style.opacity = heroOpacity;
 
-        // Works cards: fade out well before they touch the sticky title
+        // Works cards: top-down mask anchored at the sticky title bottom
         if (worksHead && workCards.length) {
           const titleBottom = worksHead.getBoundingClientRect().bottom;
           workCards.forEach((card) => {
-            const cardBottom = card.getBoundingClientRect().bottom;
-            const distance = cardBottom - titleBottom - FADE_END_OFFSET;
-            let op;
-            if (distance >= FADE_RANGE) op = 1;
-            else if (distance <= 0) op = 0;
-            else op = distance / FADE_RANGE;
-            card.style.opacity = op;
-            // Block hover on cards that have effectively disappeared
-            card.style.pointerEvents = op < 0.08 ? 'none' : '';
+            const rect = card.getBoundingClientRect();
+            const cardHeight = rect.height;
+            if (!cardHeight) return;
+
+            const cut = titleBottom - rect.top; // px from card top to title bottom
+
+            if (cut <= 0) {
+              // Title is above card top → no mask
+              card.style.maskImage = '';
+              card.style.webkitMaskImage = '';
+              card.style.pointerEvents = '';
+            } else if (cut >= cardHeight) {
+              // Card is entirely under the title zone → fully masked
+              card.style.maskImage = 'linear-gradient(transparent, transparent)';
+              card.style.webkitMaskImage = 'linear-gradient(transparent, transparent)';
+              card.style.pointerEvents = 'none';
+            } else {
+              const startPct = ((cut - FADE_BAND / 2) / cardHeight) * 100;
+              const endPct   = ((cut + FADE_BAND / 2) / cardHeight) * 100;
+              const mask = `linear-gradient(to bottom, transparent 0%, transparent ${startPct}%, #000 ${endPct}%, #000 100%)`;
+              card.style.maskImage = mask;
+              card.style.webkitMaskImage = mask;
+              // If more than 90% of the card is masked, kill hover
+              card.style.pointerEvents = (cut / cardHeight) > 0.9 ? 'none' : '';
+            }
           });
         }
 
