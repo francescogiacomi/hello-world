@@ -472,15 +472,15 @@ a {
 }
 
 /* ============================================================
-   Snap targets — major sections align to top, header-offset
+   Snap targets — major sections align to top, header-offset.
+   .works-page is handled in its own block above (each row of cards
+   is its own 100svh snap target with snap-stop: always).
    ============================================================ */
 .hero,
-.section--works,
 .section--studio,
 .stay {
   scroll-margin-top: 72px;
 }
-.section--works,
 .section--studio,
 .stay {
   scroll-snap-align: start;
@@ -560,18 +560,33 @@ a {
    Selected Works — Apple-style 2-col grid
    ============================================================ */
 .section--works {
-  /* Wider than the default 1440px so the cards extend toward the page edges */
+  /* Transparent wrapper — sizing happens on each .works-page */
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each "page" is a 100svh snap target with two cards inside.
+   scroll-snap-stop: always forces the browser to land here on
+   every trackpad swipe — no skipping past. */
+.works-page {
+  min-height: 100svh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-margin-top: 0;
+
   max-width: min(1720px, calc(100% - 40px));
-  padding-top: clamp(48px, 8vh, 96px);
-  padding-bottom: clamp(60px, 10vh, 120px);
-  padding-left: clamp(20px, 2.5vw, 40px);
-  padding-right: clamp(20px, 2.5vw, 40px);
+  margin: 0 auto;
+  padding: clamp(88px, 12vh, 132px) clamp(20px, 2.5vw, 40px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(28px, 4vh, 56px);
 }
 
 /* Section header — Revolut-style display title */
-.works__head {
-  padding: 0 0 clamp(40px, 7vh, 88px);
-}
+.works__head { padding: 0; }
 .works__title {
   font-family: var(--f-display);
   font-weight: 500;
