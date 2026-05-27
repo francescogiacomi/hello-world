@@ -113,9 +113,8 @@
 
     /* Progressive mask: the portion of each card that has passed
        under the sticky title becomes transparent (top-down "wipe"),
-       while the part still below the title stays fully visible.
-       Achieved with a vertical mask-image gradient updated per frame. */
-    const FADE_BAND = 32; // px of soft transition between visible and masked
+       while the part still below stays fully visible.
+       Hard edge — no transition band. */
 
     let ticking = false;
     const onScrollFade = () => {
@@ -151,9 +150,8 @@
               card.style.webkitMaskImage = 'linear-gradient(transparent, transparent)';
               card.style.pointerEvents = 'none';
             } else {
-              const startPct = ((cut - FADE_BAND / 2) / cardHeight) * 100;
-              const endPct   = ((cut + FADE_BAND / 2) / cardHeight) * 100;
-              const mask = `linear-gradient(to bottom, transparent 0%, transparent ${startPct}%, #000 ${endPct}%, #000 100%)`;
+              const cutPct = (cut / cardHeight) * 100;
+              const mask = `linear-gradient(to bottom, transparent 0%, transparent ${cutPct}%, #000 ${cutPct}%, #000 100%)`;
               card.style.maskImage = mask;
               card.style.webkitMaskImage = mask;
               // If more than 90% of the card is masked, kill hover
