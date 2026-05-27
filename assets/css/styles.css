@@ -385,6 +385,15 @@ a {
 }
 .clients__list li:hover img { filter: grayscale(0); opacity: 1; }
 
+/* Per-brand visual balance: trim marks that read heavier than the row */
+.clients__list li[data-client="flex"] img,
+.clients__list li[data-client="bocconi"] img,
+.clients__list li[data-client="intercos"] img,
+.clients__list li[data-client="ferrari"] img {
+  height: clamp(37px, 5.4vh, 75px);
+  max-width: clamp(153px, 14.4vw, 247px);
+}
+
 @keyframes clientsTicker {
   from { transform: translate3d(0, 0, 0); }
   to   { transform: translate3d(-50%, 0, 0); }
@@ -395,6 +404,12 @@ a {
   .clients__list li { height: clamp(50px, 6.3vh, 70px); }
   .clients__list li img { height: clamp(34px, 4.2vh, 54px); max-width: 168px; }
   .clients__list li span { font-size: clamp(20px, 4.5vw, 28px); }
+  .clients__list li[data-client="flex"] img,
+  .clients__list li[data-client="bocconi"] img,
+  .clients__list li[data-client="intercos"] img,
+  .clients__list li[data-client="ferrari"] img {
+    height: clamp(29px, 3.6vh, 46px); max-width: 143px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
