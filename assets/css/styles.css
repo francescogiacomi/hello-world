@@ -216,23 +216,12 @@ a {
 }
 
 .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
   font-family: var(--f-sans);
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 0.16px;
   color: var(--ink);
 }
-.brand__logo {
-  display: inline-block;
-  width: 30px; height: 30px;
-  color: var(--ink);
-  flex: 0 0 auto;
-}
-.brand__name { font-weight: 600; }
-@media (max-width: 520px) { .brand__name { display: none; } }
 
 .nav {
   display: flex;
