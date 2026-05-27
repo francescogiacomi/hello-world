@@ -763,41 +763,68 @@ a {
 /* ============================================================
    Process
    ============================================================ */
+/* Process steps — Apple-style: icon + title + description, no box */
 .process {
   list-style: none;
-  padding: 0; margin: 0;
+  padding: 0;
+  margin: clamp(40px, 6vh, 72px) 0 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--s-lg);
+  gap: clamp(24px, 3vw, 48px);
 }
+
 .process__step {
-  background: var(--surface-elev);
-  border-radius: var(--r-lg);
-  padding: clamp(28px, 4vw, 32px);
-  display: flex; flex-direction: column; gap: 16px;
-  min-height: 280px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.8vh, 20px);
 }
+
+.process__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 36px;
+  height: 36px;
+  color: var(--on-dark);
+  margin-bottom: 4px;
+}
+.process__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
 .process__num {
   font-family: var(--f-mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--on-dark-mute);
-}
-.process__step h3 {
-  font-family: var(--f-display);
   font-weight: 500;
-  font-size: clamp(28px, 2.6vw, 40px);
-  line-height: 1.0;
-  letter-spacing: -0.02em;
+  font-size: inherit;
+  letter-spacing: 0;
+  color: var(--on-dark-mute);
+  margin-right: 2px;
+}
+
+.process__step h3 {
+  font-family: var(--f-sans);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0;
   margin: 0;
   color: var(--on-dark);
 }
+
 .process__step p {
   margin: 0;
+  font-family: var(--f-sans);
   font-size: 15px;
   line-height: 1.55;
-  color: var(--on-dark-soft);
+  color: var(--on-dark-mute);
+  max-width: 38ch;
 }
+
 @media (max-width: 980px) {
   .process { grid-template-columns: repeat(2, 1fr); }
 }
