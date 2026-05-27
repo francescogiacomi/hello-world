@@ -611,7 +611,12 @@ a {
 .work--light { background: var(--surface-soft); color: var(--ink); }
 
 /* Per-project accent tints — subtle gradient overlay */
-.work--viola { background: radial-gradient(110% 70% at 100% 100%, rgba(73,79,223,.45) 0%, transparent 60%), var(--canvas-dark); }
+.work--viola {
+  background: radial-gradient(110% 70% at 100% 100%, rgba(139,92,246,.40) 0%, transparent 65%), var(--canvas-dark);
+}
+/* Allow the 3D phone to overflow the card edges Apple-style */
+.work--viola { overflow: visible; }
+.work--viola .work__link { overflow: visible; }
 .work--orbit { background: radial-gradient(110% 70% at 100% 100%, rgba(0,123,194,.18) 0%, transparent 60%), var(--surface-soft); }
 .work--hmi   { background: radial-gradient(110% 70% at 100% 100%, rgba(0,168,126,.20) 0%, transparent 60%), var(--surface-soft); }
 .work--north { background: radial-gradient(110% 70% at 100% 100%, rgba(58,64,196,.50) 0%, transparent 60%), var(--canvas-dark); }
@@ -660,26 +665,57 @@ a {
 .device--laptop { max-width: clamp(220px, 26vw, 360px); }
 .device--hmi    { max-width: clamp(220px, 26vw, 360px); }
 
-/* ----- VIOLA hi-fi phone mockup (vector recreation) ----- */
+/* ----- VIOLA hi-fi phone mockup (3D perspective recreation) ----- */
 .work__device--mock {
-  perspective: 1200px;
+  perspective: 1600px;
+  perspective-origin: 50% 50%;
+  /* Let the phone overflow the device column visually */
+  overflow: visible;
 }
 .viola-phone {
-  width: clamp(180px, 19vw, 268px);
-  aspect-ratio: 9 / 19.5;
-  background: #111;
-  border-radius: 38px;
-  padding: 6px;
-  box-shadow:
-    0 30px 60px -22px rgba(0,0,0,.55),
-    0 14px 32px -18px rgba(73,79,223,.45),
-    inset 0 0 0 1px rgba(255,255,255,.08);
-  /* Apple-style tilt */
-  transform: rotate(-8deg) translateY(8px);
-  transition: transform .6s var(--ease-out);
   position: relative;
+  width: clamp(220px, 26vw, 340px);
+  aspect-ratio: 9 / 19.5;
+  background: linear-gradient(135deg, #1c1c1f 0%, #0a0a0a 60%);
+  border-radius: 44px;
+  padding: 7px;
+  transform-style: preserve-3d;
+  /* Strong 3D rotation around Y, slight X tilt — Apple product-shot vibe */
+  transform: rotateY(-22deg) rotateX(3deg) translateZ(0);
+  transform-origin: 50% 50%;
+  transition: transform .8s var(--ease-out);
+
+  /* Asymmetric depth shadow: heavier on the side that rotates away */
+  box-shadow:
+    -30px 36px 110px -22px rgba(0, 0, 0, .65),
+    -12px 18px 50px -22px rgba(139, 92, 246, .45),
+    inset 0 0 0 1.5px rgba(255, 255, 255, .08);
 }
-.work__link:hover .viola-phone { transform: rotate(-6deg) translateY(0); }
+
+/* Fake side edge — visible because of rotateY: shows the phone has depth */
+.viola-phone::before {
+  content: "";
+  position: absolute;
+  top: 22px; bottom: 22px;
+  right: -4px;
+  width: 10px;
+  background: linear-gradient(
+    180deg,
+    #3a3a3e 0%,
+    #6c6c72 18%,
+    #b8b8c0 50%,
+    #6c6c72 82%,
+    #3a3a3e 100%
+  );
+  border-radius: 2px 6px 6px 2px;
+  transform: rotateY(-90deg) translateX(5px);
+  transform-origin: right center;
+  z-index: 0;
+}
+
+.work__link:hover .viola-phone {
+  transform: rotateY(-18deg) rotateX(2deg) translateZ(20px);
+}
 
 .viola-phone__notch {
   position: absolute;
