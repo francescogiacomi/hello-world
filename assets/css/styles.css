@@ -614,9 +614,6 @@ a {
 .work--viola {
   background: radial-gradient(110% 70% at 100% 100%, rgba(139,92,246,.40) 0%, transparent 65%), var(--canvas-dark);
 }
-/* Allow the 3D phone to overflow the card edges Apple-style */
-.work--viola { overflow: visible; }
-.work--viola .work__link { overflow: visible; }
 .work--orbit { background: radial-gradient(110% 70% at 100% 100%, rgba(0,123,194,.18) 0%, transparent 60%), var(--surface-soft); }
 .work--hmi   { background: radial-gradient(110% 70% at 100% 100%, rgba(0,168,126,.20) 0%, transparent 60%), var(--surface-soft); }
 .work--north { background: radial-gradient(110% 70% at 100% 100%, rgba(58,64,196,.50) 0%, transparent 60%), var(--canvas-dark); }
@@ -665,186 +662,34 @@ a {
 .device--laptop { max-width: clamp(220px, 26vw, 360px); }
 .device--hmi    { max-width: clamp(220px, 26vw, 360px); }
 
-/* ----- VIOLA hi-fi phone mockup (3D perspective recreation) ----- */
-.work__device--mock {
-  perspective: 1600px;
-  perspective-origin: 50% 50%;
-  /* Let the phone overflow the device column visually */
+/* ----- VIOLA: real screenshot, oversized, clipped on the side ----- */
+.work__device--viola-img {
+  position: relative;
+  height: 100%;
+  /* The image overflows this column on purpose; the card's
+     overflow:hidden does the elegant clipping. */
   overflow: visible;
 }
-.viola-phone {
-  position: relative;
-  width: clamp(220px, 26vw, 340px);
-  aspect-ratio: 9 / 19.5;
-  background: linear-gradient(135deg, #1c1c1f 0%, #0a0a0a 60%);
-  border-radius: 44px;
-  padding: 7px;
-  transform-style: preserve-3d;
-  /* Strong 3D rotation around Y, slight X tilt — Apple product-shot vibe */
-  transform: rotateY(-22deg) rotateX(3deg) translateZ(0);
-  transform-origin: 50% 50%;
-  transition: transform .8s var(--ease-out);
-
-  /* Asymmetric depth shadow: heavier on the side that rotates away */
-  box-shadow:
-    -30px 36px 110px -22px rgba(0, 0, 0, .65),
-    -12px 18px 50px -22px rgba(139, 92, 246, .45),
-    inset 0 0 0 1.5px rgba(255, 255, 255, .08);
-}
-
-/* Fake side edge — visible because of rotateY: shows the phone has depth */
-.viola-phone::before {
-  content: "";
+.viola-img {
   position: absolute;
-  top: 22px; bottom: 22px;
-  right: -4px;
-  width: 10px;
-  background: linear-gradient(
-    180deg,
-    #3a3a3e 0%,
-    #6c6c72 18%,
-    #b8b8c0 50%,
-    #6c6c72 82%,
-    #3a3a3e 100%
-  );
-  border-radius: 2px 6px 6px 2px;
-  transform: rotateY(-90deg) translateX(5px);
-  transform-origin: right center;
-  z-index: 0;
+  /* Oversized — taller than the card so top + bottom get cropped */
+  height: 145%;
+  width: auto;
+  /* Anchor to the right and shift further right so the right side
+     of the phone is cut by the card edge */
+  right: -22%;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Soft violet glow under the device, sells the brand */
+  filter: drop-shadow(-18px 28px 60px rgba(0, 0, 0, .55))
+          drop-shadow(0 0 60px rgba(139, 92, 246, .25));
+  transition: transform .6s var(--ease-out);
+  will-change: transform;
 }
-
-.work__link:hover .viola-phone {
-  transform: rotateY(-18deg) rotateX(2deg) translateZ(20px);
+.work__link:hover .viola-img {
+  transform: translateY(-50%) translateX(-2%);
 }
-
-.viola-phone__notch {
-  position: absolute;
-  top: 12px; left: 50%;
-  transform: translateX(-50%);
-  width: 34%;
-  height: 18px;
-  background: #000;
-  border-radius: 12px;
-  z-index: 2;
-}
-.viola-phone__screen {
-  position: relative;
-  background: #FFFFFF;
-  height: 100%;
-  border-radius: 32px;
-  padding: 36px 18px 8px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  color: #0A0A0A;
-}
-.viola-phone__time {
-  position: absolute;
-  top: 14px; left: 18px;
-  font-family: var(--f-sans);
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: -0.02em;
-}
-.viola-phone__title {
-  font-family: var(--f-sans);
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 8px 0 8px;
-  color: #0A0A0A;
-}
-.viola-phone__body {
-  font-family: var(--f-sans);
-  font-weight: 400;
-  font-size: 9.5px;
-  line-height: 1.4;
-  color: #4A4A48;
-  margin: 0;
-}
-.viola-phone__heart { color: #8B5CF6; }
-
-.viola-phone__cta {
-  position: relative;
-  margin: auto 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 110px;
-}
-.viola-phone__ring {
-  position: absolute;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: rgba(139, 92, 246, 0.14);
-  z-index: 0;
-}
-.viola-phone__btn {
-  position: relative;
-  z-index: 1;
-  width: 78px;
-  height: 78px;
-  border-radius: 50%;
-  background: #8B5CF6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFFFF;
-  box-shadow: 0 8px 20px -6px rgba(139, 92, 246, 0.55);
-}
-.viola-phone__btn svg { width: 32px; height: 32px; }
-
-.viola-phone__lang {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #FFFFFF;
-  border: 1px solid #E8E8EC;
-  border-radius: 14px;
-  padding: 10px 12px;
-  margin-top: 8px;
-}
-.viola-phone__lang-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  line-height: 1.2;
-}
-.viola-phone__lang strong {
-  font-family: var(--f-sans);
-  font-weight: 600;
-  font-size: 11px;
-  color: #0A0A0A;
-}
-.viola-phone__lang span {
-  font-family: var(--f-sans);
-  font-weight: 400;
-  font-size: 8.5px;
-  color: #8B5CF6;
-}
-.viola-phone__chevron {
-  width: 10px; height: 6px;
-  color: #8B8B92;
-  flex: 0 0 auto;
-}
-
-.viola-phone__tabs {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0 6px;
-  margin-top: 6px;
-  border-top: 1px solid #F2F2F4;
-}
-.viola-phone__tab {
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
-  background: #E8E8EC;
-}
-.viola-phone__tab.is-active { background: #8B5CF6; }
 
 @media (max-width: 760px) {
   .work { aspect-ratio: auto; min-height: 480px; }
