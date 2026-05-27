@@ -560,8 +560,33 @@ a {
    Selected Works — Apple-style 2-col grid
    ============================================================ */
 .section--works {
+  /* Wider than the default 1440px so the cards extend toward the page edges */
+  max-width: min(1720px, calc(100% - 40px));
   padding-top: clamp(48px, 8vh, 96px);
   padding-bottom: clamp(60px, 10vh, 120px);
+  padding-left: clamp(20px, 2.5vw, 40px);
+  padding-right: clamp(20px, 2.5vw, 40px);
+}
+
+/* Section header — Revolut-style display title */
+.works__head {
+  padding: 0 0 clamp(40px, 7vh, 88px);
+}
+.works__title {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(48px, 7.2vw, 120px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  margin: 0;
+  color: var(--ink);
+}
+.works__title em {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--primary);
+  letter-spacing: -0.02em;
 }
 
 .works {
@@ -579,27 +604,68 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: var(--r-lg);
-  aspect-ratio: 1 / 1;
+  /* Wider than tall: editorial landscape card */
+  aspect-ratio: 7 / 5;
   background: var(--surface-soft);
   transition: transform .5s var(--ease-out);
 }
 .work--dark  { background: var(--canvas-dark);  color: var(--on-dark); }
 .work--light { background: var(--surface-soft); color: var(--ink); }
 
-/* Per-project accent tints — subtle gradient overlay, no shapes */
-.work--viola { background: radial-gradient(120% 80% at 100% 100%, rgba(73,79,223,.45) 0%, transparent 60%), var(--canvas-dark); }
-.work--orbit { background: radial-gradient(120% 80% at 100% 100%, rgba(0,123,194,.20) 0%, transparent 60%), var(--surface-soft); }
-.work--hmi   { background: radial-gradient(120% 80% at 100% 100%, rgba(0,168,126,.22) 0%, transparent 60%), var(--surface-soft); }
-.work--north { background: radial-gradient(120% 80% at 100% 100%, rgba(58,64,196,.50) 0%, transparent 60%), var(--canvas-dark); }
+/* Per-project accent tints — subtle gradient overlay */
+.work--viola { background: radial-gradient(110% 70% at 100% 100%, rgba(73,79,223,.45) 0%, transparent 60%), var(--canvas-dark); }
+.work--orbit { background: radial-gradient(110% 70% at 100% 100%, rgba(0,123,194,.18) 0%, transparent 60%), var(--surface-soft); }
+.work--hmi   { background: radial-gradient(110% 70% at 100% 100%, rgba(0,168,126,.20) 0%, transparent 60%), var(--surface-soft); }
+.work--north { background: radial-gradient(110% 70% at 100% 100%, rgba(58,64,196,.50) 0%, transparent 60%), var(--canvas-dark); }
 
+/* Card internal grid — content left, device right */
 .work__link {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(20px, 2.4vw, 40px);
+  height: 100%;
+  padding: clamp(28px, 3.4vw, 48px);
+  position: relative;
+}
+
+.work__content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  height: 100%;
-  padding: clamp(28px, 3.6vw, 48px);
-  gap: clamp(16px, 1.8vw, 24px);
-  position: relative;
+  gap: clamp(14px, 1.6vw, 22px);
+  min-width: 0; /* allow text to wrap inside grid track */
+}
+.work__head {
+  display: flex; flex-direction: column;
+  gap: clamp(12px, 1.4vw, 18px);
+}
+.work__foot {
+  margin-top: auto;
+  display: flex; flex-direction: column;
+  gap: clamp(14px, 1.6vw, 20px);
+}
+
+/* Device column — centered visual */
+.work__device {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}
+.device {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  color: currentColor;
+}
+.device--mobile { max-width: clamp(120px, 14vw, 200px); }
+.device--laptop { max-width: clamp(220px, 26vw, 360px); }
+.device--hmi    { max-width: clamp(220px, 26vw, 360px); }
+
+@media (max-width: 760px) {
+  .work { aspect-ratio: auto; min-height: 480px; }
+  .work__link { grid-template-columns: 1fr; }
+  .work__device { display: none; } /* keep mobile compact */
 }
 
 /* Chips — small pill labels */
