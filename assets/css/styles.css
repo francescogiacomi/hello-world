@@ -324,9 +324,9 @@ a {
   /* Lift the whole row 24px closer to the title */
   margin-top: -24px;
   overflow: hidden;
-  /* Editorial edge fade — logos appear/disappear smoothly */
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  /* Editorial edge fade — tight 28px zone so logos read close to the margin */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
 }
 
 .clients__track {
@@ -389,6 +389,7 @@ a {
 .clients__list li[data-client="flex"] img,
 .clients__list li[data-client="bocconi"] img,
 .clients__list li[data-client="intercos"] img,
+.clients__list li[data-client="iveco"] img,
 .clients__list li[data-client="ferrari"] img {
   height: clamp(37px, 5.4vh, 75px);
   max-width: clamp(153px, 14.4vw, 247px);
@@ -407,6 +408,7 @@ a {
   .clients__list li[data-client="flex"] img,
   .clients__list li[data-client="bocconi"] img,
   .clients__list li[data-client="intercos"] img,
+  .clients__list li[data-client="iveco"] img,
   .clients__list li[data-client="ferrari"] img {
     height: clamp(29px, 3.6vh, 46px); max-width: 143px;
   }
