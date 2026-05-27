@@ -323,6 +323,11 @@ a {
 .clients {
   /* Lift the whole row 24px closer to the title */
   margin-top: -24px;
+  /* Full-bleed: break out of the hero's 1440px max-width so the row
+     spans the full viewport on wide displays. */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   overflow: hidden;
   /* Editorial edge fade — tight 28px zone so logos read close to the margin */
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
