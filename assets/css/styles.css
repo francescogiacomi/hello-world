@@ -829,6 +829,14 @@ a {
   .work--reveal .work__link:hover .work__content { opacity: 1; }
 }
 
+/* Touch devices (iPad / iPhone) at ANY width: never reveal — the hover
+   interaction is desktop-pointer only. On touch :hover never fires, so
+   the text stays put; we also drop the overlay so nothing can flash. */
+@media (hover: none), (pointer: coarse) {
+  .work__device--reveal { display: none; }
+  .work--reveal .work__link:hover .work__content { opacity: 1; }
+}
+
 /* Chips — small pill labels */
 .work__chips {
   display: flex;
