@@ -6,20 +6,32 @@
   --testata: #2C32B0;
   --testata-deep: #232890;
   --on-testata: #FFFFFF;
-  --on-testata-mute: rgba(255, 255, 255, 0.72);
+  --on-testata-mute: rgba(255, 255, 255, 0.74);
   --cs-max: 1280px;
 }
 
-/* Push content below the fixed header */
-.cs { padding-top: 0; }
+/* ----------------------------------------------------------------
+   Header override on case pages — solid testata, not the light tint
+   ---------------------------------------------------------------- */
+.site-header--case {
+  background: var(--testata);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+}
+.site-header--case .brand,
+.site-header--case .nav { color: var(--on-testata); }
+.site-header--case .nav a:not(.nav__cta)::after { background: var(--on-testata); }
+.site-header--case.is-scrolled { border-bottom-color: rgba(255, 255, 255, 0.16); }
 
 /* ----------------------------------------------------------------
-   HERO — full-bleed indigo testata
+   HERO — full-bleed indigo testata, content left + image right
    ---------------------------------------------------------------- */
 .cs-hero {
   background: var(--testata);
   color: var(--on-testata);
-  padding: clamp(120px, 18vh, 200px) var(--gutter) clamp(64px, 10vh, 120px);
+  padding: clamp(116px, 16vh, 180px) var(--gutter) clamp(56px, 9vh, 110px);
+  overflow: hidden;
 }
 .cs-hero__inner {
   max-width: var(--cs-max);
@@ -27,24 +39,39 @@
 }
 .cs-hero__back {
   display: inline-block;
-  font-family: var(--f-mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-family: var(--f-sans);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.02em;
   color: var(--on-testata-mute);
-  margin-bottom: clamp(40px, 7vh, 80px);
-  transition: color .3s var(--ease-out);
+  margin-bottom: clamp(36px, 6vh, 72px);
+  transition: color .3s var(--ease-out), transform .3s var(--ease-out);
 }
-.cs-hero__back:hover { color: var(--on-testata); }
+.cs-hero__back:hover { color: var(--on-testata); transform: translateX(-4px); }
+
+.cs-hero__cols {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .cs-hero__cols { grid-template-columns: 1fr; gap: clamp(40px, 7vh, 64px); }
+}
+.cs-hero__col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 5vh, 52px);
+  min-width: 0;
+}
 
 .cs-hero__title {
   font-family: var(--f-display);
   font-weight: 500;
-  font-size: clamp(36px, 5.4vw, 84px);
-  line-height: 1.04;
-  letter-spacing: -0.025em;
+  font-size: clamp(40px, 6.4vw, 104px);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
   margin: 0;
-  max-width: 18ch;
   color: var(--on-testata);
 }
 .cs-hero__title em {
@@ -53,112 +80,129 @@
   font-weight: 400;
 }
 
-.cs-hero__lead {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: clamp(32px, 5vw, 80px);
-  margin-top: clamp(48px, 8vh, 88px);
-  align-items: start;
+.cs-hero__intro {
+  font-family: var(--f-sans);
+  font-weight: 400;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: var(--on-testata-mute);
+  margin: 0;
+  max-width: 52ch;
 }
-@media (max-width: 860px) {
-  .cs-hero__lead { grid-template-columns: 1fr; gap: 32px; }
-}
+
 .cs-hero__meta {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0;
+  margin: 0;
+  max-width: 520px;
 }
 .cs-hero__meta > div {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255,255,255,.18);
+  gap: 5px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
-.cs-hero__meta dt,
-.cs-hero__meta .k {
+.cs-hero__meta > div:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
+.cs-hero__meta dt {
   font-family: var(--f-mono);
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--on-testata-mute);
 }
-.cs-hero__meta dd,
-.cs-hero__meta .v {
+.cs-hero__meta dd {
   margin: 0;
   font-size: 15px;
   font-weight: 500;
   color: var(--on-testata);
 }
-.cs-hero__intro {
-  font-family: var(--f-display);
-  font-weight: 400;
-  font-size: clamp(18px, 1.8vw, 26px);
-  line-height: 1.45;
-  letter-spacing: -0.01em;
-  color: var(--on-testata);
-  margin: 0;
-  max-width: 46ch;
-}
 
-/* Hero media band — sits at the bottom of the testata, overlaps next section */
+/* Hero image — right column, oversized, parallax */
 .cs-hero__media {
-  max-width: var(--cs-max);
-  margin: clamp(48px, 8vh, 96px) auto 0;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  aspect-ratio: 16 / 8;
-  background: linear-gradient(150deg, var(--testata-deep), #4147c8);
+  position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  will-change: transform;
 }
 .cs-hero__media img {
-  width: auto;
-  height: 116%;
-  object-fit: contain;
-  filter: drop-shadow(0 30px 60px rgba(0,0,0,.4));
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, .45));
+}
+@media (max-width: 900px) {
+  .cs-hero__media img { max-width: 360px; }
 }
 
 /* ----------------------------------------------------------------
-   Generic section wrapper
+   Context — dark band, statement + copy aligned, 3 big stats
    ---------------------------------------------------------------- */
-.cs-section {
-  max-width: var(--cs-max);
-  margin: 0 auto;
-  padding: clamp(72px, 12vh, 160px) var(--gutter);
-}
-
-/* Statement — oversized intro line */
-.cs-statement {
-  max-width: var(--cs-max);
-  margin: 0 auto;
+.cs-context {
+  background: var(--canvas-dark);
+  color: var(--on-dark);
   padding: clamp(80px, 14vh, 180px) var(--gutter);
+}
+.cs-context__inner {
+  max-width: var(--cs-max);
+  margin: 0 auto;
+}
+.cs-context__head {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(32px, 5vw, 80px);
   align-items: start;
+  padding-bottom: clamp(64px, 11vh, 140px);
 }
-@media (max-width: 860px) { .cs-statement { grid-template-columns: 1fr; gap: 24px; } }
-.cs-statement h2 {
+@media (max-width: 860px) { .cs-context__head { grid-template-columns: 1fr; gap: 24px; } }
+.cs-context__head h2 {
   font-family: var(--f-display);
   font-weight: 500;
-  font-size: clamp(28px, 3.4vw, 52px);
-  line-height: 1.1;
+  font-size: clamp(28px, 3.6vw, 52px);
+  line-height: 1.08;
   letter-spacing: -0.02em;
   margin: 0;
-  color: var(--ink);
+  color: var(--on-dark);
+  max-width: 16ch;
 }
-.cs-statement h2 em { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--primary); }
-.cs-statement p {
-  font-size: clamp(16px, 1.3vw, 19px);
-  line-height: 1.6;
-  color: var(--ink-soft);
+.cs-context__copy { display: flex; flex-direction: column; gap: 20px; }
+.cs-context__copy p {
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.55;
+  color: var(--on-dark);
   margin: 0;
-  max-width: 52ch;
+  max-width: 50ch;
 }
 
-/* Content block — left heading, right body (Sketchin rhythm) */
+.cs-context__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  margin: 0;
+}
+@media (max-width: 760px) { .cs-context__stats { grid-template-columns: 1fr; gap: 40px; } }
+.cs-context__stats > div { display: flex; flex-direction: column; gap: 12px; }
+.cs-context__stats dt {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(56px, 8vw, 120px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: var(--on-dark);
+}
+.cs-context__stats dd {
+  margin: 0;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.5;
+  color: var(--on-dark-mute);
+  max-width: 30ch;
+}
+
+/* ----------------------------------------------------------------
+   Generic content block — sticky left heading + right body
+   ---------------------------------------------------------------- */
 .cs-block {
   max-width: var(--cs-max);
   margin: 0 auto;
@@ -191,8 +235,7 @@
 .cs-block__body p:last-child { margin-bottom: 0; }
 .cs-block__body strong { color: var(--ink); font-weight: 600; }
 
-/* Numbered principle list */
-.cs-list { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 0; }
+.cs-list { list-style: none; margin: 8px 0 0; padding: 0; }
 .cs-list li {
   padding: 22px 0;
   border-top: 1px solid var(--hairline-light);
@@ -203,20 +246,15 @@
 .cs-list li strong { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; }
 
 /* ----------------------------------------------------------------
-   Figures / image bands
+   Figures / image grids
    ---------------------------------------------------------------- */
-.cs-figure {
-  max-width: var(--cs-max);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-}
+.cs-figure { max-width: var(--cs-max); margin: 0 auto; padding: 0 var(--gutter); }
 .cs-figure__frame {
   border-radius: var(--r-lg);
   overflow: hidden;
   aspect-ratio: 16 / 9;
   background: linear-gradient(150deg, #DCE0F7, #B7BEF0);
   border: 1px solid var(--hairline-light);
-  display: flex; align-items: center; justify-content: center;
 }
 .cs-figure__frame img { width: 100%; height: 100%; object-fit: cover; }
 .cs-figure figcaption {
@@ -229,7 +267,6 @@
 }
 .cs-figure--viola .cs-figure__frame { background: linear-gradient(150deg, #4F55F1, #3A40C4); }
 
-/* Image grid (2 / 3 up) */
 .cs-grid {
   max-width: var(--cs-max);
   margin: 0 auto;
@@ -238,8 +275,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(12px, 1.5vw, 24px);
 }
-.cs-grid--3 { grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 760px) { .cs-grid, .cs-grid--3 { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .cs-grid { grid-template-columns: 1fr; } }
 .cs-grid__tile {
   aspect-ratio: 4 / 3;
   border-radius: var(--r-md);
@@ -252,39 +288,7 @@
 .cs-grid__tile--blue { background: linear-gradient(150deg, #4F55F1, #2C32B0); }
 
 /* ----------------------------------------------------------------
-   Metrics — dark band, big numbers
-   ---------------------------------------------------------------- */
-.cs-metrics {
-  background: var(--canvas-dark);
-  color: var(--on-dark);
-  padding: clamp(72px, 12vh, 140px) var(--gutter);
-}
-.cs-metrics__inner {
-  max-width: var(--cs-max);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(32px, 5vw, 72px);
-}
-@media (max-width: 760px) { .cs-metrics__inner { grid-template-columns: 1fr; gap: 40px; } }
-.cs-metrics div { display: flex; flex-direction: column; gap: 10px; }
-.cs-metrics b {
-  font-family: var(--f-display);
-  font-weight: 500;
-  font-size: clamp(48px, 7vw, 104px);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  color: var(--on-dark);
-}
-.cs-metrics span {
-  font-size: clamp(14px, 1.1vw, 16px);
-  line-height: 1.5;
-  color: var(--on-dark-mute);
-  max-width: 28ch;
-}
-
-/* ----------------------------------------------------------------
-   Project numbers — closing testata block
+   Project numbers — closing testata
    ---------------------------------------------------------------- */
 .cs-numbers {
   background: var(--testata);
@@ -308,8 +312,7 @@
 }
 @media (max-width: 760px) { .cs-numbers__grid { grid-template-columns: repeat(2, 1fr); } }
 .cs-numbers__grid > div { display: flex; flex-direction: column; gap: 8px; }
-.cs-numbers__grid dt,
-.cs-numbers__grid .n {
+.cs-numbers__grid dt {
   font-family: var(--f-display);
   font-weight: 500;
   font-size: clamp(40px, 5vw, 72px);
@@ -317,8 +320,7 @@
   letter-spacing: -0.03em;
   color: var(--on-testata);
 }
-.cs-numbers__grid dd,
-.cs-numbers__grid .l {
+.cs-numbers__grid dd {
   margin: 0;
   font-size: 14px;
   line-height: 1.45;
@@ -327,7 +329,7 @@
 }
 
 /* ----------------------------------------------------------------
-   Contact CTA
+   Contact CTA + Next
    ---------------------------------------------------------------- */
 .cs-contact {
   max-width: var(--cs-max);
@@ -362,9 +364,6 @@
 }
 .cs-contact__btn:hover { background: var(--primary); transform: translateY(-2px); }
 
-/* ----------------------------------------------------------------
-   Next project
-   ---------------------------------------------------------------- */
 .cs-next {
   border-top: 1px solid var(--hairline-light);
   max-width: var(--cs-max);
@@ -394,4 +393,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   .cs-block__title { position: static; }
+  .cs-hero__media { transform: none !important; }
 }
