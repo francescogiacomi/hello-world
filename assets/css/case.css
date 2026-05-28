@@ -122,7 +122,7 @@
 .cs-hero__media {
   position: absolute;
   bottom: clamp(40px, 10vh, 180px);
-  right: max(var(--gutter), calc((100% - var(--cs-max)) / 2 + var(--gutter)));
+  right: clamp(0px, 2vw, 48px);
   width: clamp(480px, 62vw, 1000px);
   z-index: 1;
   will-change: transform;
