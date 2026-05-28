@@ -121,9 +121,9 @@
    1280px content container. */
 .cs-hero__media {
   position: absolute;
-  bottom: clamp(-80px, -5vh, -40px);
+  bottom: clamp(40px, 10vh, 180px);
   right: max(var(--gutter), calc((100% - var(--cs-max)) / 2 + var(--gutter)));
-  width: clamp(300px, 40vw, 520px);
+  width: clamp(480px, 62vw, 1000px);
   z-index: 1;
   will-change: transform;
 }
@@ -143,7 +143,7 @@
   .cs-hero__media {
     right: 50%;
     transform: translateX(50%);
-    width: clamp(260px, 70vw, 380px);
+    width: clamp(320px, 88vw, 560px);
   }
 }
 
