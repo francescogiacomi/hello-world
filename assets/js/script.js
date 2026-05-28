@@ -206,9 +206,9 @@
           hour: '2-digit', minute: '2-digit',
           timeZone: 'Europe/Rome'
         });
-        timeEl.textContent = `Italia · ${fmt.format(new Date())}`;
+        timeEl.textContent = `Italy · ${fmt.format(new Date())}`;
       } catch {
-        timeEl.textContent = 'Italia';
+        timeEl.textContent = 'Italy';
       }
     };
     tick();

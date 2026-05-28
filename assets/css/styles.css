@@ -617,6 +617,10 @@ a {
 .work--orbit { background: radial-gradient(110% 70% at 100% 100%, rgba(0,123,194,.18) 0%, transparent 60%), var(--surface-soft); }
 .work--guzzi { background: radial-gradient(110% 70% at 100% 100%, rgba(0,0,0,.06) 0%, transparent 60%), var(--surface-soft); }
 .work--vespa { background: radial-gradient(110% 70% at 100% 100%, rgba(0,123,194,.14) 0%, transparent 60%), var(--surface-soft); }
+
+/* Solo card — no device column; content spans the full card width */
+.work--solo .work__link { grid-template-columns: 1fr; }
+.work--solo .work__title { white-space: nowrap; }
 .work--guzzi.work--reveal { --reveal-glow: 150, 160, 180; } /* cool neutral backlight */
 .work--hmi   { background: radial-gradient(110% 70% at 100% 100%, rgba(0,168,126,.20) 0%, transparent 60%), var(--surface-soft); }
 .work--north { background: radial-gradient(110% 70% at 100% 100%, rgba(58,64,196,.50) 0%, transparent 60%), var(--canvas-dark); }
@@ -664,7 +668,6 @@ a {
 .device--mobile { max-width: clamp(120px, 14vw, 200px); }
 .device--laptop { max-width: clamp(220px, 26vw, 360px); }
 .device--hmi    { max-width: clamp(220px, 26vw, 360px); }
-.device--cluster { max-width: clamp(200px, 24vw, 320px); }
 
 /* ===== VIOLA card — 3-phase hover: text → (1s) → phone rises in ===== */
 
