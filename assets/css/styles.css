@@ -662,33 +662,64 @@ a {
 .device--laptop { max-width: clamp(220px, 26vw, 360px); }
 .device--hmi    { max-width: clamp(220px, 26vw, 360px); }
 
-/* ----- VIOLA: real screenshot, oversized, clipped on the side ----- */
+/* ----- VIOLA: 3D render, hover "enters" + moving hi-tech backlight ----- */
 .work__device--viola-img {
   position: relative;
   height: 100%;
-  /* The image overflows this column on purpose; the card's
-     overflow:hidden does the elegant clipping. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: visible;
 }
-.viola-img {
+
+/* Slow-drifting violet backlight behind the device */
+.viola-glow {
   position: absolute;
-  /* Oversized — taller than the card so top + bottom get cropped */
-  height: 145%;
-  width: auto;
-  /* Anchor to the right and shift further right so the right side
-     of the phone is cut by the card edge */
-  right: -22%;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  /* Soft violet glow under the device, sells the brand */
-  filter: drop-shadow(-18px 28px 60px rgba(0, 0, 0, .55))
-          drop-shadow(0 0 60px rgba(139, 92, 246, .25));
-  transition: transform .6s var(--ease-out);
+  top: 50%; left: 50%;
+  width: 78%;
+  aspect-ratio: 1 / 1.2;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(139, 92, 246, .60) 0%,
+    rgba(139, 92, 246, .22) 42%,
+    transparent 70%);
+  filter: blur(44px);
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  animation: violaGlow 9s ease-in-out infinite;
   will-change: transform;
+  transition: opacity .8s var(--ease-out);
 }
+@keyframes violaGlow {
+  0%, 100% { transform: translate(-62%, -56%) scale(1); }
+  33%      { transform: translate(-40%, -46%) scale(1.14); }
+  66%      { transform: translate(-56%, -40%) scale(0.94); }
+}
+
+.viola-img {
+  position: relative;
+  z-index: 1;
+  height: 132%;
+  width: auto;
+  pointer-events: none;
+  /* Default: oversized, shifted right, faintly cropped — the dramatic rest pose */
+  transform: translateX(15%) scale(1.04) rotate(1.5deg);
+  transition: transform 1.05s cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+  filter: drop-shadow(-20px 30px 55px rgba(0, 0, 0, .55));
+}
+
+/* Hover: the phone glides in — centers, straightens, fits fully (image 2) */
 .work__link:hover .viola-img {
-  transform: translateY(-50%) translateX(-2%);
+  transform: translateX(0) scale(0.82) rotate(0deg);
+}
+.work__link:hover .viola-glow {
+  opacity: .85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viola-glow { animation: none; }
+  .viola-img { transition: none; }
 }
 
 @media (max-width: 760px) {
