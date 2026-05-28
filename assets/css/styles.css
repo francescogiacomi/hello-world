@@ -616,6 +616,7 @@ a {
 }
 .work--orbit { background: radial-gradient(110% 70% at 100% 100%, rgba(0,123,194,.18) 0%, transparent 60%), var(--surface-soft); }
 .work--guzzi { background: radial-gradient(110% 70% at 100% 100%, rgba(0,0,0,.06) 0%, transparent 60%), var(--surface-soft); }
+.work--guzzi.work--reveal { --reveal-glow: 150, 160, 180; } /* cool neutral backlight */
 .work--hmi   { background: radial-gradient(110% 70% at 100% 100%, rgba(0,168,126,.20) 0%, transparent 60%), var(--surface-soft); }
 .work--north { background: radial-gradient(110% 70% at 100% 100%, rgba(58,64,196,.50) 0%, transparent 60%), var(--canvas-dark); }
 
@@ -662,16 +663,16 @@ a {
 .device--mobile { max-width: clamp(120px, 14vw, 200px); }
 .device--laptop { max-width: clamp(220px, 26vw, 360px); }
 .device--hmi    { max-width: clamp(220px, 26vw, 360px); }
-.device--gauge  { max-width: clamp(180px, 22vw, 300px); }
 
 /* ===== VIOLA card — 3-phase hover: text → (1s) → phone rises in ===== */
 
 /* Card link becomes a single layer; phone overlays absolutely */
-.work--viola .work__link {
+.work--reveal { --reveal-glow: 139, 92, 246; } /* default violet (VIOLA) */
+.work--reveal .work__link {
   display: block;
   position: relative;
 }
-.work--viola .work__content {
+.work--reveal .work__content {
   position: relative;
   z-index: 1;
   height: 100%;
@@ -680,13 +681,14 @@ a {
   /* Phase 1 → fades out on hover (after the dwell delay) */
   transition: opacity .55s var(--ease-out);
 }
-.work--viola .work__link:hover .work__content {
+.work--reveal .work__title { white-space: nowrap; }
+.work--reveal .work__link:hover .work__content {
   opacity: 0;
   transition-delay: 1s;
 }
 
-/* Phone overlay — hidden in phase 1, slides up from the bottom on hover */
-.work__device--viola-img {
+/* Media overlay — hidden in phase 1, slides up from the bottom on hover */
+.work__device--reveal {
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -699,35 +701,35 @@ a {
   pointer-events: none;
   transition: opacity .7s var(--ease-out);
 }
-.work--viola .work__link:hover .work__device--viola-img {
+.work--reveal .work__link:hover .work__device--reveal {
   opacity: 1;
   transition-delay: 1s;
 }
 
-/* Slow-drifting violet backlight behind the device */
-.viola-glow {
+/* Slow-drifting backlight behind the device (hi-tech) */
+.reveal-glow {
   position: absolute;
   top: 50%; left: 50%;
   width: 70%;
   aspect-ratio: 1 / 1.2;
   border-radius: 50%;
   background: radial-gradient(circle,
-    rgba(139, 92, 246, .65) 0%,
-    rgba(139, 92, 246, .24) 42%,
+    rgba(var(--reveal-glow), .65) 0%,
+    rgba(var(--reveal-glow), .24) 42%,
     transparent 70%);
   filter: blur(46px);
   z-index: 0;
   transform: translate(-50%, -50%);
-  animation: violaGlow 9s ease-in-out infinite;
+  animation: revealGlow 9s ease-in-out infinite;
   will-change: transform;
 }
-@keyframes violaGlow {
+@keyframes revealGlow {
   0%, 100% { transform: translate(-60%, -54%) scale(1); }
   33%      { transform: translate(-42%, -46%) scale(1.16); }
   66%      { transform: translate(-56%, -40%) scale(0.92); }
 }
 
-.viola-img {
+.reveal-img {
   position: relative;
   z-index: 1;
   height: 98%;
@@ -739,16 +741,16 @@ a {
   filter: drop-shadow(-12px 26px 50px rgba(0, 0, 0, .55));
 }
 /* Phase 2: glides up into place after the 1s dwell */
-.work--viola .work__link:hover .viola-img {
+.work--reveal .work__link:hover .reveal-img {
   transform: translateY(0);
   transition-delay: 1s;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .viola-glow { animation: none; }
-  .viola-img,
-  .work--viola .work__content,
-  .work__device--viola-img { transition: none; }
+  .reveal-glow { animation: none; }
+  .reveal-img,
+  .work--reveal .work__content,
+  .work__device--reveal { transition: none; }
 }
 
 @media (max-width: 760px) {
