@@ -746,6 +746,13 @@ a {
   transition-delay: 1s;
 }
 
+/* Landscape media (e.g. motorcycle handlebar) fits by width, not height */
+.reveal-img--wide {
+  height: auto;
+  width: 112%;
+  max-width: 112%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-glow { animation: none; }
   .reveal-img,
