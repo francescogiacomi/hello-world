@@ -765,7 +765,7 @@ a {
   transition-delay: 1s;
 }
 
-/* Delicate drifting smoke over the photo — small and subtle */
+/* Drifting smoke over the photo — visible but soft, rising from the base */
 .reveal-smoke {
   position: absolute;
   inset: 0;
@@ -773,17 +773,17 @@ a {
   pointer-events: none;
   opacity: 0;
   mix-blend-mode: screen;
-  filter: blur(16px);
-  transition: opacity 1.6s var(--ease-out);
-  background: radial-gradient(26% 20% at 44% 80%,
-    rgba(255, 255, 255, .18), transparent 72%);
-  animation: smokeDrift 17s ease-in-out infinite;
+  filter: blur(22px);
+  transition: opacity 1.4s var(--ease-out);
+  background: radial-gradient(42% 34% at 40% 82%,
+    rgba(255, 255, 255, .55), rgba(255,255,255,.12) 55%, transparent 75%);
+  animation: smokeDrift 15s ease-in-out infinite;
 }
 .reveal-smoke--2 {
-  background: radial-gradient(20% 16% at 60% 72%,
-    rgba(255, 255, 255, .12), transparent 74%);
-  animation: smokeDrift2 21s ease-in-out infinite;
-  filter: blur(20px);
+  background: radial-gradient(34% 28% at 64% 76%,
+    rgba(255, 255, 255, .40), transparent 72%);
+  animation: smokeDrift2 19s ease-in-out infinite;
+  filter: blur(26px);
 }
 .work--reveal .work__link:hover .reveal-smoke {
   opacity: 1;
@@ -791,11 +791,11 @@ a {
 }
 @keyframes smokeDrift {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(4%, -7%) scale(1.1); }
+  50%      { transform: translate(5%, -10%) scale(1.14); }
 }
 @keyframes smokeDrift2 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(-5%, -5%) scale(1.12); }
+  50%      { transform: translate(-6%, -8%) scale(1.16); }
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal-smoke { animation: none; }
