@@ -770,6 +770,13 @@ a {
   transition-delay: 1s;
 }
 
+/* Wide media (e.g. the Bocconi laptop) — sized by width, floats + rises */
+.reveal-img--wide {
+  height: auto;
+  width: 96%;
+  max-width: 96%;
+}
+
 /* Drifting smoke over the photo — visible but soft, rising from the base */
 .reveal-smoke {
   position: absolute;
@@ -789,6 +796,16 @@ a {
     rgba(255, 255, 255, .40), transparent 72%);
   animation: smokeDrift2 19s ease-in-out infinite;
   filter: blur(26px);
+}
+/* Smoke rendered BEHIND a transparent floating object (e.g. the laptop) */
+.reveal-smoke--back {
+  z-index: 0;
+  background: radial-gradient(40% 36% at 50% 60%,
+    rgba(255, 255, 255, .30), rgba(255,255,255,.08) 55%, transparent 75%);
+}
+.reveal-smoke--back.reveal-smoke--2 {
+  background: radial-gradient(30% 30% at 62% 50%,
+    rgba(255, 255, 255, .22), transparent 72%);
 }
 .work--reveal .work__link:hover .reveal-smoke {
   opacity: 1;
