@@ -214,7 +214,7 @@
    Generic content block — sticky left heading + right body
    ---------------------------------------------------------------- */
 .cs-block {
-  max-width: var(--cs-max);
+  max-width: calc(var(--cs-max) + var(--gutter) * 2);
   margin: 0 auto;
   padding: clamp(56px, 9vh, 120px) var(--gutter);
   display: grid;
@@ -231,7 +231,10 @@
   letter-spacing: -0.025em;
   margin: 0;
   color: var(--ink);
+  position: sticky;
+  top: 100px;
 }
+@media (max-width: 860px) { .cs-block__title { position: static; } }
 .cs-block__body p {
   font-size: clamp(16px, 1.3vw, 19px);
   line-height: 1.6;
@@ -418,5 +421,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .cs-block__title { position: static; }
   .cs-hero__media { transform: none !important; }
 }
