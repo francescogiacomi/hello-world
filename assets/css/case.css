@@ -226,15 +226,12 @@
 .cs-block__title {
   font-family: var(--f-display);
   font-weight: 500;
-  font-size: clamp(24px, 2.8vw, 40px);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  font-size: clamp(36px, 5.2vw, 80px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
   margin: 0;
   color: var(--ink);
-  position: sticky;
-  top: 100px;
 }
-@media (max-width: 860px) { .cs-block__title { position: static; } }
 .cs-block__body p {
   font-size: clamp(16px, 1.3vw, 19px);
   line-height: 1.6;
@@ -421,6 +418,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cs-block__title { position: static; }
   .cs-hero__media { transform: none !important; }
 }
