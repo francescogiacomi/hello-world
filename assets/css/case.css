@@ -226,11 +226,12 @@
 .cs-block__title {
   font-family: var(--f-display);
   font-weight: 500;
-  font-size: clamp(24px, 2.8vw, 40px);
-  line-height: 1.12;
+  font-size: clamp(28px, 3.6vw, 52px);
+  line-height: 1.08;
   letter-spacing: -0.02em;
   margin: 0;
   color: var(--ink);
+  max-width: 16ch;
   position: sticky;
   top: 100px;
 }
@@ -258,21 +259,31 @@
 /* Data points — leading figure emphasised */
 .cs-data {
   list-style: none;
-  margin: clamp(16px, 3vh, 28px) 0 0;
+  margin: clamp(24px, 4vh, 40px) 0 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 48px);
 }
 .cs-data li {
-  padding: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 0 0;
   border-top: 1px solid var(--hairline-light);
-  font-size: clamp(15px, 1.2vw, 18px);
-  line-height: 1.55;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.5;
   color: var(--ink-soft);
 }
-.cs-data li:last-child { border-bottom: 1px solid var(--hairline-light); }
 .cs-data b {
   color: var(--primary);
-  font-weight: 600;
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
 }
+@media (max-width: 640px) { .cs-data { grid-template-columns: 1fr; gap: 0; } .cs-data li:last-child { border-bottom: 1px solid var(--hairline-light); padding-bottom: 24px; } }
 
 /* ----------------------------------------------------------------
    Figures / image grids
