@@ -197,7 +197,8 @@
 
   /* ---------------------------------------------------------
      Generic parallax for [data-parallax] (e.g. case-study hero image)
-     value = speed factor; element drifts opposite to scroll
+     value = speed factor. Uses scrollY so the element is at rest (0)
+     on load and only drifts as the page scrolls down.
      --------------------------------------------------------- */
   if (!prefersReduced) {
     const parallaxEls = document.querySelectorAll('[data-parallax]');
@@ -207,18 +208,15 @@
         if (pTick) return;
         pTick = true;
         requestAnimationFrame(() => {
-          const vh = window.innerHeight;
+          const sy = window.scrollY;
           parallaxEls.forEach((el) => {
             const speed = parseFloat(el.dataset.parallax) || 0.12;
-            const rect = el.getBoundingClientRect();
-            const fromCenter = (rect.top + rect.height / 2) - vh / 2;
-            el.style.transform = `translate3d(0, ${(-fromCenter * speed).toFixed(1)}px, 0)`;
+            el.style.transform = `translate3d(0, ${(sy * speed).toFixed(1)}px, 0)`;
           });
           pTick = false;
         });
       };
       window.addEventListener('scroll', onParallax, { passive: true });
-      window.addEventListener('resize', onParallax, { passive: true });
       onParallax();
     }
   }

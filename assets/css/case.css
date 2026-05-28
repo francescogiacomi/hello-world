@@ -73,7 +73,7 @@
   display: flex;
   flex-direction: column;
   gap: clamp(28px, 5vh, 48px);
-  max-width: 480px;
+  max-width: 560px;
   margin-top: clamp(28px, 5vh, 52px);
   padding-bottom: clamp(64px, 10vh, 120px);
 }
@@ -85,6 +85,7 @@
   line-height: 1.6;
   color: var(--on-testata-mute);
   margin: 0;
+  max-width: 54ch;
 }
 
 .cs-hero__meta {
@@ -120,10 +121,11 @@
    1280px content container. */
 .cs-hero__media {
   position: absolute;
-  bottom: 0;
+  bottom: clamp(-80px, -5vh, -40px);
   right: max(var(--gutter), calc((100% - var(--cs-max)) / 2 + var(--gutter)));
   width: clamp(300px, 40vw, 520px);
   z-index: 1;
+  will-change: transform;
 }
 .cs-hero__media img {
   display: block;
@@ -252,6 +254,25 @@
   color: var(--ink-soft);
 }
 .cs-list li strong { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; }
+
+/* Data points — leading figure emphasised */
+.cs-data {
+  list-style: none;
+  margin: clamp(16px, 3vh, 28px) 0 0;
+  padding: 0;
+}
+.cs-data li {
+  padding: 18px 0;
+  border-top: 1px solid var(--hairline-light);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.cs-data li:last-child { border-bottom: 1px solid var(--hairline-light); }
+.cs-data b {
+  color: var(--primary);
+  font-weight: 600;
+}
 
 /* ----------------------------------------------------------------
    Figures / image grids
