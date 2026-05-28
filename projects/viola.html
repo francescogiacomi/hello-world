@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="theme-color" content="#2C32B0" />
   <title>VIOLA — Case Study · Francesco Giacomi</title>
-  <meta name="description" content="VIOLA — Safety app: from early-stage UX flows to a high-fidelity mobile interface. A sensitive service made clear, fast and reassuring." />
+  <meta name="description" content="VIOLA — a safety app where help is always one tap away. Safety, speed and trust turned into a clear, immediate, reassuring mobile experience." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
@@ -28,152 +28,154 @@
   </header>
 
   <main>
-    <article class="case">
-      <header class="case__hero">
-        <p class="case__breadcrumb">
-          <a href="../index.html#work" data-cursor="hover">← All projects</a>
-        </p>
-        <h1 class="case__title" data-reveal>VIOLA</h1>
-        <p class="case__subtitle" data-reveal>
-          A safety app from early-stage UX flows to a high-fidelity
-          mobile interface. A sensitive service made clear, fast
-          and reassuring.
-        </p>
+    <article class="cs">
 
-        <dl class="case__facts" data-reveal>
-          <div><dt>Client</dt><dd>Confidential</dd></div>
-          <div><dt>Role</dt><dd>Lead Product Designer</dd></div>
-          <div><dt>Platform</dt><dd>iOS · Android</dd></div>
-          <div><dt>Duration</dt><dd>3 years · 2021—2023</dd></div>
-          <div><dt>Team</dt><dd>1 PM · 4 Eng · 1 Researcher · 1 Designer</dd></div>
-          <div><dt>Status</dt><dd>Live in production</dd></div>
-        </dl>
-
-        <div class="case__cover" aria-hidden="true">
-          <div class="case__cover-shape"></div>
+      <!-- ===== HERO (testata) ===== -->
+      <header class="cs-hero">
+        <div class="cs-hero__inner">
+          <a class="cs-hero__back" href="../index.html#work" data-cursor="hover">← All projects</a>
+          <h1 class="cs-hero__title">
+            A safety app where help is always <em>one tap</em> away.
+          </h1>
+          <div class="cs-hero__lead">
+            <dl class="cs-hero__meta">
+              <div><dt>Field of work</dt><dd>Safety · Mobile</dd></div>
+              <div><dt>Year</dt><dd>2022</dd></div>
+              <div><dt>Client</dt><dd>Confidential</dd></div>
+              <div><dt>Services</dt><dd>Product Design, UX Research, UI Design, Prototyping</dd></div>
+            </dl>
+            <p class="cs-hero__intro">
+              VIOLA turns safety, speed and trust into a mobile experience
+              built to feel clear, immediate and reassuring in the most
+              delicate situations — where every second, and every tap,
+              counts.
+            </p>
+          </div>
+        </div>
+        <div class="cs-hero__media">
+          <img src="../assets/img/projects/viola-3d.webp" alt="VIOLA app on a smartphone" />
         </div>
       </header>
 
-      <section class="case__section">
-        <div class="case__grid">
-          <p class="case__index">01 — Context</p>
-          <div class="case__body" data-reveal>
-            <h2>The problem</h2>
-            <p>
-              Women facing domestic violence lack reliable tools to ask for
-              help without being noticed. Existing apps were slow, visually
-              aggressive, and required too many steps in moments where
-              seconds count.
-            </p>
-            <p>
-              VIOLA started as a pilot project with an anti-violence
-              association: an app that, in fewer than three taps, activates
-              a network of trusted contacts and notifies the authorities
-              with a precise location.
-            </p>
-          </div>
+      <!-- ===== STATEMENT ===== -->
+      <section class="cs-statement">
+        <h2>Designed to <em>disappear</em> until the exact moment it's needed.</h2>
+        <p>
+          Existing safety apps were slow, visually aggressive and demanded
+          too many steps in moments where seconds count. VIOLA started as a
+          pilot with an anti-violence association: an app that, in fewer than
+          three taps, activates a network of trusted contacts and alerts the
+          authorities with a precise location.
+        </p>
+      </section>
+
+      <!-- ===== METRICS ===== -->
+      <section class="cs-metrics">
+        <div class="cs-metrics__inner">
+          <div><b>3×</b><span>faster activation time versus the baseline flow</span></div>
+          <div><b>42</b><span>components in the scalable design system</span></div>
+          <div><b>98%</b><span>task success rate in usability testing</span></div>
         </div>
       </section>
 
-      <section class="case__section case__section--full">
-        <figure class="case__figure" data-reveal>
-          <div class="case__visual case__visual--viola">
-            <div class="case__phone">
-              <div class="case__phone-screen">
-                <span class="case__phone-eyebrow">Day 1 of 10</span>
-                <h3>Basics</h3>
-                <span class="case__phone-cta">▶ BEGIN</span>
-              </div>
-            </div>
-          </div>
-          <figcaption>Mobile onboarding — concept frame</figcaption>
-        </figure>
-      </section>
-
-      <section class="case__section">
-        <div class="case__grid">
-          <p class="case__index">02 — Approach</p>
-          <div class="case__body" data-reveal>
-            <h2>Three design principles</h2>
-            <ol class="case__list">
-              <li>
-                <strong>Invisible until needed.</strong>
-                The app must go unnoticed on the phone. Neutral icon,
-                generic name, screens that don't look like an SOS.
-              </li>
-              <li>
-                <strong>Three taps at most.</strong>
-                Every critical flow — alert, call, silent message —
-                must be completable in three interactions, even in the dark.
-              </li>
-              <li>
-                <strong>Reassuring, not alarming.</strong>
-                Warm palette, soft typography, gentle microcopy.
-                The design doesn't increase anxiety — it reduces it.
-              </li>
-            </ol>
-          </div>
+      <!-- ===== APPROACH ===== -->
+      <section class="cs-block">
+        <h2 class="cs-block__title">Three principles that shaped every screen</h2>
+        <div class="cs-block__body">
+          <ol class="cs-list">
+            <li>
+              <strong>Invisible until needed.</strong>
+              The app must go unnoticed on the phone — neutral icon, generic
+              name, screens that never look like an SOS.
+            </li>
+            <li>
+              <strong>Three taps at most.</strong>
+              Every critical flow — alert, call, silent message — completable
+              in three interactions, even in the dark.
+            </li>
+            <li>
+              <strong>Reassuring, not alarming.</strong>
+              Warm palette, soft typography, gentle microcopy. The design
+              doesn't increase anxiety — it reduces it.
+            </li>
+          </ol>
         </div>
       </section>
 
-      <section class="case__section">
-        <div class="case__grid">
-          <p class="case__index">03 — Process</p>
-          <div class="case__body" data-reveal>
-            <h2>From flow to interface</h2>
-            <p>
-              The work started with 14 interviews with operators from
-              anti-violence centres and 6 with potential users (under NDA
-              and psychological supervision). They produced 3 primary user
-              flows, 8 system states, and a 42-component design system.
-            </p>
-          </div>
-        </div>
+      <figure class="cs-figure cs-figure--viola">
+        <div class="cs-figure__frame"></div>
+        <figcaption>Core flows — alert, trusted contacts, silent message</figcaption>
+      </figure>
 
-        <div class="case__metrics" data-reveal>
-          <div class="case__metric">
-            <span class="case__metric-num">3×</span>
-            <span class="case__metric-label">faster activation time vs. baseline</span>
-          </div>
-          <div class="case__metric">
-            <span class="case__metric-num">42</span>
-            <span class="case__metric-label">components in the design system</span>
-          </div>
-          <div class="case__metric">
-            <span class="case__metric-num">98%</span>
-            <span class="case__metric-label">task success rate in usability testing</span>
-          </div>
+      <!-- ===== PROCESS ===== -->
+      <section class="cs-block">
+        <h2 class="cs-block__title">From research to a working interface</h2>
+        <div class="cs-block__body">
+          <p>
+            The work started with <strong>14 interviews</strong> with
+            operators from anti-violence centres and 6 with potential users,
+            under NDA and psychological supervision.
+          </p>
+          <p>
+            They produced 3 primary user flows, 8 system states and a
+            42-component design system — the backbone that kept the
+            experience consistent as it scaled across platforms.
+          </p>
         </div>
       </section>
 
-      <section class="case__section case__section--full">
-        <div class="case__gallery" data-reveal>
-          <div class="case__tile case__tile--a"></div>
-          <div class="case__tile case__tile--b"></div>
-          <div class="case__tile case__tile--c"></div>
-          <div class="case__tile case__tile--d"></div>
+      <div class="cs-grid">
+        <div class="cs-grid__tile cs-grid__tile--blue"></div>
+        <div class="cs-grid__tile"></div>
+        <div class="cs-grid__tile"></div>
+        <div class="cs-grid__tile cs-grid__tile--ink"></div>
+      </div>
+
+      <!-- ===== OUTCOME ===== -->
+      <section class="cs-block">
+        <h2 class="cs-block__title">What changed</h2>
+        <div class="cs-block__body">
+          <p>
+            VIOLA was adopted in <strong>7 Italian cities</strong> during the
+            pilot programme. The design system is now the foundation for other
+            products across the organisation, ensuring continuity and
+            development speed.
+          </p>
+          <p>
+            The project continues with new iterations focused on accessibility
+            and localisation — extending a service that, quite literally, can
+            save lives.
+          </p>
         </div>
       </section>
 
-      <section class="case__section">
-        <div class="case__grid">
-          <p class="case__index">04 — Outcome</p>
-          <div class="case__body" data-reveal>
-            <h2>What changed</h2>
-            <p>
-              VIOLA was adopted in 7 Italian cities during the pilot
-              programme. The design system is now used as the foundation
-              for other products across the organisation, ensuring
-              continuity and development speed. The project continues with
-              new iterations focused on accessibility and localisation.
-            </p>
-          </div>
+      <!-- ===== PROJECT NUMBERS (closing testata) ===== -->
+      <section class="cs-numbers">
+        <div class="cs-numbers__inner">
+          <p class="cs-numbers__kicker">Project numbers</p>
+          <dl class="cs-numbers__grid">
+            <div><dt>7</dt><dd>cities in the pilot programme</dd></div>
+            <div><dt>42</dt><dd>design-system components</dd></div>
+            <div><dt>20</dt><dd>research interviews conducted</dd></div>
+            <div><dt>3</dt><dd>primary user flows defined</dd></div>
+            <div><dt>98%</dt><dd>usability task success rate</dd></div>
+            <div><dt>3×</dt><dd>faster help activation</dd></div>
+          </dl>
         </div>
       </section>
 
-      <nav class="case__next">
+      <!-- ===== CONTACT ===== -->
+      <section class="cs-contact">
+        <h2>Let's <em>work</em> together.</h2>
+        <a class="cs-contact__btn" href="mailto:francescogiacomi1@gmail.com" data-cursor="hover">
+          Email me <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <!-- ===== NEXT ===== -->
+      <nav class="cs-next">
         <a href="../index.html#work" data-cursor="hover">
-          <span>Next project</span>
+          <span>Next</span>
           <strong>Back to work →</strong>
         </a>
       </nav>
