@@ -1001,6 +1001,16 @@ a {
 }
 @media (max-width: 560px) {
   .process { grid-template-columns: 1fr; }
+  /* Centre the milestones on phones (icon + text), not left-aligned */
+  .process__step { align-items: center; text-align: center; }
+  .process__icon { justify-content: center; }
+  .process__step p { margin-left: auto; margin-right: auto; }
+}
+
+/* Mobile-only: larger main headlines (hero + process) */
+@media (max-width: 600px) {
+  .hero__title  { font-size: clamp(42px, 11vw, 56px); }
+  .studio__title { font-size: clamp(40px, 9.5vw, 50px); }
 }
 
 /* ============================================================
