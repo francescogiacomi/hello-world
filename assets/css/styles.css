@@ -813,10 +813,20 @@ a {
   .work__device--reveal { transition: none; }
 }
 
-@media (max-width: 760px) {
-  .work { aspect-ratio: auto; min-height: 480px; }
+/* Tablet & below (incl. iPad): single column, flexible height, no hover
+   reveal — there's no real hover, and 2-col cards were too cramped. */
+@media (max-width: 1024px) {
+  .works { grid-template-columns: 1fr; }
+  .work {
+    aspect-ratio: auto;
+    min-height: 0;
+  }
   .work__link { grid-template-columns: 1fr; }
-  .work__device { display: none; } /* keep mobile compact */
+  .work__device,
+  .work__device--reveal { display: none; }      /* drop the hover media */
+  .work--reveal .work__content { opacity: 1; }   /* always show the text */
+  /* neutralise the desktop hover-fade if a pointer is present on tablet */
+  .work--reveal .work__link:hover .work__content { opacity: 1; }
 }
 
 /* Chips — small pill labels */
