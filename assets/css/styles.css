@@ -1157,7 +1157,7 @@ a {
    ============================================================ */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(44px);
   transition:
     opacity .9s var(--ease-out),
     transform .9s var(--ease-out);
