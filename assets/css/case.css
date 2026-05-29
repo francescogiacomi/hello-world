@@ -213,6 +213,18 @@
   max-width: 30ch;
 }
 
+/* Impact — same dark band, five figures in a row */
+.cs-impact__stats {
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(20px, 2.4vw, 44px);
+}
+.cs-impact__stats dt {
+  font-size: clamp(40px, 4.4vw, 76px);
+}
+.cs-impact__stats dd { max-width: 22ch; }
+@media (max-width: 1000px) { .cs-impact__stats { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .cs-impact__stats { grid-template-columns: repeat(2, 1fr); } }
+
 /* ----------------------------------------------------------------
    Generic content block — sticky left heading + right body
    ---------------------------------------------------------------- */
