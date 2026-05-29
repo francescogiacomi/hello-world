@@ -347,6 +347,19 @@
 }
 
 /* ----------------------------------------------------------------
+   Full-bleed break image — edge to edge
+   ---------------------------------------------------------------- */
+.cs-fullbleed {
+  margin: 0;
+  width: 100%;
+}
+.cs-fullbleed img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ----------------------------------------------------------------
    Figures / image grids
    ---------------------------------------------------------------- */
 .cs-figure { max-width: var(--cs-max); margin: 0 auto; padding: 0 var(--gutter); }
