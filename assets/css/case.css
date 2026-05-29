@@ -290,12 +290,11 @@
    Key decision — left-aligned text + media on the right
    ---------------------------------------------------------------- */
 .cs-decision {
-  max-width: calc(var(--cs-max) + var(--gutter) * 2);
-  margin: 0 auto;
-  padding: clamp(40px, 7vh, 96px) var(--gutter) clamp(56px, 9vh, 120px);
+  margin: 0;
+  padding: clamp(40px, 7vh, 96px) clamp(20px, 4vw, 56px) clamp(56px, 9vh, 120px) max(var(--gutter), calc((100% - var(--cs-max)) / 2));
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
-  gap: clamp(32px, 4vw, 80px);
+  grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+  gap: clamp(36px, 4vw, 88px);
   align-items: center;
 }
 @media (max-width: 860px) { .cs-decision { grid-template-columns: 1fr; gap: 28px; } }
