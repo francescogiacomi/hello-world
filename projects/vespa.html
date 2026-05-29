@@ -22,6 +22,8 @@
     }
     /* Impact has four figures on this page */
     .cs-impact__stats--four { grid-template-columns: repeat(4, 1fr); }
+    /* Vespa hero rig (line-art handlebar wrapping the dashboard) */
+    .cs-hero__media .vespa-rig { display: block; width: 100%; height: auto; overflow: visible; }
   </style>
 </head>
 <body>
@@ -67,8 +69,31 @@
           </div>
         </div>
         <div class="cs-hero__media" data-parallax="0.14">
-          <img src="../assets/img/projects/vespadash.png" alt="Vespa 230 Tech digital dashboard"
-               onerror="this.onerror=null; this.src='../assets/img/projects/vespa.webp';" />
+          <svg class="vespa-rig" viewBox="0 0 1100 760" fill="none" xmlns="http://www.w3.org/2000/svg"
+               stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
+               role="img" aria-label="Vespa 230 Tech handlebar with digital dashboard">
+            <defs>
+              <clipPath id="vespaScreen"><rect x="335" y="250" width="430" height="264" rx="26"/></clipPath>
+            </defs>
+            <!-- leg shield / front body -->
+            <path d="M250 700 C232 520 250 372 350 322 C440 280 660 280 750 322 C850 372 868 520 850 700"/>
+            <!-- handlebar -->
+            <path d="M120 486 C330 420 770 420 980 486"/>
+            <!-- grips -->
+            <path d="M150 480 l52 -14" stroke-width="16"/>
+            <path d="M950 480 l-52 -14" stroke-width="16"/>
+            <!-- left mirror -->
+            <path d="M188 462 L122 250"/>
+            <ellipse cx="104" cy="210" rx="52" ry="74" transform="rotate(-18 104 210)"/>
+            <!-- right mirror -->
+            <path d="M912 462 L978 250"/>
+            <ellipse cx="996" cy="210" rx="52" ry="74" transform="rotate(18 996 210)"/>
+            <!-- dashboard screen image -->
+            <image href="../assets/img/projects/vespadash.png" x="335" y="250" width="430" height="264"
+                   preserveAspectRatio="xMidYMid meet" clip-path="url(#vespaScreen)"/>
+            <!-- screen bezel on top -->
+            <rect x="323" y="238" width="454" height="288" rx="32"/>
+          </svg>
         </div>
       </header>
 
