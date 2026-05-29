@@ -362,11 +362,19 @@
    Outro — back to top + other projects
    ---------------------------------------------------------------- */
 .cs-outro {
-  text-align: center;
+  text-align: left;
+  max-width: calc(var(--cs-max) + var(--gutter) * 2);
+  margin: 0 auto;
   padding: clamp(64px, 12vh, 140px) var(--gutter) clamp(72px, 12vh, 150px);
   border-top: 1px solid var(--hairline-light);
 }
 .cs-outro__top {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--ink);
+}
+.cs-outro__top-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -375,12 +383,17 @@
   border-radius: 50%;
   border: 1px solid var(--hairline-strong);
   font-size: 22px;
-  color: var(--ink);
   transition: transform .3s var(--ease-out), background .3s var(--ease-out), color .3s var(--ease-out);
 }
-.cs-outro__top:hover { transform: translateY(-4px); background: var(--ink); color: #fff; }
+.cs-outro__top:hover .cs-outro__top-icon { transform: translateY(-4px); background: var(--ink); color: #fff; }
+.cs-outro__top-text {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 .cs-outro__label {
-  margin: clamp(28px, 5vh, 48px) 0 clamp(20px, 3vh, 32px);
+  margin: clamp(44px, 8vh, 80px) 0 clamp(24px, 4vh, 40px);
   font-family: var(--f-mono);
   font-size: 13px;
   letter-spacing: 0.08em;
@@ -393,7 +406,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: clamp(12px, 3vw, 44px);
 }
 .cs-outro__projects a {
