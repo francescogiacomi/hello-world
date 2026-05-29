@@ -27,6 +27,14 @@
     }
     /* Impact has four figures on this page */
     .cs-impact__stats--four { grid-template-columns: repeat(4, 1fr); }
+    /* Mobile: let the cockpit reach the right edge instead of looking cut */
+    @media (max-width: 900px) {
+      .cs-hero__media {
+        width: 124%;
+        margin-left: auto;
+        margin-right: calc(var(--gutter) * -1);
+      }
+    }
   </style>
 </head>
 <body>
