@@ -25,6 +25,8 @@
       -webkit-mask-image: linear-gradient(to right, transparent 8%, rgba(0,0,0,0.35) 26%, #000 46%);
               mask-image: linear-gradient(to right, transparent 8%, rgba(0,0,0,0.35) 26%, #000 46%);
     }
+    /* Impact has four figures on this page */
+    .cs-impact__stats--four { grid-template-columns: repeat(4, 1fr); }
   </style>
 </head>
 <body>
@@ -243,14 +245,13 @@
       <section class="cs-context cs-impact" id="impact">
         <div class="cs-context__inner">
           <div class="cs-context__head">
-            <h2>What the cockpit delivers on the road.</h2>
+            <h2>The work behind the glance.</h2>
           </div>
-          <dl class="cs-context__stats cs-impact__stats">
-            <div><dt>3.6"</dt><dd>round display designed end-to-end</dd></div>
-            <div><dt>&lt;3s</dt><dd>glance time for primary information</dd></div>
-            <div><dt>3</dt><dd>core modes — ride, navigation, media</dd></div>
-            <div><dt>100+</dt><dd>years of heritage in a digital language</dd></div>
-            <div><dt>1</dt><dd>message per screen, the system's core rule</dd></div>
+          <dl class="cs-context__stats cs-impact__stats cs-impact__stats--four">
+            <div><dt>5</dt><dd>core contexts designed end-to-end — ride · navigation · music · phone · vehicle</dd></div>
+            <div><dt>7</dt><dd>dashboard views, from main display to settings, all built on the same logic</dd></div>
+            <div><dt>3.6"</dt><dd>of round canvas, calibrated pixel by pixel for direct sunlight legibility</dd></div>
+            <div><dt>1</dt><dd>interaction model — a six-input joystick, consistent across every context</dd></div>
           </dl>
         </div>
       </section>
