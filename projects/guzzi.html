@@ -20,6 +20,11 @@
       --primary-bright: #6A6D72;
       --primary-deep: #3F4145;
     }
+    /* Fade the left part of the hero image so the handlebar doesn't sit over the text */
+    .cs-hero__media img {
+      -webkit-mask-image: linear-gradient(to right, transparent 8%, rgba(0,0,0,0.35) 26%, #000 46%);
+              mask-image: linear-gradient(to right, transparent 8%, rgba(0,0,0,0.35) 26%, #000 46%);
+    }
   </style>
 </head>
 <body>
