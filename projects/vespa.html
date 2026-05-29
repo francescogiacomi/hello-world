@@ -24,6 +24,10 @@
     .cs-impact__stats--four { grid-template-columns: repeat(4, 1fr); }
     /* Vespa hero rig (line-art handlebar wrapping the dashboard) */
     .cs-hero__media .vespa-rig { display: block; width: 100%; height: auto; overflow: visible; }
+    /* Keep the rig on the right so it never sits over the hero text */
+    @media (min-width: 901px) {
+      .cs-hero__media { width: clamp(420px, 46vw, 600px); right: clamp(0px, 2vw, 32px); bottom: auto; top: clamp(150px, 22vh, 260px); }
+    }
   </style>
 </head>
 <body>
@@ -69,30 +73,44 @@
           </div>
         </div>
         <div class="cs-hero__media" data-parallax="0.14">
-          <svg class="vespa-rig" viewBox="0 0 1100 760" fill="none" xmlns="http://www.w3.org/2000/svg"
+          <svg class="vespa-rig" viewBox="0 0 1120 860" fill="none" xmlns="http://www.w3.org/2000/svg"
                stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"
                role="img" aria-label="Vespa 230 Tech handlebar with digital dashboard">
             <defs>
-              <clipPath id="vespaScreen"><rect x="335" y="250" width="430" height="264" rx="26"/></clipPath>
+              <clipPath id="vespaScreen"><rect x="412" y="306" width="296" height="182" rx="16"/></clipPath>
             </defs>
-            <!-- leg shield / front body -->
-            <path d="M250 700 C232 520 250 372 350 322 C440 280 660 280 750 322 C850 372 868 520 850 700"/>
-            <!-- handlebar -->
-            <path d="M120 486 C330 420 770 420 980 486"/>
+            <!-- leg shield / front body with central spine + glovebox -->
+            <path d="M442 800 C430 700 426 636 432 596
+                     C360 558 330 516 346 472
+                     C356 442 382 426 412 416
+                     C432 356 472 300 512 272
+                     C536 252 584 252 608 272
+                     C648 300 688 356 708 416
+                     C738 426 764 442 774 472
+                     C790 516 760 558 688 596
+                     C694 636 690 700 678 800 Z"/>
+            <!-- handlebar arms -->
+            <path d="M346 470 C300 460 226 468 156 486"/>
+            <path d="M774 470 C820 460 894 468 964 486"/>
             <!-- grips -->
-            <path d="M150 480 l52 -14" stroke-width="16"/>
-            <path d="M950 480 l-52 -14" stroke-width="16"/>
+            <path d="M156 486 L92 508" stroke-width="18"/>
+            <path d="M964 486 L1028 508" stroke-width="18"/>
+            <!-- switchgear blocks -->
+            <rect x="300" y="452" width="46" height="40" rx="8"/>
+            <rect x="774" y="452" width="46" height="40" rx="8"/>
             <!-- left mirror -->
-            <path d="M188 462 L122 250"/>
-            <ellipse cx="104" cy="210" rx="52" ry="74" transform="rotate(-18 104 210)"/>
+            <path d="M300 452 C250 372 196 268 156 200"/>
+            <ellipse cx="124" cy="168" rx="70" ry="96" transform="rotate(-20 124 168)"/>
             <!-- right mirror -->
-            <path d="M912 462 L978 250"/>
-            <ellipse cx="996" cy="210" rx="52" ry="74" transform="rotate(18 996 210)"/>
+            <path d="M820 452 C870 372 924 268 964 200"/>
+            <ellipse cx="996" cy="168" rx="70" ry="96" transform="rotate(20 996 168)"/>
+            <!-- glovebox keyhole -->
+            <circle cx="560" cy="690" r="18"/>
             <!-- dashboard screen image -->
-            <image href="../assets/img/projects/vespadash.png" x="335" y="250" width="430" height="264"
+            <image href="../assets/img/projects/vespadash.png" x="412" y="306" width="296" height="182"
                    preserveAspectRatio="xMidYMid meet" clip-path="url(#vespaScreen)"/>
             <!-- screen bezel on top -->
-            <rect x="323" y="238" width="454" height="288" rx="32"/>
+            <rect x="402" y="296" width="316" height="202" rx="22"/>
           </svg>
         </div>
       </header>
