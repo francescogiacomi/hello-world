@@ -351,6 +351,19 @@
   width: 100%;
   height: auto;
 }
+/* Two screens side by side, with a gentle vertical offset */
+.cs-decision__media--two {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 40px);
+}
+.cs-decision__media--two img { flex: 1 1 0; min-width: 0; }
+.cs-decision__media--two img:nth-child(2) { transform: translateY(clamp(20px, 4vw, 56px)); }
+/* Round variant — circular screens (e.g. the dashboard dial) */
+.cs-decision__media--round img { border-radius: 50%; }
+@media (max-width: 600px) {
+  .cs-decision__media--two img:nth-child(2) { transform: none; }
+}
 @media (max-width: 860px) {
   .cs-decision__media {
     order: 1;
