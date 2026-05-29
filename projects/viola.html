@@ -24,7 +24,6 @@
       <a href="#problem" data-cursor="hover">Problem</a>
       <a href="#key-decisions" data-cursor="hover">Key Decision</a>
       <a href="#impact" data-cursor="hover">Impact</a>
-      <a href="../index.html#contact" data-cursor="hover">Contact</a>
     </nav>
   </header>
 
@@ -32,7 +31,7 @@
     <article class="cs">
 
       <!-- ===== HERO (testata) ===== -->
-      <header class="cs-hero">
+      <header class="cs-hero" id="top">
         <div class="cs-hero__inner">
           <a class="cs-hero__back" href="../index.html" data-cursor="hover">← Home</a>
           <h1 class="cs-hero__title">
@@ -231,13 +230,18 @@
         </div>
       </section>
 
-      <!-- ===== NEXT ===== -->
-      <nav class="cs-next">
-        <a href="../index.html#work" data-cursor="hover">
-          <span>Next</span>
-          <strong>Back to work →</strong>
+      <!-- ===== OUTRO — back to top + other projects ===== -->
+      <footer class="cs-outro">
+        <a class="cs-outro__top" href="#top" data-cursor="hover" aria-label="Back to top">
+          <span aria-hidden="true">↑</span>
         </a>
-      </nav>
+        <p class="cs-outro__label">Navigate other projects</p>
+        <ul class="cs-outro__projects">
+          <li><a href="../index.html#work" data-cursor="hover">Moto Guzzi <span aria-hidden="true">↗</span></a></li>
+          <li><a href="../index.html#work" data-cursor="hover">Vespa 230 Tech <span aria-hidden="true">↗</span></a></li>
+          <li><a href="../index.html#work" data-cursor="hover">Bocconi <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </footer>
     </article>
   </main>
 

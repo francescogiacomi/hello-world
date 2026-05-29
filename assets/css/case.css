@@ -359,6 +359,58 @@
 }
 
 /* ----------------------------------------------------------------
+   Outro — back to top + other projects
+   ---------------------------------------------------------------- */
+.cs-outro {
+  text-align: center;
+  padding: clamp(64px, 12vh, 140px) var(--gutter) clamp(72px, 12vh, 150px);
+  border-top: 1px solid var(--hairline-light);
+}
+.cs-outro__top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline-strong);
+  font-size: 22px;
+  color: var(--ink);
+  transition: transform .3s var(--ease-out), background .3s var(--ease-out), color .3s var(--ease-out);
+}
+.cs-outro__top:hover { transform: translateY(-4px); background: var(--ink); color: #fff; }
+.cs-outro__label {
+  margin: clamp(28px, 5vh, 48px) 0 clamp(20px, 3vh, 32px);
+  font-family: var(--f-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.cs-outro__projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 44px);
+}
+.cs-outro__projects a {
+  font-family: var(--f-display);
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 44px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  transition: color .3s var(--ease-out);
+}
+.cs-outro__projects a:hover { color: var(--primary); }
+.cs-outro__projects a span { font-size: 0.5em; }
+
+/* ----------------------------------------------------------------
    Full-bleed break image — edge to edge
    ---------------------------------------------------------------- */
 .cs-fullbleed {
