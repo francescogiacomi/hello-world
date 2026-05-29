@@ -41,10 +41,10 @@
     .vespa-switch__head { max-width: 64ch; margin: 0 auto; text-align: center; }
     .vespa-switch__head h2 { font-family: var(--f-display); font-weight:500; font-size: clamp(28px,3.6vw,52px); line-height:1.08; letter-spacing:-0.02em; margin:0 0 18px; color: var(--on-dark); }
     .vespa-switch__head p { font-size: clamp(16px,1.3vw,19px); line-height:1.6; color: var(--on-dark-mute); margin:0 auto; max-width:56ch; }
-    .vespa-switch__stage { max-width: min(1500px, 94vw); margin: clamp(36px,7vh,72px) auto clamp(32px,5vh,52px); }
+    .vespa-switch__stage { max-width: min(1750px, 98vw); margin: clamp(36px,7vh,72px) auto clamp(32px,5vh,52px); }
     .vespa-switch__stage .vespa-rig { display:block; width:100%; height:auto; }
-    #vespaCockpit { transition: opacity .22s ease; }
-    .vespa-switch__control-wrap { text-align:center; }
+    .vespa-cockpit { transition: opacity .55s cubic-bezier(.4,0,.2,1); }
+    .vespa-switch__control-wrap { text-align:center; margin-top: clamp(28px,5vh,48px); }
     .vespa-switch__control { position: relative; display: inline-flex; gap: 4px; padding: 6px; border-radius: 999px; background: rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14); }
     .vespa-switch__pill { position:absolute; top:6px; bottom:6px; left:0; width:0; border-radius:999px; background:#fff; z-index:0; transition: transform .4s cubic-bezier(.22,1,.36,1), width .4s cubic-bezier(.22,1,.36,1); }
     .vespa-switch__btn { position:relative; z-index:1; border:0; background:transparent; cursor:pointer; font-family:var(--f-mono); font-size:13px; letter-spacing:.06em; text-transform:uppercase; color: var(--on-dark-mute); padding: 12px 22px; border-radius:999px; transition: color .3s; }
@@ -154,6 +154,17 @@
           <h2>Same family. One generation later.</h2>
           <p>The previous Vespa dashboard set the language. The new one carries it forward — same proportions, same identity, sharper details. The rider transitions between generations without learning anything new. That's the point.</p>
         </div>
+        <div class="vespa-switch__control-wrap">
+          <div class="vespa-switch__control" role="tablist" aria-label="Dashboard views">
+            <span class="vespa-switch__pill" aria-hidden="true"></span>
+            <button class="vespa-switch__btn is-active" data-img="../assets/img/projects/vespadash.png">Main</button>
+            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-trip.png">Trip</button>
+            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-navi.png">Navi</button>
+            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-message.png">Message</button>
+            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-settings.jpg">Settings</button>
+            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-night.png">Night Mode</button>
+          </div>
+        </div>
         <div class="vespa-switch__stage">
           <svg class="vespa-rig" viewBox="0 0 1100 619" fill="none" xmlns="http://www.w3.org/2000/svg"
                          stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
@@ -199,21 +210,10 @@
                       <path d="M 538 165 L 509 170 L 489 177 L 483 183 L 493 177 L 510 171 L 539 166 L 561 166 L 582 169 L 599 174 L 617 183 L 611 177 L 591 170 L 562 165"/>
                       <path d="M 1000 113 L 960 125 L 934 167 L 892 194 L 882 209 L 873 207 L 868 217 L 792 259 L 782 281 L 776 276 L 775 282 L 786 283 L 782 273 L 794 260 L 874 215 L 887 218 L 924 194 L 938 193 L 943 200 L 936 165 L 973 119 L 1041 114 L 1077 122 L 1083 141 L 1064 177 L 992 206 L 1053 187 L 1073 166 L 1085 131 L 1079 119 L 1042 113"/>
                       <path d="M 73 112 L 22 119 L 17 141 L 32 171 L 17 134 L 27 120 L 74 113 L 129 119 L 164 162 L 167 178 L 158 200 L 163 193 L 174 197 L 180 187 L 223 212 L 183 195 L 213 212 L 199 211 L 223 220 L 230 216 L 306 259 L 320 274 L 312 257 L 184 187 L 193 181 L 181 176 L 177 184 L 176 169 L 167 171 L 138 122 L 89 112"/>
-                      <image id="vespaCockpit" href="../assets/img/projects/vespadash.png" x="446" y="243" width="208" height="126"
-                             preserveAspectRatio="xMidYMid slice" clip-path="url(#vespaScreen)"/>
+                      <image class="vespa-cockpit" id="cockA" href="../assets/img/projects/vespadash.png" x="446" y="243" width="208" height="126" preserveAspectRatio="xMidYMid slice" clip-path="url(#vespaScreen)"/>
+                      <image class="vespa-cockpit" id="cockB" href="" x="446" y="243" width="208" height="126" preserveAspectRatio="xMidYMid slice" clip-path="url(#vespaScreen)" style="opacity:0"/>
                       <rect x="441" y="238" width="218" height="136" rx="11" stroke-width="4"/>
                     </svg>
-        </div>
-        <div class="vespa-switch__control-wrap">
-          <div class="vespa-switch__control" role="tablist" aria-label="Dashboard views">
-            <span class="vespa-switch__pill" aria-hidden="true"></span>
-            <button class="vespa-switch__btn is-active" data-img="../assets/img/projects/vespadash.png">Main</button>
-            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-trip.png">Trip</button>
-            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-navi.png">Navi</button>
-            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-message.png">Message</button>
-            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-settings.jpg">Settings</button>
-            <button class="vespa-switch__btn" data-img="../assets/img/projects/vespa-night.png">Night Mode</button>
-          </div>
         </div>
       </section>
 
@@ -247,13 +247,13 @@
     var sec=document.querySelector('.vespa-switch'); if(!sec)return;
     var btns=[].slice.call(sec.querySelectorAll('.vespa-switch__btn'));
     var pill=sec.querySelector('.vespa-switch__pill');
-    var cockpit=document.getElementById('vespaCockpit');
+    var layers=[document.getElementById('cockA'),document.getElementById('cockB')]; var front=0; var XLINK='http://www.w3.org/1999/xlink';
     function move(btn){ if(!pill||!btn)return; pill.style.width=btn.offsetWidth+'px'; pill.style.transform='translateX('+btn.offsetLeft+'px)'; }
     function activate(btn){
       btns.forEach(function(b){ b.classList.toggle('is-active', b===btn); });
       move(btn);
       var img=btn.getAttribute('data-img');
-      if(img&&cockpit){ cockpit.style.opacity='0'; setTimeout(function(){ cockpit.setAttribute('href',img); cockpit.setAttributeNS('http://www.w3.org/1999/xlink','href',img); cockpit.style.opacity='1'; },200); }
+      if(img){ var back=layers[1-front], fr=layers[front]; back.setAttribute('href',img); back.setAttributeNS(XLINK,'href',img); back.parentNode.appendChild(back); back.style.opacity='0'; requestAnimationFrame(function(){ back.style.opacity='1'; }); setTimeout(function(){ fr.style.opacity='0'; },600); front=1-front; }
     }
     btns.forEach(function(b){ b.addEventListener('click',function(){activate(b);}); });
     function init(){ move(sec.querySelector('.vespa-switch__btn.is-active')||btns[0]); }
