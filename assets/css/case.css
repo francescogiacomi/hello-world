@@ -294,8 +294,8 @@
   margin: 0 auto;
   padding: clamp(40px, 7vh, 96px) var(--gutter) clamp(56px, 9vh, 120px);
   display: grid;
-  grid-template-columns: 0.95fr 1.2fr;
-  gap: clamp(20px, 2.5vw, 48px);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
+  gap: clamp(32px, 4vw, 80px);
   align-items: center;
 }
 @media (max-width: 860px) { .cs-decision { grid-template-columns: 1fr; gap: 28px; } }
@@ -339,15 +339,12 @@
   display: block;
   width: 100%;
   height: auto;
-  transform: scale(1.74);
-  transform-origin: right center;
 }
 @media (max-width: 860px) {
   .cs-decision__media {
     order: 1;
     margin: 4px calc(var(--gutter) * -1) 0;
   }
-  .cs-decision__media img { transform: none; }
 }
 
 /* ----------------------------------------------------------------
