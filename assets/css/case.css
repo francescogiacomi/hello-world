@@ -435,6 +435,12 @@
   width: 100%;
   height: auto;
 }
+/* Capped height variant — crop instead of growing tall */
+.cs-fullbleed--cap img {
+  max-height: 1080px;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* ----------------------------------------------------------------
    Figures / image grids
