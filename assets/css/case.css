@@ -439,7 +439,7 @@
 .cs-fullbleed--cap img {
   max-height: 680px;
   object-fit: cover;
-  object-position: center 32%;
+  object-position: center 22%;
 }
 
 /* ----------------------------------------------------------------
