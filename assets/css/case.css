@@ -364,6 +364,21 @@
 }
 /* Round variant — circular screens (e.g. the dashboard dial) */
 .cs-decision__media--round img { border-radius: 50%; }
+
+/* Entrance animation for the Key Decision screens */
+.cs-decision__media[data-reveal] {
+  opacity: 0;
+  transform: translateY(34px) scale(0.92);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+  will-change: transform, opacity;
+}
+.cs-decision__media[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-decision__media[data-reveal] { opacity: 1; transform: none; transition: none; }
+}
 @media (max-width: 860px) {
   .cs-decision__media {
     order: 1;
