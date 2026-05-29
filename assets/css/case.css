@@ -437,9 +437,9 @@
 }
 /* Capped height variant — crop instead of growing tall */
 .cs-fullbleed--cap img {
-  max-height: 1080px;
+  max-height: 680px;
   object-fit: cover;
-  object-position: center;
+  object-position: center 32%;
 }
 
 /* ----------------------------------------------------------------
