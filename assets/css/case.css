@@ -369,7 +369,7 @@
 .cs-decision__media[data-reveal] {
   opacity: 0;
   transform: translateY(34px) scale(0.92);
-  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+  transition: opacity 1s var(--ease-out) .12s, transform 1s var(--ease-out) .12s;
   will-change: transform, opacity;
 }
 .cs-decision__media[data-reveal].is-in {

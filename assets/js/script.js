@@ -86,6 +86,11 @@
   /* ---------------------------------------------------------
      Reveal-on-scroll
      --------------------------------------------------------- */
+  // Auto-tag case-study content blocks so they animate in on scroll
+  document.querySelectorAll(
+    '.cs-context__head, .cs-context__stats, .cs-block__title, .cs-block__body, .cs-decision__text'
+  ).forEach((el) => el.setAttribute('data-reveal', ''));
+
   const revealTargets = document.querySelectorAll('[data-reveal]');
   if (revealTargets.length && 'IntersectionObserver' in window && !prefersReduced) {
     const io = new IntersectionObserver((entries) => {
