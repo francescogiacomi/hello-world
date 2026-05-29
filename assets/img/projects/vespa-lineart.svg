@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" fill="none" stroke="#7A4042" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- wheels -->
+  <circle cx="255" cy="470" r="72"/>
+  <circle cx="255" cy="470" r="26"/>
+  <circle cx="780" cy="470" r="72"/>
+  <circle cx="780" cy="470" r="26"/>
+
+  <!-- front fender over front wheel -->
+  <path d="M180 455 C176 372 238 352 312 384"/>
+
+  <!-- leg shield front + step-through + floorboard -->
+  <path d="M198 440 C188 332 210 268 250 244
+           C276 228 305 228 320 246
+           C332 260 333 296 333 330
+           L333 384 L560 384"/>
+
+  <!-- rear monocoque cowl over rear wheel -->
+  <path d="M560 384 C612 384 624 352 660 318
+           C712 268 762 258 818 280
+           C884 306 902 386 872 446
+           C858 474 832 492 800 496"/>
+
+  <!-- seat (stepped: rider + passenger) -->
+  <path d="M455 312 C455 286 495 274 556 276
+           C566 250 596 240 640 242
+           C706 245 760 258 792 286"/>
+
+  <!-- handlebar stem + grip -->
+  <path d="M306 244 C300 200 304 172 326 154"/>
+  <path d="M300 152 L398 132"/>
+
+  <!-- headlight on leg shield -->
+  <circle cx="262" cy="262" r="24"/>
+
+  <!-- mirror -->
+  <path d="M372 138 L392 100"/>
+  <ellipse cx="396" cy="92" rx="16" ry="22"/>
+</svg>
