@@ -468,14 +468,16 @@
 /* ----------------------------------------------------------------
    Prototype gallery
    ---------------------------------------------------------------- */
-.cs-gallery { max-width: calc(var(--cs-max) + var(--gutter) * 2); margin: 0 auto; padding: clamp(40px,7vh,90px) var(--gutter) clamp(56px,9vh,120px); }
-.cs-gallery__eyebrow { font-family: var(--f-mono); font-size: clamp(13px,1vw,15px); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-mute); margin: 0 0 clamp(28px,5vh,48px); }
-.cs-gallery__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: clamp(24px,3vw,48px); }
-@media (max-width:760px){ .cs-gallery__grid { grid-template-columns: 1fr; } }
-.cs-gallery__item figure { margin: 0; }
-.cs-gallery__item img { width: 100%; height: auto; display: block; border-radius: var(--r-lg); border: 1px solid var(--hairline-light); background: #f3f3f5; }
-.cs-gallery__item figcaption { margin-top: 14px; font-size: clamp(14px,1.05vw,16px); line-height: 1.5; color: var(--ink-soft); }
-.cs-gallery__item figcaption b { color: var(--ink); font-weight: 600; }
+.cs-gallery { background: var(--testata); color: var(--on-testata, #fff); padding: clamp(64px,11vh,150px) var(--gutter); }
+.cs-gallery__title { font-family: var(--f-display); font-weight: 500; font-size: clamp(30px,4.4vw,68px); line-height: 1.05; letter-spacing: -.02em; color: #fff; margin: 0 auto clamp(40px,7vh,80px); max-width: var(--cs-max); }
+.cs-gallery__list { max-width: var(--cs-max); margin: 0 auto; display: flex; flex-direction: column; gap: clamp(56px,10vh,128px); }
+.cs-gallery__shot { margin: 0; width: min(76%, 920px); }
+.cs-gallery__shot--right { margin-left: auto; text-align: right; }
+.cs-gallery__shot figcaption { font-size: clamp(15px,1.3vw,19px); line-height: 1.5; color: var(--on-testata-mute, rgba(255,255,255,.74)); margin: 0 0 20px; max-width: 56ch; }
+.cs-gallery__shot--right figcaption { margin-left: auto; }
+.cs-gallery__shot figcaption b { color: #fff; font-weight: 600; }
+.cs-gallery__shot img { width: 100%; height: auto; display: block; border-radius: 14px; }
+@media (max-width:760px){ .cs-gallery__shot, .cs-gallery__shot--right { width: 100%; text-align: left; } .cs-gallery__shot--right figcaption { margin-left: 0; } }
 
 /* Closing line under final image */
 .cs-closing { text-align: center; padding: clamp(40px,7vh,90px) var(--gutter) clamp(48px,8vh,110px); }
