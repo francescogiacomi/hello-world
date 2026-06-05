@@ -24,15 +24,15 @@
       .cs-hero__media { width: clamp(440px, 50vw, 820px); right: clamp(0px,2vw,40px); bottom: auto; top: clamp(340px, 44vh, 580px); }
     }
     @media (min-width: 861px) {
-      #decision { grid-template-columns: minmax(0, 400px) minmax(0, 1fr); align-items: center; }
+      #decision { grid-template-columns: minmax(0, 520px) minmax(0, 1fr); align-items: center; gap: clamp(24px, 3vw, 56px); }
       #decision .cs-decision__media { position: relative; display: flex; align-items: center; justify-content: center; }
       #decision .cs-decision__media::before {
         content: ""; position: absolute; z-index: 0;
-        width: min(34vw, 540px); aspect-ratio: 1 / 1; border-radius: 50%;
+        width: min(40vw, 660px); aspect-ratio: 1 / 1; border-radius: 50%;
         background: var(--testata);
         left: 50%; top: 50%; transform: translate(-50%, -50%);
       }
-      #decision .cs-decision__media img { position: relative; z-index: 1; width: 108%; max-width: none; }
+      #decision .cs-decision__media img { position: relative; z-index: 1; width: 124%; max-width: none; }
     }
   </style>
 </head>
