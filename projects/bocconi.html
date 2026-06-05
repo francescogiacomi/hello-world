@@ -20,6 +20,9 @@
       --primary-bright: #2E63AD;
       --primary-deep: #143A6B;
     }
+    @media (min-width: 901px) {
+      .cs-hero__media { width: clamp(360px, 42vw, 640px); right: clamp(0px,2vw,40px); bottom: auto; top: clamp(140px, 18vh, 280px); }
+    }
   </style>
 </head>
 <body>
@@ -161,19 +164,19 @@
         <h2 class="cs-principles__title">Four rules that shaped every decision.</h2>
         <div class="cs-principles__grid">
           <div class="cs-principles__item">
-            <h3>Scalable navigation</h3>
+            <div class="cs-principles__head"><span class="cs-principles__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg></span><h3>Scalable navigation</h3></div>
             <p>From overview to detail, always one click away. The platform was designed to grow with new spaces, events and roles without restructuring.</p>
           </div>
           <div class="cs-principles__item">
-            <h3>Clarity over density</h3>
+            <div class="cs-principles__head"><span class="cs-principles__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span><h3>Clarity over density</h3></div>
             <p>Complex operational data made readable through visual hierarchy and grouping. The screen never shows everything; it shows what matters now.</p>
           </div>
           <div class="cs-principles__item">
-            <h3>Consistency</h3>
+            <div class="cs-principles__head"><span class="cs-principles__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span><h3>Consistency</h3></div>
             <p>Repeated patterns for bookings, notifications and reports. Users learn the system once and reuse the same logic in every context.</p>
           </div>
           <div class="cs-principles__item">
-            <h3>Accessibility</h3>
+            <div class="cs-principles__head"><span class="cs-principles__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7.6" r="1.2" fill="currentColor" stroke="none"/><path d="M5.5 9.5c2 1 4 1.4 6.5 1.4s4.5-.4 6.5-1.4"/><path d="M12 11v4"/><path d="M12 15l-3 4"/><path d="M12 15l3 4"/></svg></span><h3>Accessibility</h3></div>
             <p>Clear labels, color-coded states, predictable interactions. The platform is operational software — it has to work for everyone on the team, every day.</p>
           </div>
         </div>
@@ -209,7 +212,7 @@
       <!-- ===== VISUAL CLOSING ===== -->
       <figure class="cs-fullbleed">
         <img src="../assets/img/projects/bocconi-closing.png" alt="Bocconi platform in context"
-             onerror="this.onerror=null; this.src='../assets/img/projects/bocconiintro.png';" />
+             onerror="this.closest('figure').style.display='none';" />
       </figure>
       <div class="cs-closing">
         <p>Operational software, finally readable.</p>
