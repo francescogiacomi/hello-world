@@ -31,9 +31,9 @@
   <header class="site-header site-header--case">
     <a class="brand" href="../index.html" data-cursor="hover">Francesco Giacomi</a>
     <nav class="nav" aria-label="Primary">
-      <a href="#problem" data-cursor="hover">Problem</a>
-      <a href="#key-decisions" data-cursor="hover">Key Decision</a>
-      <a href="#impact" data-cursor="hover">Impact</a>
+      <a href="#problem" data-cursor="hover">Context</a>
+      <a href="#approach" data-cursor="hover">Approach</a>
+      <a href="#decision" data-cursor="hover">Decision</a>
     </nav>
   </header>
 
@@ -45,23 +45,28 @@
         <div class="cs-hero__inner">
           <a class="cs-hero__back" href="../index.html" data-cursor="hover">← Home</a>
           <h1 class="cs-hero__title">
-            A Bocconi <em>case study</em>.
+            One calendar to <em>run a university</em>.
           </h1>
           <div class="cs-hero__col">
             <p class="cs-hero__intro">
-              Placeholder intro — replace with the Bocconi project description.
+              As Lead Product Designer, I shaped the operational platform that
+              powers Bocconi's daily life — a backend tool used by staff, alumni
+              and administrators to manage classrooms, bookings and events from a
+              single calendar. The goal: turn a multi-role operational system into
+              one interface anyone can read at a glance.
             </p>
             <dl class="cs-hero__meta">
-              <div><dt>Industry</dt><dd>Education</dd></div>
-              <div><dt>Year</dt><dd>—</dd></div>
-              <div><dt>Client</dt><dd>Bocconi</dd></div>
+              <div><dt>Industry</dt><dd>Education · Enterprise Operations</dd></div>
+              <div><dt>Year</dt><dd>2023</dd></div>
+              <div><dt>Client</dt><dd>Bocconi University</dd></div>
               <div><dt>Role</dt><dd>Lead Product Designer</dd></div>
-              <div><dt>Scope</dt><dd>—</dd></div>
+              <div><dt>Scope</dt><dd>Service Design · UX Research · UI Design · Prototyping</dd></div>
+              <div><dt>Website</dt><dd><a href="https://www.unibocconi.it/" target="_blank" rel="noopener">unibocconi.it</a></dd></div>
             </dl>
           </div>
         </div>
         <div class="cs-hero__media" data-parallax="0.14">
-          <img src="../assets/img/projects/bocconiintro.png" alt="Bocconi project"
+          <img src="../assets/img/projects/bocconiintro.png" alt="Bocconi operational platform"
                onerror="this.onerror=null; this.src='../assets/img/projects/bocconi.webp';" />
         </div>
       </header>
@@ -70,169 +75,145 @@
       <section class="cs-context" id="problem">
         <div class="cs-context__inner">
           <div class="cs-context__head">
-            <h2>Walking alone shouldn't feel like a risk.</h2>
+            <h2>Behind every classroom, a coordination problem.</h2>
             <div class="cs-context__copy">
               <p>
-                In Italy, fear of walking alone isn't an exception, it's a
-                daily constant for millions of people.
-              </p>
-              <p>
-                The data on gender-based violence and perceived safety in
-                public spaces shows a problem that everyday products and
-                services have largely ignored.
+                A university the size of Bocconi runs hundreds of events, classes,
+                alumni gatherings and external meetings every week. Behind every
+                smooth experience sits a coordination problem: classrooms with
+                limited capacity, multiple stakeholders requesting the same space,
+                special guests, last-minute rescheduling. Until this project, the
+                complexity was managed across spreadsheets, emails and disconnected
+                tools — each role using a different system, none seeing the whole
+                picture.
               </p>
             </div>
           </div>
           <dl class="cs-context__stats">
-            <div>
-              <dt>31.5%</dt>
-              <dd>of people aged 16–70 in Italy have experienced physical or
-                sexual violence in their lifetime (ISTAT)</dd>
-            </div>
-            <div>
-              <dt>20.2%</dt>
-              <dd>have experienced physical violence</dd>
-            </div>
-            <div>
-              <dt>21%</dt>
-              <dd>have experienced sexual violence</dd>
-            </div>
+            <div><dt>3</dt><dd>user roles — alumni · staff · admin: three perspectives, one shared operational reality</dd></div>
+            <div><dt>5+</dt><dd>booking states — available, booked, special request, external guest, unavailable, each with its own visual code</dd></div>
+            <div><dt>All</dt><dd>end-to-end flows mapped before the first pixel — booking, approval, rejection, rescheduling, exception handling</dd></div>
           </dl>
         </div>
       </section>
 
       <!-- ===== APPROACH ===== -->
-      <section class="cs-block">
-        <h2 class="cs-block__title">We designed company, not a panic button.</h2>
+      <section class="cs-block" id="approach">
+        <h2 class="cs-block__title">The calendar as the operating system.</h2>
         <div class="cs-block__body">
           <p>
-            Most safety apps are built around emergencies — a red button you
-            press when something has already gone wrong. User research told us
-            a different story: people feel unsafe long before anything happens.
-            The fear lives in the walk itself, not in the incident. So we
-            shifted the entire product around a single decision: Viola opens
-            with a video call, not an SOS. Human presence first, intervention
-            only if needed.
+            Most management tools default to tables — rows of data, filters,
+            dropdowns. But operational work doesn't live in tables, it lives in
+            time: someone is booking a room <em>for tomorrow</em>, an event runs
+            <em>at 3pm</em>, a special guest arrives <em>Wednesday</em>. So the
+            calendar wasn't treated as a feature — it became
+            <strong>the operating system of the platform</strong>. Every action
+            (booking, approving, reporting, monitoring capacity) is anchored to the
+            calendar view. Users don't navigate sections. They navigate time.
           </p>
           <p>
-            The product was shaped through interviews with women who walk home
-            alone at night, sessions with DonnexStrada operators trained in
-            active listening, and iterative testing with users in real-world
-            conditions — at bus stops, on poorly lit streets, after late
-            shifts.
+            The platform was shaped through two stakeholder workshops, end-to-end
+            flow mapping, role-based persona research, and a visual benchmark of
+            comparable enterprise systems. Every requirement was validated against
+            operational reality before moving into design.
           </p>
           <ul class="cs-data">
-            <li><b>20</b><span>user interviews conducted with women aged 18–55 during discovery and validation</span></li>
-            <li><b>4 yrs</b><span>of continuous product design, from the first release in 2022 to today</span></li>
-            <li><b>6</b><span>core flows designed end-to-end, from onboarding to operator escalation</span></li>
+            <li><b>2</b><span>workshops with stakeholders to validate requirements, roles and edge cases before design</span></li>
+            <li><b>3</b><span>personas mapped to define needs, permissions and pain points across the platform</span></li>
+            <li><b>5</b><span>end-to-end flows — booking, approval, rejection, rescheduling and exception handling</span></li>
           </ul>
         </div>
       </section>
 
-      <!-- ===== FULL-BLEED BREAK IMAGE (sfondo) ===== -->
-      <figure class="cs-fullbleed">
-        <img src="../assets/img/projects/bocconi-sfondo.png" alt="Viola — visual break"
-             onerror="this.parentElement.style.display='none';" />
-      </figure>
-
-      <!-- ===== KEY DECISION (text left, media right) ===== -->
-      <section class="cs-decision" id="key-decisions">
+      <!-- ===== KEY DECISION (single) ===== -->
+      <section class="cs-decision" id="decision">
         <div class="cs-decision__text">
-          <p class="cs-decision__eyebrow">Key Decision #1 — Video Call as Default</p>
-          <h2 class="cs-decision__title">Opening the app with a face, not a panic button.</h2>
+          <p class="cs-decision__eyebrow">Design Decision</p>
+          <h2 class="cs-decision__title">Different roles, same view.</h2>
           <p class="cs-decision__desc">
-            Every safety app is built around an emergency button — red, central,
-            alarming. Our research told a different story: people want to open
-            Viola before something happens. The bus stop at 11pm. The empty
-            street home. The walk back from a friend's place. So the home screen
-            became one large, purple button that doesn't trigger an emergency —
-            it starts a video call with a real, trained operator who stays with
-            the user during the walk. No sirens, no countdown. Just presence.
+            Alumni, staff and administrators have different responsibilities — but
+            they share the same operational reality. Designing a separate dashboard
+            for each role would have multiplied complexity, fragmented data and
+            introduced inconsistency. Instead, we built one shared calendar that
+            adapts to permissions: staff sees what staff can do, admins see what
+            admins can manage, alumni see what's relevant to them. Same visual
+            language, same interaction model, same mental map. Roles change the
+            actions, not the architecture. The result is a system where the support
+            team, the executive office and the alumni association can finally talk
+            about the same calendar — because they're literally looking at it.
           </p>
           <ul class="cs-decision__stats">
-            <li><b>2K</b> video call sessions handled by operators since launch</li>
-            <li><b>24/7</b> human operator availability, every day of the year</li>
+            <li><b>1 shared interface</b> adapting to three role permissions — no parallel dashboards, no data silos</li>
+            <li><b>Color-coded states</b> make room availability, requests and conflicts readable at a glance, across every role</li>
           </ul>
         </div>
-        <div class="cs-decision__media" data-reveal>
-          <img src="../assets/img/projects/bocconi-key1.png" alt="Viola video call screens"
+        <div class="cs-decision__media cs-decision__media--two" data-reveal>
+          <img src="../assets/img/projects/bocconi-key1.png" alt="Bocconi staff calendar view"
+               onerror="this.style.display='none';" />
+          <img src="../assets/img/projects/bocconi-key2.png" alt="Bocconi admin booking requests view"
                onerror="this.style.display='none';" />
         </div>
       </section>
 
-      <!-- ===== KEY DECISION #2 ===== -->
-      <section class="cs-decision">
-        <div class="cs-decision__text">
-          <p class="cs-decision__eyebrow">Key Decision #2 — Maps &amp; Safe Spaces</p>
-          <h2 class="cs-decision__title">A map that shows where you're safe, not where you're in danger.</h2>
-          <p class="cs-decision__desc">
-            Traditional safety maps highlight risk: red zones, danger areas,
-            crime statistics. They make users feel watched and afraid before
-            they've even left home. We inverted the logic. Viola's map shows only
-            trusted places — hospitals, police stations, pharmacies, and a
-            network of partner spaces called Viola Points where users can stop
-            and breathe. The street stops being a threat to avoid and becomes a
-            route between safe points. Same data, opposite emotion.
-          </p>
-          <ul class="cs-decision__stats">
-            <li><b>900+</b> Viola Points active across Italian cities — a network of trusted spaces built with DonnexStrada</li>
-            <li><b>Real-time</b> location sharing during calls, fully controlled by the user</li>
-          </ul>
-        </div>
-        <div class="cs-decision__media" data-reveal>
-          <img src="../assets/img/projects/bocconi-key2.png" alt="Viola map and safe spaces screens"
-               onerror="this.style.display='none';" />
-        </div>
-      </section>
-
-      <!-- ===== FULL-BLEED IMAGE — Design System in Action (005) ===== -->
-      <figure class="cs-fullbleed">
-        <img src="../assets/img/projects/bocconi-005.png" alt="Viola — Design System in Action"
-             onerror="this.parentElement.style.display='none';" />
-      </figure>
-
-      <!-- ===== KEY DECISION #3 ===== -->
-      <section class="cs-decision">
-        <div class="cs-decision__text">
-          <p class="cs-decision__eyebrow">Key Decision #3 — Recording as Consent</p>
-          <h2 class="cs-decision__title">Recording is the user's choice. Every single time.</h2>
-          <p class="cs-decision__desc">
-            Recording during a safety call is a delicate tool: it can protect,
-            but it can also intrude. Most apps either record everything by default
-            (privacy violation) or make it impossible to capture evidence (safety
-            gap). We chose a third path. Recording in Viola is always opt-in,
-            asked for in clear language at the start of each session. The footage
-            is saved in the user's personal archive, encrypted, and accessible
-            only to them. The user decides whether to keep it, delete it, or
-            share it — never the operator, never the platform. Consent isn't a
-            checkbox. It's the design.
-          </p>
-          <ul class="cs-decision__stats">
-            <li><b>100%</b> opt-in recording is never triggered automatically — explicit consent required at every session</li>
-            <li><b>End-to-end</b> encrypted archive, owned and accessible only by the user</li>
-          </ul>
-        </div>
-        <div class="cs-decision__media" data-reveal>
-          <img src="../assets/img/projects/bocconi-key3.png" alt="Viola recording consent screens"
-               onerror="this.style.display='none';" />
-        </div>
-      </section>
-
-      <!-- ===== IMPACT (dark) ===== -->
-      <section class="cs-context cs-impact" id="impact">
-        <div class="cs-context__inner">
-          <div class="cs-context__head">
-            <h2>What four years of presence look like.</h2>
+      <!-- ===== DESIGN PRINCIPLES ===== -->
+      <section class="cs-principles" id="principles">
+        <p class="cs-principles__eyebrow">Principles</p>
+        <h2 class="cs-principles__title">Four rules that shaped every decision.</h2>
+        <div class="cs-principles__grid">
+          <div class="cs-principles__item">
+            <h3>Scalable navigation</h3>
+            <p>From overview to detail, always one click away. The platform was designed to grow with new spaces, events and roles without restructuring.</p>
           </div>
-          <dl class="cs-context__stats cs-impact__stats">
-            <div><dt>90K</dt><dd>Downloads on iOS and Android since launch</dd></div>
-            <div><dt>200</dt><dd>Trained supporters available in real time</dd></div>
-            <div><dt>2K</dt><dd>Video call sessions handled by operators</dd></div>
-            <div><dt>4</dt><dd>Languages supported by the operator network</dd></div>
-            <div><dt>7</dt><dd>Countries with active users</dd></div>
-          </dl>
+          <div class="cs-principles__item">
+            <h3>Clarity over density</h3>
+            <p>Complex operational data made readable through visual hierarchy and grouping. The screen never shows everything; it shows what matters now.</p>
+          </div>
+          <div class="cs-principles__item">
+            <h3>Consistency</h3>
+            <p>Repeated patterns for bookings, notifications and reports. Users learn the system once and reuse the same logic in every context.</p>
+          </div>
+          <div class="cs-principles__item">
+            <h3>Accessibility</h3>
+            <p>Clear labels, color-coded states, predictable interactions. The platform is operational software — it has to work for everyone on the team, every day.</p>
+          </div>
         </div>
       </section>
+
+      <!-- ===== PROTOTYPE GALLERY ===== -->
+      <section class="cs-gallery" id="interface">
+        <p class="cs-gallery__eyebrow">The interface</p>
+        <div class="cs-gallery__grid">
+          <div class="cs-gallery__item"><figure>
+            <img src="../assets/img/projects/bocconi-proto1.png" alt="" onerror="this.closest('figure').style.display='none';" />
+            <figcaption><b>The shared calendar</b> — The operating system of the platform. Time-anchored, role-aware, conflict-aware.</figcaption>
+          </figure></div>
+          <div class="cs-gallery__item"><figure>
+            <img src="../assets/img/projects/bocconi-proto2.png" alt="" onerror="this.closest('figure').style.display='none';" />
+            <figcaption><b>Booking requests</b> — Incoming requests grouped by status, with special-request and external-guest tags surfaced for quick triage.</figcaption>
+          </figure></div>
+          <div class="cs-gallery__item"><figure>
+            <img src="../assets/img/projects/bocconi-proto3.png" alt="" onerror="this.closest('figure').style.display='none';" />
+            <figcaption><b>Request detail</b> — One-screen view with full context, special needs and a single-tap accept/reject action.</figcaption>
+          </figure></div>
+          <div class="cs-gallery__item"><figure>
+            <img src="../assets/img/projects/bocconi-proto4.png" alt="" onerror="this.closest('figure').style.display='none';" />
+            <figcaption><b>Day view</b> — Drilldown into a single day, showing capacity load, room availability and special markers in one glance.</figcaption>
+          </figure></div>
+          <div class="cs-gallery__item"><figure>
+            <img src="../assets/img/projects/bocconi-proto5.png" alt="" onerror="this.closest('figure').style.display='none';" />
+            <figcaption><b>Multi-room availability</b> — Parallel view of all rooms at the same time slot, designed for fast comparative decisions.</figcaption>
+          </figure></div>
+        </div>
+      </section>
+
+      <!-- ===== VISUAL CLOSING ===== -->
+      <figure class="cs-fullbleed">
+        <img src="../assets/img/projects/bocconi-closing.png" alt="Bocconi platform in context"
+             onerror="this.onerror=null; this.src='../assets/img/projects/bocconiintro.png';" />
+      </figure>
+      <div class="cs-closing">
+        <p>Operational software, finally readable.</p>
+      </div>
 
       <!-- ===== OUTRO — back to top + other projects ===== -->
       <footer class="cs-outro">
