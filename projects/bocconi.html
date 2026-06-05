@@ -190,7 +190,7 @@
             <figcaption><b>The shared calendar</b> — The operating system of the platform. Time-anchored, role-aware, conflict-aware.</figcaption>
             <img src="../assets/img/projects/bocconi-proto1.png" alt="The shared calendar" onerror="this.closest('figure').style.display='none';" />
           </figure>
-          <figure class="cs-gallery__shot cs-gallery__shot--right">
+          <figure class="cs-gallery__shot">
             <figcaption><b>Booking requests</b> — Incoming requests grouped by status, with special-request and external-guest tags surfaced for quick triage.</figcaption>
             <img src="../assets/img/projects/bocconi-proto2.png" alt="Booking requests" onerror="this.closest('figure').style.display='none';" />
           </figure>
@@ -198,7 +198,7 @@
             <figcaption><b>Request detail</b> — One-screen view with full context, special needs and a single-tap accept/reject action.</figcaption>
             <img src="../assets/img/projects/bocconi-proto3.png" alt="Request detail" onerror="this.closest('figure').style.display='none';" />
           </figure>
-          <figure class="cs-gallery__shot cs-gallery__shot--right">
+          <figure class="cs-gallery__shot">
             <figcaption><b>Day view</b> — Drilldown into a single day, showing capacity load, room availability and special markers in one glance.</figcaption>
             <img src="../assets/img/projects/bocconi-proto4.png" alt="Day view" onerror="this.closest('figure').style.display='none';" />
           </figure>
@@ -243,5 +243,17 @@
   </footer>
 
   <script src="../assets/js/script.js" defer></script>
+  <script>
+  (function(){
+    function layout(){
+      var figs = Array.prototype.slice.call(document.querySelectorAll('.cs-gallery__shot'));
+      var visible = figs.filter(function(f){ return getComputedStyle(f).display !== 'none'; });
+      visible.forEach(function(f,i){ f.classList.toggle('cs-gallery__shot--right', i % 2 === 1); });
+    }
+    if (document.readyState === 'complete') layout();
+    else window.addEventListener('load', layout);
+    setTimeout(layout, 1200);
+  })();
+  </script>
 </body>
 </html>
