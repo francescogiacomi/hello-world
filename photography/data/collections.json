@@ -1,0 +1,264 @@
+{
+  "collections": [
+    {
+      "id": "santorini-2024",
+      "title": "Santorini",
+      "subtitle": "Grecia",
+      "year": 2024,
+      "cover": "https://picsum.photos/id/1040/800/1000",
+      "description": "Due settimane a Santorini nel cuore dell'estate. Luce accecante, muri bianchi, tramonti che sembrano inventati. Ho cercato di catturare i momenti tra una cosa e l'altra — le stradine vuote al mattino presto, i gatti addormentati, l'acqua che cambia colore ogni ora.",
+      "blocks": [
+        {
+          "type": "full",
+          "src": "https://picsum.photos/id/1040/1600/900",
+          "alt": "Vista panoramica di Oia al tramonto",
+          "caption": "Oia, poco prima delle otto di sera",
+          "title": "Tramonto su Oia",
+          "location": "Oia, Santorini",
+          "year": 2024,
+          "forSale": false,
+          "price": null
+        },
+        {
+          "type": "text",
+          "content": "Santorini la conosci dalle cartoline, ma viverla è diverso. Il caldo ti svuota, ti rallenta. E in quel rallentare trovi un ritmo nuovo — cammini, guardi, aspetti la luce giusta senza fretta."
+        },
+        {
+          "type": "pair",
+          "photos": [
+            {
+              "src": "https://picsum.photos/id/1044/800/1000",
+              "alt": "Scalinata bianca con buganvillea",
+              "caption": "Scalini verso il porto vecchio",
+              "title": "Scalinata",
+              "location": "Fira, Santorini",
+              "year": 2024,
+              "forSale": false,
+              "price": null
+            },
+            {
+              "src": "https://picsum.photos/id/1048/800/1000",
+              "alt": "Porta blu su muro bianco",
+              "caption": "Dettaglio, Imerovigli",
+              "title": "Porta blu",
+              "location": "Imerovigli, Santorini",
+              "year": 2024,
+              "forSale": false,
+              "price": null
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "La cosa più bella di fotografare in viaggio è che non stai cercando niente di preciso. Lasci che le cose ti vengano incontro. Una luce particolare su un muro, una barca che passa al momento giusto."
+        },
+        {
+          "type": "full",
+          "src": "https://picsum.photos/id/1051/1600/1000",
+          "alt": "Caldera al tramonto con barche",
+          "caption": "Vista sulla caldera, Fira",
+          "title": "Caldera",
+          "location": "Fira, Santorini",
+          "year": 2024,
+          "forSale": false,
+          "price": null
+        },
+        {
+          "type": "bleed",
+          "src": "https://picsum.photos/id/1057/1920/900",
+          "alt": "Costa rocciosa con mare blu intenso",
+          "caption": null,
+          "title": "Costa sud",
+          "location": "Red Beach, Santorini",
+          "year": 2024,
+          "forSale": false,
+          "price": null
+        },
+        {
+          "type": "pair",
+          "photos": [
+            {
+              "src": "https://picsum.photos/id/164/800/1000",
+              "alt": "Vicolo al crepuscolo",
+              "caption": null,
+              "title": "Vicolo",
+              "location": "Pyrgos, Santorini",
+              "year": 2024,
+              "forSale": false,
+              "price": null
+            },
+            {
+              "src": "https://picsum.photos/id/169/800/1000",
+              "alt": "Finestra con persiane azzurre",
+              "caption": null,
+              "title": "Persiane",
+              "location": "Oia, Santorini",
+              "year": 2024,
+              "forSale": false,
+              "price": null
+            }
+          ]
+        },
+        {
+          "type": "full",
+          "src": "https://picsum.photos/id/188/1600/900",
+          "alt": "Ultimo giorno, porto di Athinios",
+          "caption": "L'ultimo giorno, aspettando il traghetto",
+          "title": "Porto di Athinios",
+          "location": "Athinios, Santorini",
+          "year": 2024,
+          "forSale": false,
+          "price": null
+        }
+      ]
+    },
+    {
+      "id": "dolomiti-2023",
+      "title": "Dolomiti",
+      "subtitle": "Alto Adige",
+      "year": 2023,
+      "cover": "https://picsum.photos/id/29/800/1000",
+      "description": "Una settimana nelle Dolomiti a fine agosto. Partivamo presto, quando la luce era ancora morbida e le valli silenziose. Roccia, boschi, rifugi — e quella sensazione di essere piccoli davanti a qualcosa di enorme.",
+      "blocks": [
+        {
+          "type": "full",
+          "src": "https://picsum.photos/id/29/1600/900",
+          "alt": "Panorama dolomitico all'alba",
+          "caption": "Cinque Torri, le sei del mattino",
+          "title": "Alba sulle Cinque Torri",
+          "location": "Cinque Torri, Cortina",
+          "year": 2023,
+          "forSale": false,
+          "price": null
+        },
+        {
+          "type": "text",
+          "content": "C'è qualcosa di speciale nel camminare in montagna con la macchina fotografica. Ti costringe a fermarti, a guardare davvero. Ogni passo può essere una foto — ma solo alcune meritano lo scatto."
+        },
+        {
+          "type": "pair",
+          "photos": [
+            {
+              "src": "https://picsum.photos/id/15/800/1000",
+              "alt": "Sentiero tra i larici",
+              "caption": "Sentiero verso il Lago di Braies",
+              "title": "Sentiero",
+              "location": "Braies, Alto Adige",
+              "year": 2023,
+              "forSale": false,
+              "price": null
+            },
+            {
+              "src": "https://picsum.photos/id/10/800/1000",
+              "alt": "Riflessi sul lago alpino",
+              "caption": null,
+              "title": "Riflessi",
+              "location": "Lago di Braies",
+              "year": 2023,
+              "forSale": false,
+              "price": null
+            }
+          ]
+        },
+        {
+          "type": "full",
+          "src": "https://picsum.photos/id/100/1600/1000",
+          "alt": "Nuvole basse tra le cime",
+          "caption": "Quando le nuvole scendono, le montagne diventano isole",
+          "title": "Nuvole",
+          "location": "Passo Gardena",
+          "year": 2023,
+          "forSale": false,
+          "price": null
+        },
+        {
+          "type": "text",
+          "content": "L'ultimo giorno abbiamo preso la pioggia. Ma la pioggia in montagna ha un suo fascino — i colori si accendono, il verde diventa impossibile, e la roccia luccica."
+        },
+        {
+          "type": "bleed",
+          "src": "https://picsum.photos/id/27/1920/900",
+          "alt": "Valle dopo la pioggia",
+          "caption": "Val di Funes, dopo il temporale",
+          "title": "Dopo la pioggia",
+          "location": "Val di Funes",
+          "year": 2023,
+          "forSale": false,
+          "price": null
+        }
+      ]
+    },
+    {
+      "id": "costiera-2023",
+      "title": "Costiera Amalfitana",
+      "subtitle": "Campania",
+      "year": 2023,
+      "cover": "https://picsum.photos/id/1015/800/1000",
+      "description": "Quattro giorni lungo la costiera a giugno. Case colorate a picco sul mare, limoni ovunque, strade impossibili. La luce del sud è diversa — più calda, più densa, quasi fisica.",
+      "blocks": [
+        {
+          "type": "full",
+          "src": "https://picsum.photos/id/1015/1600/900",
+          "alt": "Vista dall'alto su Positano",
+          "caption": "Positano vista dalla strada panoramica",
+          "title": "Positano dall'alto",
+          "location": "Positano",
+          "year": 2023,
+          "forSale": false,
+          "price": null
+        },
+        {
+          "type": "text",
+          "content": "La costiera è un posto che conosci prima di vederlo, perché l'hai visto mille volte in foto. Ma quando ci arrivi capisci che le foto non bastano — è l'odore dei limoni, il rumore del mare, la verticalità di tutto."
+        },
+        {
+          "type": "pair",
+          "photos": [
+            {
+              "src": "https://picsum.photos/id/175/800/1000",
+              "alt": "Barche colorate nel porticciolo",
+              "caption": "Porto di Amalfi",
+              "title": "Barche",
+              "location": "Amalfi",
+              "year": 2023,
+              "forSale": false,
+              "price": null
+            },
+            {
+              "src": "https://picsum.photos/id/101/800/1000",
+              "alt": "Vicolo con panni stesi",
+              "caption": null,
+              "title": "Vicolo",
+              "location": "Atrani",
+              "year": 2023,
+              "forSale": false,
+              "price": null
+            }
+          ]
+        },
+        {
+          "type": "full",
+          "src": "https://picsum.photos/id/1019/1600/1000",
+          "alt": "Tramonto sul mare da Ravello",
+          "caption": "Da Villa Cimbrone, Ravello — il punto più bello che abbia mai visto",
+          "title": "Tramonto da Ravello",
+          "location": "Ravello",
+          "year": 2023,
+          "forSale": false,
+          "price": null
+        },
+        {
+          "type": "bleed",
+          "src": "https://picsum.photos/id/1036/1920/900",
+          "alt": "Scogliera e mare aperto",
+          "caption": null,
+          "title": "Scogliera",
+          "location": "Praiano",
+          "year": 2023,
+          "forSale": false,
+          "price": null
+        }
+      ]
+    }
+  ]
+}
