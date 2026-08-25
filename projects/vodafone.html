@@ -20,6 +20,10 @@
       --primary-bright: #FF3333;
       --primary-deep: #A30000;
     }
+    /* Hero device is a portrait phone mockup, not a wide landscape shot — narrow the default box */
+    @media (min-width: 901px) {
+      .cs-hero__media { width: clamp(220px, 18vw, 300px); right: clamp(24px, 4vw, 80px); }
+    }
     /* Digital Field light/dark screenshot pairs */
     .vodafone-shots {
       max-width: var(--cs-max);
