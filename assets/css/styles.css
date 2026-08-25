@@ -624,6 +624,8 @@ a {
 .work--guzzi.work--reveal { --reveal-glow: 150, 160, 180; } /* cool neutral backlight */
 .work--hmi   { background: radial-gradient(110% 70% at 100% 100%, rgba(0,168,126,.20) 0%, transparent 60%), var(--surface-soft); }
 .work--bocconi { background: radial-gradient(110% 70% at 100% 100%, rgba(58,64,196,.42) 0%, transparent 60%), var(--canvas-dark); }
+.work--vodafone { background: radial-gradient(110% 70% at 100% 100%, rgba(230,0,0,.40) 0%, transparent 60%), var(--canvas-dark); }
+.work--vodafone.work--reveal { --reveal-glow: 230, 0, 0; }
 
 /* Card internal grid — content left, device right */
 .work__link {

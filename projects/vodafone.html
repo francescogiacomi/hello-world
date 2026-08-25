@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#E60000" />
+  <title>VODAFONE — Case Study · Francesco Giacomi</title>
+  <meta name="description" content="VODAFONE — a structured design system evaluation that turned a recurring style debate into one technical decision, applied to the Digital Field app." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/case.css" />
+  <!-- Page accent: Vodafone red -->
+  <style>
+    :root {
+      --testata: #E60000;
+      --testata-deep: #A30000;
+      --primary: #E60000;
+      --primary-bright: #FF3333;
+      --primary-deep: #A30000;
+    }
+    /* No stats row on this page's Context section — remove the gap it leaves */
+    #problem .cs-context__head { padding-bottom: 0; }
+    /* Digital Field light/dark screenshot pairs */
+    .vodafone-shots {
+      max-width: var(--cs-max);
+      margin: 0 auto;
+      padding: 0 var(--gutter) clamp(56px, 9vh, 120px);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(20px, 3vw, 40px);
+    }
+    @media (max-width: 760px) { .vodafone-shots { grid-template-columns: 1fr; } }
+    .vodafone-shots figure { margin: 0; }
+    .vodafone-shots img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--r-lg);
+      border: 1px solid var(--hairline-light);
+    }
+    .vodafone-shots figcaption {
+      margin-top: 14px;
+      font-family: var(--f-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"></span>
+  </div>
+
+  <header class="site-header site-header--case">
+    <a class="brand" href="../index.html" data-cursor="hover">Francesco Giacomi</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#problem" data-cursor="hover">Context</a>
+      <a href="#approach" data-cursor="hover">Approach</a>
+      <a href="#impact" data-cursor="hover">Impact</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="cs">
+
+      <!-- ===== HERO (testata) ===== -->
+      <header class="cs-hero" id="top">
+        <div class="cs-hero__inner">
+          <a class="cs-hero__back" href="../index.html" data-cursor="hover">← Home</a>
+          <h1 class="cs-hero__title">
+            A design system built to <em>end the debate</em>.
+          </h1>
+          <div class="cs-hero__col">
+            <p class="cs-hero__intro">
+              As Product Designer, I led a structured evaluation of five design
+              systems — Ant, Carbon, Fluent, Material and MUI — against
+              Vodafone's own component library, then facilitated a workshop
+              with developers and the client to turn a recurring, subjective
+              style debate into one technical decision. Material Design was
+              selected for its balance of consumer-app flexibility and
+              enterprise-level customization. The result became the
+              foundation for Digital Field, a field-operations app built for
+              Vodafone Romania to manage antenna issues and ticket closures —
+              shipped in both light and dark themes.
+            </p>
+            <dl class="cs-hero__meta">
+              <div><dt>Industry</dt><dd>Telecommunications · Enterprise Design Systems</dd></div>
+              <div><dt>Year</dt><dd>2024</dd></div>
+              <div><dt>Client</dt><dd>Vodafone</dd></div>
+              <div><dt>Duration</dt><dd>2 months (2-week workshop &amp; decision phase)</dd></div>
+              <div><dt>Role &amp; Team</dt><dd>Product Designer — co-led the system evaluation and client/developer workshop with one colleague; built the final app with a team of three designers</dd></div>
+              <div><dt>Scope</dt><dd>Design System Audit · Component Benchmarking · Workshop Facilitation · UI Restyling · Field App Design</dd></div>
+            </dl>
+          </div>
+        </div>
+        <div class="cs-hero__media" data-parallax="0.14">
+          <img src="../assets/img/projects/vodafoneintro.png" alt="Vodafone Digital Field app"
+               onerror="this.onerror=null; this.src='../assets/img/projects/vodafone.webp';" />
+        </div>
+      </header>
+
+      <!-- ===== CONTEXT (dark) ===== -->
+      <section class="cs-context" id="problem">
+        <div class="cs-context__inner">
+          <div class="cs-context__head">
+            <h2>A decision nobody could close.</h2>
+            <div class="cs-context__copy">
+              <p>
+                Vodafone already had its own component library, but styling
+                decisions kept being reopened without a technical reference
+                point to settle them. Every round of feedback restarted the
+                same subjective conversation, slowing down delivery on the
+                products being built on top of it — including the app that
+                would become Digital Field.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== APPROACH ===== -->
+      <section class="cs-block" id="approach">
+        <h2 class="cs-block__title">Comparing five systems, one component at a time.</h2>
+        <div class="cs-block__body">
+          <p>
+            Instead of arguing about style in the abstract, we benchmarked
+            Vodafone's existing components against five established design
+            systems — Ant Design, Carbon Design, Fluent Design, Material
+            Design and MUI — across 16 core UI elements: Button, Radio
+            Button, Chips, Switch, Checkbox, Breadcrumbs, Dropdown,
+            Input/Note, Data Table, Calendar, Tooltip, Alert, Icon, Modal,
+            Pagination and Stepper. The comparison became the base for a
+            workshop with both the development team, to validate technical
+            feasibility, and the client, to walk through the trade-offs of
+            each system in detail.
+          </p>
+        </div>
+      </section>
+
+      <figure class="cs-figure">
+        <div class="cs-figure__frame">
+          <img src="../assets/img/projects/vodafone-ds-comparison.png" alt="Vodafone design system comparison matrix"
+               onerror="this.style.display='none';" />
+        </div>
+        <figcaption>Vodafone's existing components benchmarked against five design systems across 16 core UI elements — used to move the decision from opinion to evidence.</figcaption>
+      </figure>
+
+      <!-- ===== KEY DECISION ===== -->
+      <section class="cs-block" id="decision">
+        <div>
+          <p class="cs-decision__eyebrow">Key Decision</p>
+          <h2 class="cs-block__title">Material, chosen on its own trade-offs.</h2>
+        </div>
+        <div class="cs-block__body">
+          <p>
+            Material Design was selected for being flexible and
+            consumer-friendly while still adaptable to enterprise needs
+            through customization — the best fit for both Vodafone Mobile
+            and Digital Field. It came with a known limitation: no built-in
+            data visualization components, requiring integration with
+            external charting libraries. That trade-off was made openly, in
+            the workshop, rather than discovered later. After the decision
+            was shared and agreed with the client, style change requests
+            stopped.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== DIGITAL FIELD ===== -->
+      <section class="cs-block">
+        <h2 class="cs-block__title">From decision to Digital Field.</h2>
+        <div class="cs-block__body">
+          <p>
+            The new design system became the foundation for Digital Field, a
+            field-operations app built for Vodafone Romania to help
+            operators manage problematic antenna issues and close tickets
+            from the field. Built by a team of three designers given its
+            complexity, it shipped in both light and dark versions.
+          </p>
+        </div>
+      </section>
+
+      <div class="vodafone-shots">
+        <figure>
+          <img src="../assets/img/projects/vodafone-digitalfield-light-01.png" alt="Digital Field app, light theme"
+               onerror="this.closest('figure').style.display='none';" />
+          <figcaption>Digital Field — light theme</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/img/projects/vodafone-digitalfield-dark-01.png" alt="Digital Field app, dark theme"
+               onerror="this.closest('figure').style.display='none';" />
+          <figcaption>Digital Field — dark theme</figcaption>
+        </figure>
+      </div>
+
+      <!-- ===== IMPACT (dark) ===== -->
+      <section class="cs-context cs-impact" id="impact">
+        <div class="cs-context__inner">
+          <div class="cs-context__head">
+            <h2>The work behind the decision.</h2>
+          </div>
+          <dl class="cs-context__stats cs-impact__stats">
+            <div><dt>5</dt><dd>design systems evaluated against Vodafone's own components</dd></div>
+            <div><dt>16</dt><dd>core UI components benchmarked across all five systems</dd></div>
+            <div><dt>2 weeks</dt><dd>workshop to move the decision from opinion to evidence</dd></div>
+            <div><dt>0</dt><dd>style change requests reopened after the decision was shared</dd></div>
+            <div><dt>Shipped</dt><dd>in production on Digital Field, in both light and dark themes</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ===== OUTRO — back to top + other projects ===== -->
+      <footer class="cs-outro">
+        <a class="cs-outro__top" href="#top" data-cursor="hover" aria-label="Torna su">
+          <span class="cs-outro__top-icon" aria-hidden="true">↑</span>
+          <span class="cs-outro__top-text">Torna su</span>
+        </a>
+        <p class="cs-outro__label">Navigate other projects</p>
+        <ul class="cs-outro__projects">
+          <li><a href="viola.html" data-cursor="hover">Viola <span aria-hidden="true">↗</span></a></li>
+          <li><a href="guzzi.html" data-cursor="hover">MGM <span aria-hidden="true">↗</span></a></li>
+          <li><a href="vespa.html" data-cursor="hover">Vespa 230 Tech <span aria-hidden="true">↗</span></a></li>
+          <li><a href="bocconi.html" data-cursor="hover">Bocconi <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© 2026 Francesco Giacomi</span>
+      <span>Designed and built in remote</span>
+      <span class="footer__time" id="footerTime">—</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js" defer></script>
+</body>
+</html>
