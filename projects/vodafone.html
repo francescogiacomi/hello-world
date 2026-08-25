@@ -20,8 +20,6 @@
       --primary-bright: #FF3333;
       --primary-deep: #A30000;
     }
-    /* No stats row on this page's Context section — remove the gap it leaves */
-    #problem .cs-context__head { padding-bottom: 0; }
     /* Digital Field light/dark screenshot pairs */
     .vodafone-shots {
       max-width: var(--cs-max);
@@ -48,6 +46,13 @@
       text-transform: uppercase;
       color: var(--mute);
     }
+    /* Key Decision #3 stat row — sits below the light/dark screenshots */
+    .vodafone-stats {
+      max-width: calc(var(--cs-max) + var(--gutter) * 2);
+      margin: 0 auto;
+      padding: 0 var(--gutter) clamp(56px, 9vh, 120px);
+    }
+    .vodafone-stats .cs-decision__stats { max-width: 56ch; }
   </style>
 </head>
 <body>
@@ -120,12 +125,20 @@
               </p>
             </div>
           </div>
+          <dl class="cs-context__stats">
+            <div><dt>16</dt><dd>core UI components without one shared reference</dd></div>
+            <div><dt>5</dt><dd>alternative design systems on the table</dd></div>
+            <div><dt>0</dt><dd>technical criteria being used to settle the debate</dd></div>
+          </dl>
         </div>
       </section>
 
-      <!-- ===== APPROACH ===== -->
+      <!-- ===== KEY DECISION #1 ===== -->
       <section class="cs-block" id="approach">
-        <h2 class="cs-block__title">Comparing five systems, one component at a time.</h2>
+        <div>
+          <p class="cs-decision__eyebrow">Key Decision #1</p>
+          <h2 class="cs-block__title">Comparing five systems, one component at a time.</h2>
+        </div>
         <div class="cs-block__body">
           <p>
             Instead of arguing about style in the abstract, we benchmarked
@@ -139,6 +152,11 @@
             feasibility, and the client, to walk through the trade-offs of
             each system in detail.
           </p>
+          <ul class="cs-decision__stats">
+            <li><b>5</b> design systems benchmarked — Ant, Carbon, Fluent, Material, MUI</li>
+            <li><b>16</b> core components compared side by side</li>
+            <li><b>2</b> audiences in the workshop — developers and client</li>
+          </ul>
         </div>
       </section>
 
@@ -150,10 +168,10 @@
         <figcaption>Vodafone's existing components benchmarked against five design systems across 16 core UI elements — used to move the decision from opinion to evidence.</figcaption>
       </figure>
 
-      <!-- ===== KEY DECISION ===== -->
+      <!-- ===== KEY DECISION #2 ===== -->
       <section class="cs-block" id="decision">
         <div>
-          <p class="cs-decision__eyebrow">Key Decision</p>
+          <p class="cs-decision__eyebrow">Key Decision #2</p>
           <h2 class="cs-block__title">Material, chosen on its own trade-offs.</h2>
         </div>
         <div class="cs-block__body">
@@ -168,12 +186,20 @@
             was shared and agreed with the client, style change requests
             stopped.
           </p>
+          <ul class="cs-decision__stats">
+            <li><b>1</b> known trade-off accepted openly — no built-in data visualization</li>
+            <li><b>1</b> shared decision, reached with the client in the room</li>
+            <li><b>0</b> style change requests after the decision was shared</li>
+          </ul>
         </div>
       </section>
 
-      <!-- ===== DIGITAL FIELD ===== -->
+      <!-- ===== KEY DECISION #3 ===== -->
       <section class="cs-block">
-        <h2 class="cs-block__title">From decision to Digital Field.</h2>
+        <div>
+          <p class="cs-decision__eyebrow">Key Decision #3</p>
+          <h2 class="cs-block__title">From decision to Digital Field.</h2>
+        </div>
         <div class="cs-block__body">
           <p>
             The new design system became the foundation for Digital Field, a
@@ -196,6 +222,14 @@
                onerror="this.closest('figure').style.display='none';" />
           <figcaption>Digital Field — dark theme</figcaption>
         </figure>
+      </div>
+
+      <div class="vodafone-stats">
+        <ul class="cs-decision__stats">
+          <li><b>3</b> designers on the build, given its complexity</li>
+          <li><b>2</b> theme variants shipped — light and dark</li>
+          <li><b>1</b> country in active use — Romania field operations</li>
+        </ul>
       </div>
 
       <!-- ===== IMPACT (dark) ===== -->
