@@ -26,33 +26,7 @@
     @media (min-width: 901px) {
       .cs-hero__media { width: clamp(220px, 18vw, 300px); right: clamp(200px, 24vw, 420px); top: clamp(560px, 32vw, 660px); bottom: auto; }
     }
-    /* Digital Field light/dark screenshot pairs */
-    .vodafone-shots {
-      max-width: var(--cs-max);
-      margin: 0 auto;
-      padding: 0 var(--gutter) clamp(56px, 9vh, 120px);
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: clamp(20px, 3vw, 40px);
-    }
-    @media (max-width: 760px) { .vodafone-shots { grid-template-columns: 1fr; } }
-    .vodafone-shots figure { margin: 0; }
-    .vodafone-shots img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: var(--r-lg);
-      border: 1px solid var(--hairline-light);
-    }
-    .vodafone-shots figcaption {
-      margin-top: 14px;
-      font-family: var(--f-mono);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--mute);
-    }
-    /* Key Decision #3 stat row — sits below the light/dark screenshots */
+    /* Key Decision #3 stat row — sits below the Digital Field showcase image */
     .vodafone-stats {
       max-width: calc(var(--cs-max) + var(--gutter) * 2);
       margin: 0 auto;
@@ -122,20 +96,15 @@
             <h2>A decision nobody could close.</h2>
             <div class="cs-context__copy">
               <p>
-                Vodafone already had its own component library, but styling
-                decisions kept being reopened without a technical reference
-                point to settle them. Every round of feedback restarted the
-                same subjective conversation, slowing down delivery on the
-                products being built on top of it — including the app that
-                would become Digital Field.
+                Vodafone already had a component library, but nothing
+                anchored it. Every review reopened the same argument, because
+                there was no technical ground to end it on. That single
+                unresolved question kept resurfacing on every product built
+                on top of it — including the app that would become Digital
+                Field.
               </p>
             </div>
           </div>
-          <dl class="cs-context__stats">
-            <div><dt>16</dt><dd>core UI components without one shared reference</dd></div>
-            <div><dt>5</dt><dd>alternative design systems on the table</dd></div>
-            <div><dt>0</dt><dd>technical criteria being used to settle the debate</dd></div>
-          </dl>
         </div>
       </section>
 
@@ -161,7 +130,6 @@
           <ul class="cs-decision__stats">
             <li><b>5</b> design systems benchmarked — Ant, Carbon, Fluent, Material, MUI</li>
             <li><b>16</b> core components compared side by side</li>
-            <li><b>2</b> audiences in the workshop — developers and client</li>
           </ul>
         </div>
       </section>
@@ -190,8 +158,6 @@
             stopped.
           </p>
           <ul class="cs-decision__stats">
-            <li><b>1</b> known trade-off accepted openly — no built-in data visualization</li>
-            <li><b>1</b> shared decision, reached with the client in the room</li>
             <li><b>0</b> style change requests after the decision was shared</li>
           </ul>
         </div>
@@ -214,24 +180,15 @@
         </div>
       </section>
 
-      <div class="vodafone-shots">
-        <figure>
-          <img src="../assets/img/projects/vodafone-digitalfield-light-01.png" alt="Digital Field app, light theme"
-               onerror="this.closest('figure').style.display='none';" />
-          <figcaption>Digital Field — light theme</figcaption>
-        </figure>
-        <figure>
-          <img src="../assets/img/projects/vodafone-digitalfield-dark-01.png" alt="Digital Field app, dark theme"
-               onerror="this.closest('figure').style.display='none';" />
-          <figcaption>Digital Field — dark theme</figcaption>
-        </figure>
-      </div>
+      <figure class="cs-fullbleed">
+        <img src="../assets/img/projects/vodafone-digitalfield-showcase.png" alt="Digital Field app — splash screen, light theme and dark theme"
+             onerror="this.parentElement.style.display='none';" />
+      </figure>
 
       <div class="vodafone-stats">
         <ul class="cs-decision__stats">
           <li><b>3</b> designers on the build, given its complexity</li>
           <li><b>2</b> theme variants shipped — light and dark</li>
-          <li><b>1</b> country in active use — Romania field operations</li>
         </ul>
       </div>
 
