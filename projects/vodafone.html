@@ -21,10 +21,10 @@
       --primary-deep: #A30000;
     }
     /* Hero device is a portrait phone mockup, not a wide landscape shot — narrow the box and
-       anchor it near the top (the 6-row info bar makes this column very tall, so a bottom
-       anchor would push the phone far below the fold) */
+       drop it below the (long, wrapping) title so it never overlaps the headline, sitting
+       beside the intro paragraph instead */
     @media (min-width: 901px) {
-      .cs-hero__media { width: clamp(220px, 18vw, 300px); right: clamp(24px, 4vw, 80px); top: clamp(140px, 20vh, 220px); bottom: auto; }
+      .cs-hero__media { width: clamp(220px, 18vw, 300px); right: clamp(24px, 4vw, 80px); top: clamp(690px, 40vw, 800px); bottom: auto; }
     }
     /* Digital Field light/dark screenshot pairs */
     .vodafone-shots {
