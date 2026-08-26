@@ -26,13 +26,6 @@
     @media (min-width: 901px) {
       .cs-hero__media { width: clamp(220px, 18vw, 300px); right: clamp(200px, 24vw, 420px); top: clamp(560px, 32vw, 660px); bottom: auto; }
     }
-    /* Key Decision #3 stat row — sits below the Digital Field showcase image */
-    .vodafone-stats {
-      max-width: calc(var(--cs-max) + var(--gutter) * 2);
-      margin: 0 auto;
-      padding: 0 var(--gutter) clamp(56px, 9vh, 120px);
-    }
-    .vodafone-stats .cs-decision__stats { max-width: 56ch; }
   </style>
 </head>
 <body>
@@ -131,15 +124,10 @@
           </ul>
         </div>
         <div class="cs-decision__media" data-reveal>
-          <img src="../assets/img/projects/vodafone-digitalfield-showcase.png" alt="Digital Field app — splash screen, light theme and dark theme"
+          <img src="../assets/img/projects/vodafone-ds-comparison.png" alt="Vodafone design system comparison matrix"
                onerror="this.style.display='none';" />
         </div>
       </section>
-
-      <figure class="cs-fullbleed">
-        <img src="../assets/img/projects/vodafone-ds-comparison.png" alt="Vodafone design system comparison matrix"
-             onerror="this.parentElement.style.display='none';" />
-      </figure>
 
       <!-- ===== KEY DECISION #2 ===== -->
       <section class="cs-decision" id="decision">
@@ -162,34 +150,33 @@
           </ul>
         </div>
         <div class="cs-decision__media" data-reveal>
-          <img src="../assets/img/projects/vodafone-app-flows.png" alt="Digital Field app — activity log, profile and questionnaire screens"
+          <img src="../assets/img/projects/vodafone-digitalfield-showcase.png" alt="Digital Field app — splash screen, light theme and dark theme"
                onerror="this.style.display='none';" />
         </div>
       </section>
 
       <!-- ===== KEY DECISION #3 ===== -->
-      <section class="cs-block">
-        <div>
+      <section class="cs-decision">
+        <div class="cs-decision__text">
           <p class="cs-decision__eyebrow">Key Decision #3</p>
-          <h2 class="cs-block__title">From decision to Digital Field.</h2>
-        </div>
-        <div class="cs-block__body">
-          <p>
+          <h2 class="cs-decision__title">From decision to Digital Field.</h2>
+          <p class="cs-decision__desc">
             The new design system became the foundation for Digital Field, a
             field-operations app built for Vodafone Romania to help
             operators manage problematic antenna issues and close tickets
             from the field. Built by a team of three designers given its
             complexity, it shipped in both light and dark versions.
           </p>
+          <ul class="cs-decision__stats">
+            <li><b>3</b> designers on the build, given its complexity</li>
+            <li><b>2</b> theme variants shipped — light and dark</li>
+          </ul>
+        </div>
+        <div class="cs-decision__media" data-reveal>
+          <img src="../assets/img/projects/vodafone-app-flows.png" alt="Digital Field app — activity log, profile and questionnaire screens"
+               onerror="this.style.display='none';" />
         </div>
       </section>
-
-      <div class="vodafone-stats">
-        <ul class="cs-decision__stats">
-          <li><b>3</b> designers on the build, given its complexity</li>
-          <li><b>2</b> theme variants shipped — light and dark</li>
-        </ul>
-      </div>
 
       <!-- ===== IMPACT (dark) ===== -->
       <section class="cs-context cs-impact" id="impact">
